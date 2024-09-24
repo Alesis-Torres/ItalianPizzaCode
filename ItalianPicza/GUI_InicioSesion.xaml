@@ -1,0 +1,21 @@
+﻿<Page x:Class="ItalianPicza.GUI_InicioSesion"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      xmlns:p="clr-namespace:ItalianPicza.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_InicioSesion">
+
+    <Grid>
+        <Label Content="Italian pizza" HorizontalAlignment="Left" Margin="331,57,0,0" VerticalAlignment="Top" Height="107" Width="656" FontFamily="Ravie" FontSize="72" Foreground="#FFFFBC06"/>
+        <TextBox Name="cuadroTextoNombreUsuario" HorizontalAlignment="Left" Margin="685,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Height="40" FontSize="24"/>
+        <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="685,254,0,0" VerticalAlignment="Top" Width="319" Foreground="White" FontSize="36"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="685,412,0,0" VerticalAlignment="Top" Foreground="White" FontSize="36"/>
+        <Button Content="Iniciar sesión" HorizontalAlignment="Left" Margin="685,597,0,0" VerticalAlignment="Top" Height="62" Width="422" Background="Red" FontSize="36" Foreground="#FFF9F5F5" BorderBrush="White" Click="IniciarSesion"/>
+        <Image Source="/Imagenes/Logos/pizza.png" HorizontalAlignment="Left" Height="358" Margin="146,254,0,0" VerticalAlignment="Top" Width="353"/>
+        <PasswordBox Name="cuadroContrasenaContrasena" Margin="685,475,173,206" FontSize="24"/>
+    </Grid>
+</Page>

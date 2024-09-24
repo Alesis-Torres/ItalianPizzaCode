@@ -1,0 +1,16 @@
+﻿<Window x:Class="ItalianPicza.VentanaPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItalianPicza"
+        mc:Ignorable="d"
+        Background="#262626"
+        Title="Italian pizza" Height="720" Width="1280">
+    <Grid>
+        <StackPanel Margin="0,0,0,0" Width="1280" Height="720">
+            <Frame Name="marcoPaginaActual" Width="1280" Height="720" NavigationUIVisibility="Hidden"/>
+        </StackPanel>
+        <Grid Name="panelBloqueo" Background="Black" Opacity="0.7" Visibility="Hidden"/>
+    </Grid>
+</Window>
