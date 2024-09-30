@@ -24,3 +24,8 @@ C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Usuarios.g.cs
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_DarAltaUsuario.baml
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Usuarios.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Inventario.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Inventario.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\EntityFramework.dll
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\EntityFramework.xml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\ItalianPicza_Content.g.cs

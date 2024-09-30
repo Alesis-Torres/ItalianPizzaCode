@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0a85e14cf4764db4b63cdb72db24794a" Name="Diagram1" ZoomLevel="95">
+        <EntityTypeShape EntityType="italianpizzaModel.baja" Width="1.5" PointX="8.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.cliente" Width="1.5" PointX="9" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.cortecaja" Width="1.5" PointX="6" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.direccion" Width="1.5" PointX="11.25" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.empleado" Width="1.5" PointX="3.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.entradaextraordinaria" Width="1.5" PointX="11.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.ingrediente" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.inventario" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.medidaproducto" Width="1.5" PointX="3.75" PointY="20.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.mesa" Width="1.5" PointX="9" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedido" Width="1.5" PointX="9" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidodomicilio" Width="1.5" PointX="11.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidolocal" Width="1.5" PointX="11.25" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidoproducto" Width="1.5" PointX="11.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidoproveedor" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidoproveedoringrediente" Width="1.5" PointX="8.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.pedidoproveedorproducto" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.producto" Width="1.5" PointX="6" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.proveedor" Width="1.5" PointX="0.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.receta" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.recetaingrediente" Width="1.5" PointX="8.25" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.rol" Width="1.5" PointX="1.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.salidaextraordinaria" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="italianpizzaModel.tipoproducto" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
+        <AssociationConnector Association="italianpizzaModel.FK_baja_cortecaja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_baja_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_ingrediente_baja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_baja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_cliente_direccion" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidodomicilio_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_corte_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_entradaextraordinaria_cortecaja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedido_cortecaja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_salidaextraordinaria_cortecaja" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_empleado_rol" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_entradaextraordinaria_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_salidaextraordinaria_empleado" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_ingrediente_inventario" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_ingrediente_proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproveedoringrediente_ingrediente" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_recetaingrediente_ingrediente" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_inventario" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_medidaproducto" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidolocal_mesa" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidodomicilio_pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidolocal_pedido" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidorpoducto_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproducto_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproveedor_proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproveedoringrediente_pedidoproveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproveedorproducto_pedidoproveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_pedidoproveedorproducto_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_receta" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_producto_tipoproducto" ManuallyRouted="false" />
+        <AssociationConnector Association="italianpizzaModel.FK_recetaingrediente_receta" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="italianpizzaModel.usuario" Width="1.5" PointX="1.5" PointY="3.125" />
+        <AssociationConnector Association="italianpizzaModel.FK_empleado_usuario" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -35,8 +35,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -57,9 +62,103 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DatabaseModel\DAO%27s\UsuariosDAO.cs" />
+    <Compile Include="DatabaseModel\DataBaseMapping\baja.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\cliente.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\cortecaja.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\direccion.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\empleado.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\entradaextraordinaria.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\ingrediente.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\inventario.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\medidaproducto.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\mesa.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBaseDatos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedido.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidodomicilio.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidolocal.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidoproducto.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidoproveedor.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidoproveedoringrediente.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\pedidoproveedorproducto.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\producto.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\proveedor.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\receta.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\recetaingrediente.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\rol.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\salidaextraordinaria.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\tipoproducto.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DataBaseMapping\usuario.cs">
+      <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
+    </Compile>
     <Compile Include="GestorCuadroDialogo.cs" />
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Inventario.xaml.cs">
+      <DependentUpon>GUI_Inventario.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_MenuPrincipal.xaml.cs">
       <DependentUpon>GUI_MenuPrincipal.xaml</DependentUpon>
@@ -85,6 +184,10 @@
     <Compile Include="GUI_InicioSesion.xaml.cs">
       <DependentUpon>GUI_InicioSesion.xaml</DependentUpon>
     </Compile>
+    <Page Include="GUI_Inventario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_MenuPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,6 +219,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModeloBaseDatos.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.edmx.diagram">
+      <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,9 +235,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DatabaseModel\DAO%27s\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Imagenes\Logos\pizza.png" />
   </ItemGroup>
@@ -159,6 +268,24 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\Logos\image 9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Indicadores\Group 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModeloBaseDatos.Context.cs</LastGenOutput>
+      <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
+    </Content>
+    <Content Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
+      <LastGenOutput>ModeloBaseDatos.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

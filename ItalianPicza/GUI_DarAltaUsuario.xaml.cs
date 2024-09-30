@@ -1,8 +1,8 @@
 ﻿using Microsoft.Win32;
+using Seguridad;
 using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace ItalianPicza
@@ -15,18 +15,31 @@ namespace ItalianPicza
             InitializeComponent();
         }
 
-        private void CerrarSesion(object objetoOrigen, MouseButtonEventArgs evento)
-        {
-            VentanaPrincipal.CambiarPagina(new GUI_InicioSesion());
-        }
-
         private void GuardarUsuario(object sender, RoutedEventArgs e)
         {
-            //DAO Dar alta usuario
-            GestorCuadroDialogo.MostrarInformacion
-                ("Usuario registrado de manera exitosa en el sistema", 
+            string nombre = cuadroTextoNombre.Text;
+            string apellidoPaterno = cuadroTextoApellidoPaterno.Text;
+            string apellidoMaterno = cuadroTextoApellidoMaterno.Text;
+            string nombreUsuario = cuadroTextoNombreUsuario.Text;
+            string telefono = cuadroTextoTelefono.Text;
+
+            if(!ValidarDatos.EsCadenaVacia(nombre) && !ValidarDatos.EsCadenaVacia(apellidoPaterno)
+                && !ValidarDatos.EsCadenaVacia(apellidoMaterno) && !ValidarDatos.EsCadenaVacia(nombreUsuario)
+                && !ValidarDatos.EsCadenaVacia(telefono))
+            {
+                //DAO Dar alta usuario  -- Pendiente
+
+                GestorCuadroDialogo.MostrarInformacion
+                ("Usuario registrado de manera exitosa en el sistema",
                 "Usuario dado de alta");
-            VentanaPrincipal.CambiarPagina(new GUI_Usuarios());
+                VentanaPrincipal.CambiarPagina(new GUI_Usuarios());
+            }
+            else
+            {
+                GestorCuadroDialogo.MostrarAdvertencia(
+                    "Los campos están vacíos, por favor, ingrese la información solicitada.",
+                    "Campos vacíos");
+            }
         }
 
         private void Cancelar(object sender, RoutedEventArgs e)
