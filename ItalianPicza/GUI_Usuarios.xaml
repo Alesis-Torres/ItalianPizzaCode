@@ -8,49 +8,167 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_Usuarios">
 
+    <Page.Resources>
+        <!-- Estilo para el ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="4" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="Background" Value="#2B2B2B" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <!-- Definir columnas: una para el contenido y otra para la flecha -->
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <!-- Para el contenido del ComboBox -->
+                                <ColumnDefinition Width="30" />
+                                <!-- Para la flecha de despliegue -->
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Borde del ComboBox -->
+                            <Border 
+                                x:Name="Border"
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="5"
+                                Grid.ColumnSpan="2">
+
+                                <Grid>
+                                    <!-- Muestra el contenido seleccionado del ComboBox -->
+                                    <ContentPresenter
+                                        Margin="4"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Left"
+                                        Content="{TemplateBinding SelectionBoxItem}" />
+                                </Grid>
+                            </Border>
+
+                            <!-- Botón de despliegue con la flecha -->
+                            <ToggleButton 
+                                Grid.Column="1"
+                                Name="ToggleButton"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Focusable="False"
+                                IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                                ClickMode="Press">
+                                <Path
+                                    x:Name="Arrow"
+                                    Fill="Gray"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Data="M 0 0 L 4 4 L 8 0 Z"/>
+                            </ToggleButton>
+
+                            <!-- Popup que contiene los elementos del ComboBox desplegados -->
+                            <Popup Name="Popup"
+                                   Placement="Bottom"
+                                   IsOpen="{TemplateBinding IsDropDownOpen}"
+                                   AllowsTransparency="True"
+                                   Focusable="False"
+                                   PopupAnimation="Slide">
+                                <Border 
+                                    Background="{TemplateBinding Background}" 
+                                    BorderBrush="Gray" 
+                                    BorderThickness="1">
+                                    <ScrollViewer Margin="4">
+                                        <StackPanel IsItemsHost="True" />
+                                    </ScrollViewer>
+                                </Border>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <Image Source="/Imagenes/Indicadores/logout 2.png" HorizontalAlignment="Left" Height="55" Margin="166,10,0,0" VerticalAlignment="Top" Width="49" MouseDown="CerrarSesion"/>
-        <Button HorizontalAlignment="Left" Margin="0,182,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="/Imagenes/Logos/empleados 1.png" Height="70" Width="84"/>
-                <TextBlock Text="Usuarios" Foreground="White" FontSize="24" Height="34"/>
-            </StackPanel>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="0,282,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="/Imagenes/Logos/libro-de-cocina 1.png" Height="70" Width="84"/>
-                <TextBlock Text="Inventario" Foreground="White" FontSize="24" Height="34"/>
-            </StackPanel>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="/Imagenes/Logos/order-now 1.png" Height="70" Width="84"/>
-                <TextBlock Text="Pedidos" Foreground="White" FontSize="24" Height="34"/>
-            </StackPanel>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="0,482,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="/Imagenes/Logos/budget 1.png" Height="70" Width="84"/>
-                <TextBlock Text="Finanzas" Foreground="White" FontSize="24" Height="34"/>
-            </StackPanel>
-        </Button>
-        <Button HorizontalAlignment="Left" Margin="0,581,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Image Source="/Imagenes/Logos/delivery-man 1.png" Height="70" Width="84"/>
-                <TextBlock Text="Proveedores" Foreground="White" FontSize="24" Height="34"/>
-            </StackPanel>
-        </Button>
-        <TextBox HorizontalAlignment="Left" Margin="559,34,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="351" Height="36"/>
-        <Label Content="Buscar por" Foreground="White" HorizontalAlignment="Left" Margin="910,114,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="1063,129,0,0" VerticalAlignment="Top" Width="150"/>
-        <ListView d:ItemsSource="{d:SampleData ItemCount=5}" Margin="386,200,197,153">
+        <TextBox HorizontalAlignment="Left" Margin="271,34,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
+        <Label Content="Filtrar por" Foreground="White" HorizontalAlignment="Left" Margin="808,21,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
+
+        <ComboBox HorizontalAlignment="Left" Margin="970,34,0,0" VerticalAlignment="Top" Width="221" Height="36">
+            <ComboBoxItem Content="--Tipo de usuario--" IsSelected="True"/>
+            <ComboBoxItem Content="Gerente" />
+            <ComboBoxItem Content="Cocinero" />
+            <!-- Datos de ejemplo -->
+        </ComboBox>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="943" Fill="#800000"/>
+        
+        <ListView Name="lvUsuarios" Margin="321,158,89,158" Background="#00008B">
+            <!-- Definir el estilo para los ListViewItems -->
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <!-- Color por defecto del fondo -->
+                    <Setter Property="Background" Value="Transparent"/>
+                    <!-- Cambiar el color del texto al pasar el cursor -->
+                    <Setter Property="Foreground" Value="White"/>
+                    <Style.Triggers>
+                        <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#020250"/>
+                            <!-- Color cuando está el cursor encima -->
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <!-- Image Column -->
+                    <GridViewColumn Header=" " Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding ImagenUsuario}" Width="80" Height="80" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Name Column -->
+                    <GridViewColumn Header="Nombre" Width="350">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NombreUsuario}" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Estatus" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EstatusUsuario}" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Button Column -->
+                    <GridViewColumn Header=" " Width="215">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Modificar usuario" Width="120" Height="40" Background="Goldenrod" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Dar de alta usuario" HorizontalAlignment="Left" Margin="1001,600,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="DarAltaUsuario" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20"/>
+
+        <Button Content="Dar de alta usuario" HorizontalAlignment="Left" Margin="654,600,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="DarAltaUsuario" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20"/>
+       
     </Grid>
 </Page>

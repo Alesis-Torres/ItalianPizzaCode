@@ -40,10 +40,20 @@ namespace ItalianPicza
             return (VentanaPrincipal)GetWindow(PaginaActual);
         }
 
-        public static void CambiarPaginaGuardandoAnterior(Page nuevaPagina)
+        private void CerrarSesion(object objetoOrigen, MouseButtonEventArgs evento)
         {
-            PaginaAnterior = PaginaActual;
-            CambiarPagina(nuevaPagina);
+            CambiarPagina(new GUI_InicioSesion());
+            panelNavegacion.Visibility = Visibility.Collapsed;
+        }
+
+        private void irUsuarios(object sender, RoutedEventArgs e)
+        {
+            CambiarPagina(new GUI_Usuarios());
+        }
+
+        private void irInventario(object sender, RoutedEventArgs e)
+        {
+            CambiarPagina(new GUI_Inventario());
         }
 
     }

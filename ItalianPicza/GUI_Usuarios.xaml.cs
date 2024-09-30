@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
@@ -21,6 +11,20 @@ namespace ItalianPicza
         public GUI_Usuarios()
         {
             InitializeComponent();
+
+            //Datos de ejemplo 
+            List<Usuario> usuarios = new List<Usuario>()
+            {
+                new Usuario() { NombreUsuario = "Pizza lover", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Tlachy", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Luis", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Pizza lover", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Tlachy", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Tlachy", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" },
+                new Usuario() { NombreUsuario = "Luis", EstatusUsuario = "Activo", ImagenUsuario = "/Imagenes/Logos/image 9.png" }
+            };
+
+            lvUsuarios.ItemsSource = usuarios;
         }
 
         private void DarAltaUsuario(object sender, RoutedEventArgs e)
@@ -28,9 +32,12 @@ namespace ItalianPicza
             VentanaPrincipal.CambiarPagina(new GUI_DarAltaUsuario());
         }
 
-        private void CerrarSesion(object objetoOrigen, MouseButtonEventArgs evento)
+        public class Usuario
         {
-            VentanaPrincipal.CambiarPagina(new GUI_InicioSesion());
+            public string NombreUsuario { get; set; }
+            public string EstatusUsuario { get; set; }
+            public string ImagenUsuario { get; set; } // Path to image
         }
+
     }
 }
