@@ -1,10 +1,7 @@
 ﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ItalianPicza.DatabaseModel.DAO_s
 {
@@ -34,15 +31,35 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                     }*/
                 }
 
-
-            }catch(InvalidOperationException)
+            }catch(InvalidOperationException ex)
             {
-                GestorCuadroDialogo.MostrarError("No hay conexion con la base de datos, intentelo más tarde.",
-                    "Sin conexion a la base de datos");
+                throw new InvalidOperationException("Operación no válida al acceder a la base de datos.", ex);
             }
 
-
             return empleadoVerificado;
+        }
+
+        public int DarDeAltaNuevoUsuario(empleado nuevoEmpleado, usuario nuevoUsuario)
+        {
+            int resultado = 0;
+
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    context.usuario.Add(nuevoUsuario);
+                    resultado = context.SaveChanges(); 
+                    nuevoEmpleado.idUsuario = nuevoUsuario.idUsuario;
+                    context.empleado.Add(nuevoEmpleado);
+                    resultado = context.SaveChanges(); 
+                }
+
+                return resultado; 
+            }
+            catch (EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
         }
 
     }

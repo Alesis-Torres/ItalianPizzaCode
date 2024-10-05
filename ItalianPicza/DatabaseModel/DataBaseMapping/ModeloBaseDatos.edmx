@@ -53,7 +53,7 @@
           <Property Name="apellidoMaterno" Type="varchar" MaxLength="20" />
           <Property Name="email" Type="varchar" MaxLength="30" />
           <Property Name="estado" Type="bit" />
-          <Property Name="telefono" Type="int" />
+          <Property Name="telefono" Type="varchar" MaxLength="10" />
           <Property Name="imagen" Type="varbinary(max)" />
           <Property Name="idRol" Type="int" />
           <Property Name="idUsuario" Type="int" />
@@ -913,7 +913,7 @@
           <Property Name="apellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" />
-          <Property Name="telefono" Type="Int32" />
+          <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="true" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="idRol" Type="Int32" />
           <NavigationProperty Name="baja" Relationship="Self.FK_baja_empleado" FromRole="empleado" ToRole="baja" />

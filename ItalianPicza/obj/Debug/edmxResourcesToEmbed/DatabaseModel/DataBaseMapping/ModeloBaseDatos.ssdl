@@ -48,7 +48,7 @@
     <Property Name="apellidoMaterno" Type="varchar" MaxLength="20" />
     <Property Name="email" Type="varchar" MaxLength="30" />
     <Property Name="estado" Type="bit" />
-    <Property Name="telefono" Type="int" />
+    <Property Name="telefono" Type="varchar" MaxLength="10" />
     <Property Name="imagen" Type="varbinary(max)" />
     <Property Name="idRol" Type="int" />
     <Property Name="idUsuario" Type="int" />

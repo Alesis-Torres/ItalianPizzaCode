@@ -56,7 +56,9 @@ namespace ItalianPicza
                     }
                     catch(EntityException)
                     {
-                        GestorCuadroDialogo.MostrarError("Error", "Error");
+                        GestorCuadroDialogo.MostrarError
+                            ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                            "Sin conexión a la base de datos");
                     }
 
                 }
@@ -102,11 +104,11 @@ namespace ItalianPicza
             return hayCamposInvalidos;
         }
 
-        private bool ExistenLongitudesExcedidas(string nombreJugador, string contrasena)
+        private bool ExistenLongitudesExcedidas(string nombreUsuario, string contrasena)
         {
             bool resultado = false;
 
-            if (ValidarDatos.ExisteLongitudExcedidaEnNombreUsuario(nombreJugador) ||
+            if (ValidarDatos.ExisteLongitudExcedidaEnNombreUsuario(nombreUsuario) ||
                 ValidarDatos.ExisteLongitudExcedidaEnContrasena(contrasena))
             {
                 resultado = true;
