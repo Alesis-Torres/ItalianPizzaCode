@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Data;
+using System.Windows;
 using System.Windows.Controls;
+using ItalianPicza.DatabaseModel.DAO_s;
+using ItalianPicza.DatabaseModel.DataBaseMapping;
 using Seguridad;
 
 namespace ItalianPicza
@@ -22,7 +25,42 @@ namespace ItalianPicza
             {
                 if(!ExistenDatosInvalidos(nombreUsuario, contrasena))
                 {
-                    VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+
+                    usuario usuario = new usuario()
+                    {
+                        nombreUsuario = nombreUsuario,
+                        password = contrasena
+                    };  
+
+                    UsuariosDAO usuariosDAO = new UsuariosDAO();
+
+                    try
+                    {
+                        usuario usuarioVerificado = usuariosDAO.verificarExistenciaDeUsuario(usuario);
+                        if(usuarioVerificado != null)
+                        {
+
+                            VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
+                            ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
+
+                            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+
+                        }
+                        else
+                        {
+                            GestorCuadroDialogo.MostrarAdvertencia(
+                                "El usuario ingresado no existe, por favor, verifique la información ingresada", 
+                                "Usuario inexistente");
+                        }
+
+                    }
+                    catch(EntityException)
+                    {
+                        GestorCuadroDialogo.MostrarError
+                            ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                            "Sin conexión a la base de datos");
+                    }
+
                 }
             }
             else
@@ -66,11 +104,11 @@ namespace ItalianPicza
             return hayCamposInvalidos;
         }
 
-        private bool ExistenLongitudesExcedidas(string nombreJugador, string contrasena)
+        private bool ExistenLongitudesExcedidas(string nombreUsuario, string contrasena)
         {
             bool resultado = false;
 
-            if (ValidarDatos.ExisteLongitudExcedidaEnNombreUsuario(nombreJugador) ||
+            if (ValidarDatos.ExisteLongitudExcedidaEnNombreUsuario(nombreUsuario) ||
                 ValidarDatos.ExisteLongitudExcedidaEnContrasena(contrasena))
             {
                 resultado = true;
