@@ -1,0 +1,271 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\gui_daraltausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_daraltausuario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_iniciosesion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_iniciosesion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_usuarios.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_usuarios.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_usuarios.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_usuarios.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_iniciosesion.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_iniciosesion.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\ventanaprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:ventanaprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_inventario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_inventario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_inventario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_inventario.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\databasemodel\\dao\u0027s\\usuariosdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:databasemodel\\dao\u0027s\\usuariosdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_daraltausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_daraltausuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\ventanaprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:ventanaprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gui_menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_menuprincipal.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\gestorcuadrodialogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gestorcuadrodialogo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UsuariosDAO.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\DatabaseModel\\DAO\u0027s\\UsuariosDAO.cs",
+              "RelativeDocumentMoniker": "DatabaseModel\\DAO\u0027s\\UsuariosDAO.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\DatabaseModel\\DAO\u0027s\\UsuariosDAO.cs",
+              "RelativeToolTip": "DatabaseModel\\DAO\u0027s\\UsuariosDAO.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVDhP7VNdSFNhGH7POds8znNy080/BIXldAbJcEkXiaChXRRCCIGK6E1CV/lDeZHl8EowxYtAIgxC7CIvRIe48kLDC5Vz41EmbhpDS51uudOmubNztr7vuILqoiDoyufie3nP9/B8z/tz4Bz/DCoRYc23xlTdqUpXl6rZ6NUoa6g0sJabFrasrkzjmnJ9xZxgMKhnKhi9\u002B6JbI8wJkc7OTuN28fYF\u002BbIMh/OHIuaQ\u002BMAQT8RWJM9JGolTkSpOikkcQRKcilINJigggzyI72gVPRgOhw2RWGRGDWouQkVaExQg8MF7\u002BW7nprNxZXfFTFM0FGcWA5PEABKFiBRxtJS2NGGxoYWhG/Nb85neI68PifLWXGu559BDH50cuUmCHN18vNmrOFz8uHjFG/Ca4/E41JhrwiU5JU\u002BtOVZ7gaHAnsVkvU5NTY3G4rHVbDZbMDJGIAhC0Gq0fJGxKMomsdjWLpLZwloK6l7UTda/rI/bHXZfKBR6hXqVlrj6CYEvgcm\u002Bt31xU69p6iB8kB0QAp\u002BaR5tx3pOgnPVww78BGpUGdFrdMsuyTTqd7rNymwByTqKHMvxhP30sHqMPQA8vDGf4Qj5KlEVkkGByn\u002BQqJhRBSZZwANRwJf6K7wMYeD9QPs6PQzQWvTayOOJsGGswcDscyDH5Lh4U5iqC\u002Bfp8OJVOgd/ncfobUlJSBOTqYe2lWr7CVIEfXjUbzQ\u002B6KruEQmMhoIE4UF\u002BfYa5iqbqoGlz7LnAfuM1tb9p6cM5oGEAlwl5oz02S5BiivQsEAwa0CYUkkG7nPeekP\u002Bg3Tq9Ps6jmOc8jzzLWUtZm6cNS94xrphEttzlNmwaWDAskq5NxaSBKoqP9evstzPsbKIIYs\u002BuzHWh1OiZWJ2BH2AGKpMCUboI8fd5s/\u002B3\u002BpgTtj/jxp9BAP0fBRkqkDfXEhiZro\u002BKUTY7K988Y5/g/APgG2Ocp0eSbumcAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.125Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GUI_Inventario.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Inventario.xaml.cs",
+              "RelativeDocumentMoniker": "GUI_Inventario.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Inventario.xaml.cs",
+              "RelativeToolTip": "GUI_Inventario.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAFAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH\u002BSURBVDhP7ZRPaNNQHMe/TdNma2NrW1jUFYZYN0YKHqZischAMCCjh94siEfp0buIeBZ2LYKXHvSWQ4toDkKC0F7EU93NQyEthkFnG9uuaf6YhIcusknBHTz4gR\u002B/x\u002B/7e1/ee8l7IRzhmbi3s0TTzc3zcYQpp3R3K9sk0sJQJPtscgmcSzJ4\u002BeErPvemj99\u002B6t0j0sKEcF96SsbgV\u002BOX\u002BQvxyvu9A9zaSOL2\u002BrK8Zn9R6vU66QBomkYul0OpVNJns9mLYrGoE8mHhhPaImNoI4Nboikcmjb29TkYOr6dZtPbPM\u002BTDmAwGGAymaDb7Q44jttvt9tSoVDQiOyu8AhvPqo7\u002BqHVfP5OReXGCgQ\u002BiRU2BMMwSAcgSZIfiUQC5XIZLMs\u002BSKVSYj6f/\u002B7pgTPs9CbofTPw6E4WQj6JTAyYz\u002BdE/YXjONB1HaIoQtO03el0\u002BpBIQcPrq6Ybbr64jLOMA8e2/MnHYds2RqMR3C2nG43GGVJGmGSfm1evrI8PtMqltSzoMOVPOo5MJuN/GC/6/T5UVVU6nY7saYEVyrKMVquF8Xh8oplnIgjCz/DMTdMk6m\u002BGlmX5Z3bSNhchYHga/Df8e/59Q5pkn2g0CoqioCgKGIYh1T8zHA4Ri7mXnhB4barV6jX3hjzxmryffBG8VycSibyu1WqvSOk0AX4A4Q67Z\u002BxJ14gAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUI_DarAltaUsuario.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_DarAltaUsuario.xaml.cs",
+              "RelativeDocumentMoniker": "GUI_DarAltaUsuario.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_DarAltaUsuario.xaml.cs",
+              "RelativeToolTip": "GUI_DarAltaUsuario.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T23:19:06.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUI_InicioSesion.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml",
+              "RelativeDocumentMoniker": "GUI_InicioSesion.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml",
+              "RelativeToolTip": "GUI_InicioSesion.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.349Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GUI_Usuarios.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Usuarios.xaml",
+              "RelativeDocumentMoniker": "GUI_Usuarios.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Usuarios.xaml",
+              "RelativeToolTip": "GUI_Usuarios.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GUI_Usuarios.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Usuarios.xaml.cs",
+              "RelativeDocumentMoniker": "GUI_Usuarios.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Usuarios.xaml.cs",
+              "RelativeToolTip": "GUI_Usuarios.xaml.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH\u002BSURBVDhP7ZRPaNNQHMe/TdNma2NrW1jUFYZYN0YKHqZischAMCCjh94siEfp0buIeBZ2LYKXHvSWQ4toDkKC0F7EU93NQyEthkFnG9uuaf6YhIcusknBHTz4gR\u002B/x\u002B/7e1/ee8l7IRzhmbi3s0TTzc3zcYQpp3R3K9sk0sJQJPtscgmcSzJ4\u002BeErPvemj99\u002B6t0j0sKEcF96SsbgV\u002BOX\u002BQvxyvu9A9zaSOL2\u002BrK8Zn9R6vU66QBomkYul0OpVNJns9mLYrGoE8mHhhPaImNoI4Nboikcmjb29TkYOr6dZtPbPM\u002BTDmAwGGAymaDb7Q44jttvt9tSoVDQiOyu8AhvPqo7\u002BqHVfP5OReXGCgQ\u002BiRU2BMMwSAcgSZIfiUQC5XIZLMs\u002BSKVSYj6f/\u002B7pgTPs9CbofTPw6E4WQj6JTAyYz\u002BdE/YXjONB1HaIoQtO03el0\u002BpBIQcPrq6Ybbr64jLOMA8e2/MnHYds2RqMR3C2nG43GGVJGmGSfm1evrI8PtMqltSzoMOVPOo5MJuN/GC/6/T5UVVU6nY7saYEVyrKMVquF8Xh8oplnIgjCz/DMTdMk6m\u002BGlmX5Z3bSNhchYHga/Df8e/59Q5pkn2g0CoqioCgKGIYh1T8zHA4Ri7mXnhB4barV6jX3hjzxmryffBG8VycSibyu1WqvSOk0AX4A4Q67Z\u002BxJ14gAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GUI_InicioSesion.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml.cs",
+              "RelativeDocumentMoniker": "GUI_InicioSesion.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml.cs",
+              "RelativeToolTip": "GUI_InicioSesion.xaml.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwDwAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH\u002BSURBVDhP7ZRPaNNQHMe/TdNma2NrW1jUFYZYN0YKHqZischAMCCjh94siEfp0buIeBZ2LYKXHvSWQ4toDkKC0F7EU93NQyEthkFnG9uuaf6YhIcusknBHTz4gR\u002B/x\u002B/7e1/ee8l7IRzhmbi3s0TTzc3zcYQpp3R3K9sk0sJQJPtscgmcSzJ4\u002BeErPvemj99\u002B6t0j0sKEcF96SsbgV\u002BOX\u002BQvxyvu9A9zaSOL2\u002BrK8Zn9R6vU66QBomkYul0OpVNJns9mLYrGoE8mHhhPaImNoI4Nboikcmjb29TkYOr6dZtPbPM\u002BTDmAwGGAymaDb7Q44jttvt9tSoVDQiOyu8AhvPqo7\u002BqHVfP5OReXGCgQ\u002BiRU2BMMwSAcgSZIfiUQC5XIZLMs\u002BSKVSYj6f/\u002B7pgTPs9CbofTPw6E4WQj6JTAyYz\u002BdE/YXjONB1HaIoQtO03el0\u002BpBIQcPrq6Ybbr64jLOMA8e2/MnHYds2RqMR3C2nG43GGVJGmGSfm1evrI8PtMqltSzoMOVPOo5MJuN/GC/6/T5UVVU6nY7saYEVyrKMVquF8Xh8oplnIgjCz/DMTdMk6m\u002BGlmX5Z3bSNhchYHga/Df8e/59Q5pkn2g0CoqioCgKGIYh1T8zHA4Ri7mXnhB4barV6jX3hjzxmryffBG8VycSibyu1WqvSOk0AX4A4Q67Z\u002BxJ14gAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.364Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "VentanaPrincipal.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\VentanaPrincipal.xaml.cs",
+              "RelativeDocumentMoniker": "VentanaPrincipal.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\VentanaPrincipal.xaml.cs",
+              "RelativeToolTip": "VentanaPrincipal.xaml.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAAAJAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH\u002BSURBVDhP7ZRPaNNQHMe/TdNma2NrW1jUFYZYN0YKHqZischAMCCjh94siEfp0buIeBZ2LYKXHvSWQ4toDkKC0F7EU93NQyEthkFnG9uuaf6YhIcusknBHTz4gR\u002B/x\u002B/7e1/ee8l7IRzhmbi3s0TTzc3zcYQpp3R3K9sk0sJQJPtscgmcSzJ4\u002BeErPvemj99\u002B6t0j0sKEcF96SsbgV\u002BOX\u002BQvxyvu9A9zaSOL2\u002BrK8Zn9R6vU66QBomkYul0OpVNJns9mLYrGoE8mHhhPaImNoI4Nboikcmjb29TkYOr6dZtPbPM\u002BTDmAwGGAymaDb7Q44jttvt9tSoVDQiOyu8AhvPqo7\u002BqHVfP5OReXGCgQ\u002BiRU2BMMwSAcgSZIfiUQC5XIZLMs\u002BSKVSYj6f/\u002B7pgTPs9CbofTPw6E4WQj6JTAyYz\u002BdE/YXjONB1HaIoQtO03el0\u002BpBIQcPrq6Ybbr64jLOMA8e2/MnHYds2RqMR3C2nG43GGVJGmGSfm1evrI8PtMqltSzoMOVPOo5MJuN/GC/6/T5UVVU6nY7saYEVyrKMVquF8Xh8oplnIgjCz/DMTdMk6m\u002BGlmX5Z3bSNhchYHga/Df8e/59Q5pkn2g0CoqioCgKGIYh1T8zHA4Ri7mXnhB4barV6jX3hjzxmryffBG8VycSibyu1WqvSOk0AX4A4Q67Z\u002BxJ14gAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GUI_Inventario.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Inventario.xaml",
+              "RelativeDocumentMoniker": "GUI_Inventario.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_Inventario.xaml",
+              "RelativeToolTip": "GUI_Inventario.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\App.config",
+              "RelativeDocumentMoniker": "App.config",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\App.config",
+              "RelativeToolTip": "App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKcSURBVDhPrVRPSJphGP/5aaUrAw2L7Wa2LgkWsXXcQCIopoghJAMv0aHbFh08jAW7Kju7o3gsdlilHRRJJLSBgoThIVC72D/7Y2pY2vO9fH5szFqO/eDh9Xue9/v5fr/n97z435AIKxYXF\u002Beq1erc1dWVkGmNjo4ODA0NwWw2F7u6uj7o9fozocQgEjocjpW\u002Bvr7PtEHItMbBwQGKxSJoX2lkZMTT29v7bXR0NCOUIRNWlMtlaLVaTE1NCZnW2NraYhGPx3sISxqNphyLxXwTExOMlGO72kSj0cD19TX8fj\u002BOj48/3d3dLZyfn6v52j8RNnF7e4twOIzDw8MF0vYrn2ubcGxsDPPz82KQ7qATKqn0\u002Bwmnp6dBOkAul6OzsxNSqRQSidgzEf39/aBmiNHd3c0kaIIRkg6vdDrdS54gkUggm83i5uYGHMe1JH0M3NHR0fN6vb60t7dncrlccDqd8Hq9jJTyjLQdcPTSTzrFd4PB4JmdnUWtVkMwGMTa2hrS6TRkMtFZTwLndrtfRCKRj6RFqVKpfOF1IZHZp\u002BdyOaZlO\u002BCi0ShCodDr1dXVN6lUSndycsIILy4umNnb1pBGh3c9dnZ23hYKBXsmk2H\u002B4rXjNeTJ2yHljEYj81I\u002Bn8f\u002B/j4janb38vISp6enD1qoFTi73Q6LxQJqClQqFQuaT9DNg83NTfh8Ptaop5JyCoXCxAeZ2UTPpsHBQcfy8vLZ\u002BPg4qEnY3t6Gx\u002BNhNwxP\u002BDcbydRq9Q/hN8PGxkYPmVpDw79AfzLMd5uaxiZiZmYGpVKJ2akJvnm/WusPkw0MDJRocdPAP6P1PX3ucDKZZN4kS\u002B2SroVAICCOm1KpZJcuPe\u002ByxGOgRq2sr683JicnG1artWGz2d4JpQcA3AOOGSI59OotsgAAAABJRU5ErkJggg==",
+              "WhenOpened": "2024-10-07T23:19:06.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GUI_DarAltaUsuario.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_DarAltaUsuario.xaml",
+              "RelativeDocumentMoniker": "GUI_DarAltaUsuario.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_DarAltaUsuario.xaml",
+              "RelativeToolTip": "GUI_DarAltaUsuario.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GUI_MenuPrincipal.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml.cs",
+              "RelativeDocumentMoniker": "GUI_MenuPrincipal.xaml.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml.cs",
+              "RelativeToolTip": "GUI_MenuPrincipal.xaml.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH\u002BSURBVDhP7ZRPaNNQHMe/TdNma2NrW1jUFYZYN0YKHqZischAMCCjh94siEfp0buIeBZ2LYKXHvSWQ4toDkKC0F7EU93NQyEthkFnG9uuaf6YhIcusknBHTz4gR\u002B/x\u002B/7e1/ee8l7IRzhmbi3s0TTzc3zcYQpp3R3K9sk0sJQJPtscgmcSzJ4\u002BeErPvemj99\u002B6t0j0sKEcF96SsbgV\u002BOX\u002BQvxyvu9A9zaSOL2\u002BrK8Zn9R6vU66QBomkYul0OpVNJns9mLYrGoE8mHhhPaImNoI4Nboikcmjb29TkYOr6dZtPbPM\u002BTDmAwGGAymaDb7Q44jttvt9tSoVDQiOyu8AhvPqo7\u002BqHVfP5OReXGCgQ\u002BiRU2BMMwSAcgSZIfiUQC5XIZLMs\u002BSKVSYj6f/\u002B7pgTPs9CbofTPw6E4WQj6JTAyYz\u002BdE/YXjONB1HaIoQtO03el0\u002BpBIQcPrq6Ybbr64jLOMA8e2/MnHYds2RqMR3C2nG43GGVJGmGSfm1evrI8PtMqltSzoMOVPOo5MJuN/GC/6/T5UVVU6nY7saYEVyrKMVquF8Xh8oplnIgjCz/DMTdMk6m\u002BGlmX5Z3bSNhchYHga/Df8e/59Q5pkn2g0CoqioCgKGIYh1T8zHA4Ri7mXnhB4barV6jX3hjzxmryffBG8VycSibyu1WqvSOk0AX4A4Q67Z\u002BxJ14gAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GUI_MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "GUI_MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml",
+              "RelativeToolTip": "GUI_MenuPrincipal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "VentanaPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\VentanaPrincipal.xaml",
+              "RelativeDocumentMoniker": "VentanaPrincipal.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\VentanaPrincipal.xaml",
+              "RelativeToolTip": "VentanaPrincipal.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-10-07T23:19:06.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GestorCuadroDialogo.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GestorCuadroDialogo.cs",
+              "RelativeDocumentMoniker": "GestorCuadroDialogo.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GestorCuadroDialogo.cs",
+              "RelativeToolTip": "GestorCuadroDialogo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAJAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALNSURBVDhP7VNdSFNhGH7POds8znNy080/BIXldAbJcEkXiaChXRRCCIGK6E1CV/lDeZHl8EowxYtAIgxC7CIvRIe48kLDC5Vz41EmbhpDS51uudOmubNztr7vuILqoiDoyufie3nP9/B8z/tz4Bz/DCoRYc23xlTdqUpXl6rZ6NUoa6g0sJabFrasrkzjmnJ9xZxgMKhnKhi9\u002B6JbI8wJkc7OTuN28fYF\u002BbIMh/OHIuaQ\u002BMAQT8RWJM9JGolTkSpOikkcQRKcilINJigggzyI72gVPRgOhw2RWGRGDWouQkVaExQg8MF7\u002BW7nprNxZXfFTFM0FGcWA5PEABKFiBRxtJS2NGGxoYWhG/Nb85neI68PifLWXGu559BDH50cuUmCHN18vNmrOFz8uHjFG/Ca4/E41JhrwiU5JU\u002BtOVZ7gaHAnsVkvU5NTY3G4rHVbDZbMDJGIAhC0Gq0fJGxKMomsdjWLpLZwloK6l7UTda/rI/bHXZfKBR6hXqVlrj6CYEvgcm\u002Bt31xU69p6iB8kB0QAp\u002BaR5tx3pOgnPVww78BGpUGdFrdMsuyTTqd7rNymwByTqKHMvxhP30sHqMPQA8vDGf4Qj5KlEVkkGByn\u002BQqJhRBSZZwANRwJf6K7wMYeD9QPs6PQzQWvTayOOJsGGswcDscyDH5Lh4U5iqC\u002Bfp8OJVOgd/ncfobUlJSBOTqYe2lWr7CVIEfXjUbzQ\u002B6KruEQmMhoIE4UF\u002BfYa5iqbqoGlz7LnAfuM1tb9p6cM5oGEAlwl5oz02S5BiivQsEAwa0CYUkkG7nPeekP\u002Bg3Tq9Ps6jmOc8jzzLWUtZm6cNS94xrphEttzlNmwaWDAskq5NxaSBKoqP9evstzPsbKIIYs\u002BuzHWh1OiZWJ2BH2AGKpMCUboI8fd5s/\u002B3\u002BpgTtj/jxp9BAP0fBRkqkDfXEhiZro\u002BKUTY7K988Y5/g/APgG2Ocp0eSbumcAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-10-07T23:19:06.37Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
