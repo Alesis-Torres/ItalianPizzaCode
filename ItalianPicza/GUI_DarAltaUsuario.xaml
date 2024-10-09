@@ -91,26 +91,46 @@
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
         <Rectangle HorizontalAlignment="Left" Height="676" Margin="262,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="995" Fill="#800000"/>
-        <TextBox Name="cuadroTextoNombre" HorizontalAlignment="Left" Margin="286,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Margin="286,47,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Foreground="White"/>
-        <TextBox Name="cuadroTextoApellidoPaterno"  HorizontalAlignment="Left" Margin="822,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
-        <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="822,47,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
-        <TextBox Name="cuadroTextoApellidoMaterno"  HorizontalAlignment="Left" Margin="286,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
-        <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="286,193,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
-        <TextBox Name="cuadroTextoNombreUsuario"  HorizontalAlignment="Left" Margin="822,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
-        <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="822,193,0,0" VerticalAlignment="Top" Width="325" FontSize="36" Foreground="White"/>
-        <Button Content="Seleccionar imagen" HorizontalAlignment="Left" Margin="364,574,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="DarkBlue" Foreground="#FFFAFAFA" Click="SeleccionarImagen"/>
-        <Label Content="Rol" HorizontalAlignment="Left" Margin="830,340,0,0" VerticalAlignment="Top" Width="70" FontSize="36" Foreground="White"/>
-        <ComboBox HorizontalAlignment="Left" Margin="935,348,0,0" VerticalAlignment="Top" Width="281" Height="41">
-            <ComboBoxItem Content="--Seleecione un rol--" IsSelected="True"/>
-            <ComboBoxItem Content="Cocinero"/>
-            <ComboBoxItem Content="Gerente de sucursal"/>
-        </ComboBox>
-        <TextBox Name="cuadroTextoTelefono"  HorizontalAlignment="Left" Margin="822,487,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="10" FontSize="24"/>
-        <Label Content="Telefono" HorizontalAlignment="Left" Margin="822,424,0,0" VerticalAlignment="Top" Width="325" FontSize="36" Foreground="White"/>
-        <Button Content="Cancelar" Click="Cancelar" HorizontalAlignment="Left" Margin="746,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-        <Button Content="Guardar" Click="GuardarUsuario" HorizontalAlignment="Left" Margin="1019,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
-        <Image Name="imagenUsuario" Source="/Imagenes/Indicadores/Group 1.png" HorizontalAlignment="Left" Height="192" Margin="383,348,0,0" VerticalAlignment="Top" Width="212"/>
+        <Grid x:Name="panelNavegacion" Visibility="Visible" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
+            <TextBox Name="cuadroTextoNombre" HorizontalAlignment="Left" Margin="286,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
+            <Label Content="Nombre" HorizontalAlignment="Left" Margin="286,47,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Foreground="White"/>
+            <TextBox Name="cuadroTextoApellidoPaterno"  HorizontalAlignment="Left" Margin="802,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
+            <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="802,47,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
+            <TextBox Name="cuadroTextoApellidoMaterno"  HorizontalAlignment="Left" Margin="286,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
+            <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="286,193,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
+            <TextBox Name="cuadroTextoEmail"  HorizontalAlignment="Left" Margin="802,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
+            <Label Content="Email" HorizontalAlignment="Left" Margin="802,158,0,0" VerticalAlignment="Top" Width="325" FontSize="36" Foreground="White"/>
+            <Button Content="Seleccionar imagen" HorizontalAlignment="Left" Margin="364,574,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="DarkBlue" Foreground="#FFFAFAFA" Click="SeleccionarImagen"/>
+            <Label Content="Rol" HorizontalAlignment="Left" Margin="802,280,0,0" VerticalAlignment="Top" Width="70" FontSize="36" Foreground="White"/>
+            <Label Content="Estado" HorizontalAlignment="Left" Margin="802,358,0,0" VerticalAlignment="Top" Width="128" FontSize="36" Foreground="White"/>
+            <ComboBox Name="cbRol" HorizontalAlignment="Left" Margin="935,288,0,0" VerticalAlignment="Top" Width="281" Height="41">
+                <ComboBoxItem Content="--Seleecione un rol--" IsSelected="True"/>
+                <ComboBoxItem Content="Gerente de sucursal"/>
+                <ComboBoxItem Content="Cocinero"/>
+            </ComboBox>
+            <ComboBox Name="cbEstado" HorizontalAlignment="Left" Margin="935,372,0,0" VerticalAlignment="Top" Width="281" Height="41">
+                <ComboBoxItem Content="-- Seleccione un estado--" IsSelected="True"/>
+                <ComboBoxItem Content="Activo"/>
+                <ComboBoxItem Content="Baja"/>
+            </ComboBox>
+            <TextBox Name="cuadroTextoTelefono"  HorizontalAlignment="Left" Margin="802,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="10" FontSize="24"/>
+            <Label Content="Telefono" HorizontalAlignment="Left" Margin="802,442,0,0" VerticalAlignment="Top" Width="162" FontSize="36" Foreground="White"/>
+            <Button Content="Cancelar" Click="Cancelar" HorizontalAlignment="Left" Margin="746,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
+            <Button Content="Siguiente" Click="Siguiente" HorizontalAlignment="Left" Margin="999,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+            <Image Name="imagenUsuario" Source="/Imagenes/Indicadores/Group 1.png" HorizontalAlignment="Left" Height="192" Margin="383,348,0,0" VerticalAlignment="Top" Width="212"/>
+        </Grid>
+
+        <Grid x:Name="panelNavegacionUsuario" Visibility="Collapsed" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
+            <PasswordBox Name="cuadroContrasenaContrasena" HorizontalAlignment="Left" Margin="706,256,0,0" VerticalAlignment="Top" Width="457" Height="48" MaxLength="10" FontSize="24"/>
+            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="310,251,0,0" VerticalAlignment="Top" Width="204" FontSize="36" Foreground="White"/>
+            <PasswordBox Name="cuadroContasenaConfirmarContrasena" HorizontalAlignment="Left" Margin="706,413,0,0" VerticalAlignment="Top" Width="457" Height="48" MaxLength="10" FontSize="24"/>
+            <Label Content="Confirmar contraseña" HorizontalAlignment="Left" Margin="310,403,0,0" VerticalAlignment="Top" Width="359" FontSize="36" Foreground="White"/>
+            <TextBox Name="cuadroTextoNombreUsuario"  HorizontalAlignment="Left" Margin="706,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" Height="48" MaxLength="20" FontSize="24"/>
+            <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="310,96,0,0" VerticalAlignment="Top" Width="359" FontSize="36" Foreground="White"/>
+            <Button Content="Regresar" Click="RegresarPanel" HorizontalAlignment="Left" Margin="746,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
+            <Button Content="Guardar" Click="GuardarUsuario" HorizontalAlignment="Left" Margin="999,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+        </Grid>
+
         <Label Content="Todos los campos son obligatorios" HorizontalAlignment="Left" Height="37" Margin="279,635,0,0" VerticalAlignment="Top" Width="274" Foreground="White" FontSize="16"/>
     </Grid>
 </Page>

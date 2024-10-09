@@ -28,7 +28,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public string apellidoMaterno { get; set; }
         public string email { get; set; }
         public Nullable<bool> estado { get; set; }
-        public Nullable<int> telefono { get; set; }
+        public string telefono { get; set; }
         public byte[] imagen { get; set; }
         public Nullable<int> idRol { get; set; }
         public Nullable<int> idUsuario { get; set; }
