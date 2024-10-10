@@ -154,6 +154,9 @@
       <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="GestorCuadroDialogo.cs" />
+    <Compile Include="GUI_AgregarProveedores.xaml.cs">
+      <DependentUpon>GUI_AgregarProveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
     </Compile>
@@ -163,12 +166,22 @@
     <Compile Include="GUI_MenuPrincipal.xaml.cs">
       <DependentUpon>GUI_MenuPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_PedidosProveedores.xaml.cs">
+      <DependentUpon>GUI_PedidosProveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Proveedores.xaml.cs">
+      <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Usuarios.xaml.cs">
       <DependentUpon>GUI_Usuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Page Include="GUI_AgregarProveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_DarAltaUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +202,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI_MenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_PedidosProveedores.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_Proveedores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

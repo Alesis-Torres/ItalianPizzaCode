@@ -190,15 +190,16 @@
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
           <Property Name="nombre" Type="varchar" MaxLength="30" />
           <Property Name="telefono" Type="int" />
+          <Property Name="imagen" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="receta">
           <Key>
             <PropertyRef Name="idReceta" />
           </Key>
           <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="10" />
           <Property Name="tiempoCoccion" Type="int" />
-          <Property Name="imagen" Type="varbinary" MaxLength="1" />
+          <Property Name="descripcion" Type="varchar" MaxLength="150" />
+          <Property Name="instrucciones" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="recetaingrediente">
           <Key>
@@ -913,7 +914,7 @@
           <Property Name="apellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" />
-          <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="true" />
+          <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="false" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="idRol" Type="Int32" />
           <NavigationProperty Name="baja" Relationship="Self.FK_baja_empleado" FromRole="empleado" ToRole="baja" />
@@ -1095,6 +1096,7 @@
           <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
           <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="receta">
           <Key>
@@ -1106,6 +1108,8 @@
           <Property Name="imagen" Type="Binary" MaxLength="1" FixedLength="false" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_receta" FromRole="receta" ToRole="producto" />
           <NavigationProperty Name="recetaingrediente" Relationship="Self.FK_recetaingrediente_receta" FromRole="receta" ToRole="recetaingrediente" />
+          <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="instrucciones" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="recetaingrediente">
           <Key>
@@ -1967,6 +1971,7 @@
           <EntitySetMapping Name="proveedor">
             <EntityTypeMapping TypeName="italianpizzaModel.proveedor">
               <MappingFragment StoreEntitySet="proveedor">
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -1977,10 +1982,10 @@
           <EntitySetMapping Name="receta">
             <EntityTypeMapping TypeName="italianpizzaModel.receta">
               <MappingFragment StoreEntitySet="receta">
+                <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="idReceta" ColumnName="idReceta" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="tiempoCoccion" ColumnName="tiempoCoccion" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

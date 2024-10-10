@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
-    
+
     public partial class VentanaPrincipal : Window
     {
         private static Page PaginaActual { get; set; }
@@ -56,5 +56,9 @@ namespace ItalianPicza
             CambiarPagina(new GUI_Inventario());
         }
 
+        private void irProveedores(object sender, RoutedEventArgs e)
+        {
+            CambiarPagina(new GUI_Proveedores());
+        }
     }
 }

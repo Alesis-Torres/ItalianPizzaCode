@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\App.xaml
-6862015657
+9-140410546
 2129895837
-40-2098452122
+43-804771283
 191474361236
-GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_MenuPrincipal.xaml;GUI_Usuarios.xaml;VentanaPrincipal.xaml;
+GUI_AgregarProveedores.xaml;GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_MenuPrincipal.xaml;GUI_PedidosProveedores.xaml;GUI_Proveedores.xaml;GUI_Usuarios.xaml;VentanaPrincipal.xaml;
 
-True
+False
 
