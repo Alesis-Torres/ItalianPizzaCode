@@ -189,7 +189,7 @@
           <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
           <Property Name="nombre" Type="varchar" MaxLength="30" />
-          <Property Name="telefono" Type="int" />
+          <Property Name="telefono" Type="varchar" MaxLength="15" />
           <Property Name="imagen" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="receta">
@@ -1092,7 +1092,7 @@
           <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="Int32" />
+          <Property Name="telefono" Type="String" />
           <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
           <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />
@@ -1103,9 +1103,7 @@
             <PropertyRef Name="idReceta" />
           </Key>
           <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="tiempoCoccion" Type="Int32" />
-          <Property Name="imagen" Type="Binary" MaxLength="1" FixedLength="false" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_receta" FromRole="receta" ToRole="producto" />
           <NavigationProperty Name="recetaingrediente" Relationship="Self.FK_recetaingrediente_receta" FromRole="receta" ToRole="recetaingrediente" />
           <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />

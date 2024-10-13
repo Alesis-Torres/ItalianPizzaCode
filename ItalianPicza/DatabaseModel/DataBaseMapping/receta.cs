@@ -21,9 +21,9 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         }
     
         public int idReceta { get; set; }
-        public string nombre { get; set; }
         public Nullable<int> tiempoCoccion { get; set; }
-        public byte[] imagen { get; set; }
+        public string descripcion { get; set; }
+        public string instrucciones { get; set; }
     
         public virtual ICollection<producto> producto { get; set; }
         public virtual ICollection<recetaingrediente> recetaingrediente { get; set; }

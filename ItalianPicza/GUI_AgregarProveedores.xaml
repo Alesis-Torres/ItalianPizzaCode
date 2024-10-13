@@ -92,7 +92,7 @@
         <Button Content="Seleccionar imagen" HorizontalAlignment="Left" Margin="916,132,0,0" VerticalAlignment="Top" Height="56" Width="238" FontSize="22" Background="DarkBlue" Foreground="#FFFAFAFA" Click="SeleccionarImagen"/>
         <Button Content="Cancelar" Click="Cancelar" HorizontalAlignment="Left" Margin="718,606,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
         <Button Content="Guardar" Click="GuardarProveedor" HorizontalAlignment="Left" Margin="994,606,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
-        <Image Name="imagenProveedor" Source="/Imagenes/Indicadores/Group 1.png" HorizontalAlignment="Left" Height="192" Margin="664,64,0,0" VerticalAlignment="Top" Width="212"/>
+        <Image Name="imagenUsuario" Source="/Imagenes/Indicadores/Group 1.png" HorizontalAlignment="Left" Height="192" Margin="664,64,0,0" VerticalAlignment="Top" Width="212"/>
         <Label Content="*Los campos que contienen un asterisco son obligatorios" HorizontalAlignment="Left" Height="37" Margin="280,656,0,0" VerticalAlignment="Top" Width="418" Foreground="White" FontSize="16"/>
     </Grid>
 </Page>

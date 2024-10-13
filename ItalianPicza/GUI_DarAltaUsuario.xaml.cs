@@ -76,11 +76,16 @@ namespace ItalianPicza
                     }
 
                 }
-                catch(EntityException)
+                catch(EntityException ex)
                 {
-                    GestorCuadroDialogo.MostrarError
-                            ("No hay conexión con la base de datos, por favor, intentelo más tarde",
-                            "Sin conexión a la base de datos");
+                    //GestorCuadroDialogo.MostrarError
+                    //      ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                    //    "Sin conexión a la base de datos");
+                    Console.WriteLine("EntityException: " + ex.Message);
+                    if (ex.InnerException != null)
+                    {
+                        Console.WriteLine("InnerException: " + ex.InnerException.Message);
+                    }
                 }
 
             }

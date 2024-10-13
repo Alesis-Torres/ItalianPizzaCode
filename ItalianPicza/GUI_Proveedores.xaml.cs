@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using ItalianPicza.DatabaseModel.DAO_s;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -20,8 +22,25 @@ namespace ItalianPicza
 
             lvProveedores.ItemsSource = proveedores;
 
+            //CargarProveedores();
         }
+        /*
+        private void CargarProveedores()
+        {
+            ProveedoresDAO proveedoresDAO = new ProveedoresDAO();
 
+            try
+            {
+                List<Proveedor> proveedores = proveedoresDAO.ObtenerListaProveedores();
+
+                lvProveedores.ItemsSource = proveedores;
+            }
+            catch (EntityException ex)
+            {
+                MessageBox.Show("Error al cargar la lista de proveedores: " + ex.Message);
+            }
+        }
+        */
         private void AgregarProveedor(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_AgregarProveedores());

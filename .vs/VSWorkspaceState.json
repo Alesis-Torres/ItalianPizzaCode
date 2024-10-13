@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ItalianPicza"
+    "\\ItalianPicza",
+    "\\ItalianPicza\\DatabaseModel",
+    "\\ItalianPicza\\DatabaseModel\\DataBaseMapping"
   ],
-  "SelectedNode": "\\ItalianPicza\\GUI_Usuarios.xaml",
+  "SelectedNode": "\\ItalianPicza\\GUI_VerDetallesPedidoProveedores.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
