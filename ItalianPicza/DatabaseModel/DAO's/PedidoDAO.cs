@@ -125,5 +125,15 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
         }
+
+        internal static void registrarDireccionRegistro(int idDomicilio, int resultado)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal static List<producto> recuperarResumenProducto(int idProducto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

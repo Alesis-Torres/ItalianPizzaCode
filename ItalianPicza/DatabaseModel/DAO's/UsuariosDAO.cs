@@ -13,6 +13,26 @@ namespace ItalianPicza.DatabaseModel.DAO_s
 
         public UsuariosDAO() { }
 
+        public static int registrarCliente(cliente nuevoCliente)
+        {
+                int resultado = 0;
+                try
+                {
+                    using (var context = new italianpizzaEntities())
+                    {
+                        context.cliente.Add(nuevoCliente);
+                        resultado = context.SaveChanges();
+                        resultado = nuevoCliente.idCliente;
+                    }
+
+                    return resultado;
+                }
+                catch (EntityException ex)
+                {
+                    throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+                }
+        }
+
         public usuario verificarExistenciaDeUsuario(usuario empleadoCuenta)
         {
             usuario empleadoVerificado = null;

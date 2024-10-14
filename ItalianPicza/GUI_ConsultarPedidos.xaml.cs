@@ -78,5 +78,40 @@ namespace ItalianPicza
                 VentanaPrincipal.CambiarPagina(new GUI_FormularioPedido(true, pedidoEdicion));
             }
         }
+
+        private void cerrarDetalles(object sender, RoutedEventArgs e)
+        {
+            GridResumen.Visibility = Visibility.Hidden;
+            lvResumen.ItemsSource = null;
+        }
+        private void botonDetalles(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var pedido = button.CommandParameter;
+            List<producto> listaProductosPedido = cargarDatosPedido((pedido)pedido);
+            lvResumen.ItemsSource = listaProductosPedido;
+            GridResumen.Visibility = Visibility.Visible;
+        }
+
+        private List<producto> cargarDatosPedido(pedido pedido)
+        {
+            List<producto> listaPedidos = new List<producto>();
+            try { 
+                listaPedidos = PedidoDAO.recuperarProductos(pedido.idPedido);
+                
+            }
+            catch (EntityException ex)
+            {
+                GestorCuadroDialogo.MostrarError("Error de conexión", "Error al acceder a la base de datos.");
+            }
+            return listaPedidos;
+        }
+
+        private void botonModificar(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var pedido = button.CommandParameter;
+            VentanaPrincipal.CambiarPagina(new GUI_FormularioPedido(true, (pedido)pedido));
+        }
     }
 }
