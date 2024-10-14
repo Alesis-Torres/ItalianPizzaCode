@@ -154,8 +154,17 @@
       <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="GestorCuadroDialogo.cs" />
+    <Compile Include="GUI_ConsultarPedidos.xaml.cs">
+      <DependentUpon>GUI_ConsultarPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_DarAltaProducto.xaml.cs">
+      <DependentUpon>GUI_DarAltaProducto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_FormularioPedido.xaml.cs">
+      <DependentUpon>GUI_FormularioPedido.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_Inventario.xaml.cs">
       <DependentUpon>GUI_Inventario.xaml</DependentUpon>
@@ -169,7 +178,19 @@
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Page Include="GUI_ConsultarPedidos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_DarAltaProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_DarAltaUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_FormularioPedido.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
