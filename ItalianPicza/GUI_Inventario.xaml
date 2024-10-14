@@ -124,7 +124,7 @@
                     <GridViewColumn Header=" " Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding ImagenProducto}" Width="80" Height="80" />
+                                <Image Source="{Binding imagen}" Width="80" Height="80" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -133,7 +133,7 @@
                     <GridViewColumn Header="Nombre" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding NombreProducto}" 
+                                <TextBlock Text="{Binding nombre}" 
                            Foreground="White" 
                            HorizontalAlignment="Center" 
                            VerticalAlignment="Center" 
@@ -146,7 +146,7 @@
                     <GridViewColumn Header="Tipo" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding TipoProducto}" 
+                                <TextBlock Text="{Binding tipo}" 
                                     Foreground="White" 
                                     HorizontalAlignment="Center" 
                                     VerticalAlignment="Center" 
@@ -178,7 +178,7 @@
                                     <Button Content="Modificar artículo" Width="120" Height="40" Background="Goldenrod" Margin="0,0,0,10" />
 
                                     <!-- Botón "Ver receta" -->
-                                    <Button Content="Ver receta" Width="120" Height="40" Background="#00008B" Foreground="White"/>
+                                    <Button Content="Ver receta" Width="120" Height="40" Background="#00008B" Foreground="White" Click="VerReceta"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

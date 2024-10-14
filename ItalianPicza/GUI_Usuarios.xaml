@@ -90,12 +90,11 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox HorizontalAlignment="Left" Margin="271,34,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
+        <TextBox Name="cuadroTextoNombreEmpleado" HorizontalAlignment="Left" Margin="271,34,0,0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Top" Width="444" Height="36" TextChanged="FiltrarPorNombre"/>
         <Label Content="Filtrar por" Foreground="White" HorizontalAlignment="Left" Margin="808,21,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
 
-        <ComboBox HorizontalAlignment="Left" Margin="970,34,0,0" VerticalAlignment="Top" Width="221" Height="36">
-            <ComboBoxItem Content="--Tipo de usuario--" IsSelected="True"/>
-            <ComboBoxItem Content="Gerente" />
+        <ComboBox HorizontalAlignment="Left" Margin="970,34,0,0" VerticalAlignment="Top" Width="221" Height="36" SelectionChanged="FiltrarPorRol">
+            <ComboBoxItem Content="Gerente de sucursal" />
             <ComboBoxItem Content="Cocinero" />
             <!-- Datos de ejemplo -->
         </ComboBox>
@@ -125,7 +124,7 @@
                     <GridViewColumn Header=" " Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding ImagenUsuario}" Width="80" Height="80" />
+                                <Image Source="{Binding imagen}" Width="80" Height="80" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -134,7 +133,7 @@
                     <GridViewColumn Header="Nombre" Width="350">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding NombreUsuario}" 
+                                <TextBlock Text="{Binding nombre}" 
                                    Foreground="White" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" 
@@ -147,7 +146,7 @@
                     <GridViewColumn Header="Estatus" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding EstatusUsuario}" 
+                                <TextBlock Text="{Binding estado}" 
                                    Foreground="White" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" 

@@ -25,6 +25,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public string descripcion { get; set; }
         public string nombre { get; set; }
         public Nullable<int> telefono { get; set; }
+        public byte[] imagen { get; set; }
     
         public virtual ICollection<ingrediente> ingrediente { get; set; }
         public virtual ICollection<pedidoproveedor> pedidoproveedor { get; set; }

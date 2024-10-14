@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using ItalianPicza.DatabaseModel.DAO_s;
+using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,15 +13,8 @@ namespace ItalianPicza
         public GUI_Inventario()
         {
             InitializeComponent();
-
-            List<Productos> productos = new List<Productos>
-            {
-                new Productos { NombreProducto = "Pizza con piña", TipoProducto = "Tipo A", EstatusUsuario = "Disponible", ImagenProducto = "/Imagenes/Logos/image 1.png" },
-                new Productos { NombreProducto = "Pizza de pepperoni", TipoProducto = "Tipo B", EstatusUsuario = "Agotado", ImagenProducto = "/Imagenes/Logos/image 1.png" },
-                new Productos { NombreProducto = "Pizza 3 quesos", TipoProducto = "Tipo C", EstatusUsuario = "Disponible", ImagenProducto = "/Imagenes/Logos/image 1.png" }
-            };
-
-            lvProductos.ItemsSource = productos;
+            CargarProductos();
+            
         }
 
         private void irMenuPrincipal(object sender, RoutedEventArgs e)
@@ -26,12 +22,38 @@ namespace ItalianPicza
             VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
         }
 
-        public class Productos
+        private void VerReceta(object sender, RoutedEventArgs e)
         {
-            public string NombreProducto { get; set; }
-            public string TipoProducto { get; set; }
-            public string EstatusUsuario { get; set; }
-            public string ImagenProducto { get; set; }  // Path de la imagen como string
+
+            Button botonVerReceta = sender as Button;
+            producto productoSeleccionado = botonVerReceta.DataContext as producto;
+
+            if (productoSeleccionado != null)
+            {
+                VentanaPrincipal.CambiarPagina(new GUI_ConsultarReceta(productoSeleccionado));
+            }
+        }
+
+
+        private void CargarProductos()
+        {
+            ProductosDAO productosDAO = new ProductosDAO();
+
+            List<producto> productos = new List<producto>();
+
+            try
+            {
+                productos = productosDAO.ObtenerProductos();
+                lvProductos.ItemsSource = productos;
+
+            }
+            catch (EntityException)
+            {
+                GestorCuadroDialogo.MostrarError
+                           ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                           "Sin conexión a la base de datos");
+            }
+
         }
 
     }

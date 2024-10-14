@@ -68,7 +68,7 @@
     </Key>
     <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="caducidad" Type="varchar" MaxLength="10" />
-    <Property Name="cantidad" Type="int" />
+    <Property Name="cantidad" Type="varchar" MaxLength="5" />
     <Property Name="codigo" Type="int" />
     <Property Name="lote" Type="varchar" MaxLength="10" />
     <Property Name="medida" Type="varchar" MaxLength="10" />
@@ -185,22 +185,23 @@
     <Property Name="descripcion" Type="varchar" MaxLength="200" />
     <Property Name="nombre" Type="varchar" MaxLength="30" />
     <Property Name="telefono" Type="int" />
+    <Property Name="imagen" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="receta">
     <Key>
       <PropertyRef Name="idReceta" />
     </Key>
     <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="10" />
     <Property Name="tiempoCoccion" Type="int" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="instrucciones" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="recetaingrediente">
     <Key>
       <PropertyRef Name="idRecetaIngrediente" />
     </Key>
     <Property Name="idRecetaIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="cantidad" Type="int" />
+    <Property Name="cantidad" Type="varchar" MaxLength="3" />
     <Property Name="idReceta" Type="int" />
     <Property Name="idIngrediente" Type="int" />
   </EntityType>

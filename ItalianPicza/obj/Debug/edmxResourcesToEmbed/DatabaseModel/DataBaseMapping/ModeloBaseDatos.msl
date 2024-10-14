@@ -199,6 +199,7 @@
     <EntitySetMapping Name="proveedor">
       <EntityTypeMapping TypeName="italianpizzaModel.proveedor">
         <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
           <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -209,10 +210,10 @@
     <EntitySetMapping Name="receta">
       <EntityTypeMapping TypeName="italianpizzaModel.receta">
         <MappingFragment StoreEntitySet="receta">
+          <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="idReceta" ColumnName="idReceta" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="tiempoCoccion" ColumnName="tiempoCoccion" />
-          <ScalarProperty Name="imagen" ColumnName="imagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -23,7 +23,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
     
         public int idIngrediente { get; set; }
         public string caducidad { get; set; }
-        public Nullable<int> cantidad { get; set; }
+        public string cantidad { get; set; }
         public Nullable<int> codigo { get; set; }
         public string lote { get; set; }
         public string medida { get; set; }

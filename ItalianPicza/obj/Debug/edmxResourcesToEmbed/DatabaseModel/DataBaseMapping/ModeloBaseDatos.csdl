@@ -60,7 +60,7 @@
     <Property Name="apellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="estado" Type="Boolean" />
-    <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="true" />
+    <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="false" />
     <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="idRol" Type="Int32" />
     <NavigationProperty Name="baja" Relationship="Self.FK_baja_empleado" FromRole="empleado" ToRole="baja" />
@@ -88,7 +88,7 @@
     </Key>
     <Property Name="idIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="caducidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="cantidad" Type="Int32" />
+    <Property Name="cantidad" Type="String" />
     <Property Name="codigo" Type="Int32" />
     <Property Name="lote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="medida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -242,24 +242,25 @@
     <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
     <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
     <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />
+    <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="receta">
     <Key>
       <PropertyRef Name="idReceta" />
     </Key>
     <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="tiempoCoccion" Type="Int32" />
-    <Property Name="imagen" Type="Binary" MaxLength="1" FixedLength="false" />
     <NavigationProperty Name="producto" Relationship="Self.FK_producto_receta" FromRole="receta" ToRole="producto" />
     <NavigationProperty Name="recetaingrediente" Relationship="Self.FK_recetaingrediente_receta" FromRole="receta" ToRole="recetaingrediente" />
+    <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="instrucciones" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="recetaingrediente">
     <Key>
       <PropertyRef Name="idRecetaIngrediente" />
     </Key>
     <Property Name="idRecetaIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="cantidad" Type="Int32" />
+    <Property Name="cantidad" Type="String" />
     <Property Name="idReceta" Type="Int32" />
     <Property Name="idIngrediente" Type="Int32" />
     <NavigationProperty Name="ingrediente" Relationship="Self.FK_recetaingrediente_ingrediente" FromRole="recetaingrediente" ToRole="ingrediente" />
