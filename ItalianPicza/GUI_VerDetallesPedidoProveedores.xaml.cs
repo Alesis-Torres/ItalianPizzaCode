@@ -9,7 +9,6 @@ namespace ItalianPicza
         public GUI_VerDetallesPedidoProveedores()
         {
             InitializeComponent();
-            lbCostoTotal = new Label();
 
             List<DetallesPedidoProveedor> detallesPedidoProveedor = new List<DetallesPedidoProveedor>()
             {

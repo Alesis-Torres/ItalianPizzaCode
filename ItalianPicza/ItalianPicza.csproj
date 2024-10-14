@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DatabaseModel\DAO%27s\PedidosProveedoresDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\ProveedoresDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\UsuariosDAO.cs" />
     <Compile Include="DatabaseModel\DataBaseMapping\baja.cs">

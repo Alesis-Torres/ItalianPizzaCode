@@ -82,10 +82,10 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox HorizontalAlignment="Left" Margin="288,34,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
-        <Label Content="Filtrar por:" Foreground="White" HorizontalAlignment="Left" Margin="792,34,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="383,81,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
+        <Label Content="Filtrar por:" Foreground="White" HorizontalAlignment="Left" Margin="881,34,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
 
-        <ComboBox HorizontalAlignment="Left" Margin="967,41,0,0" VerticalAlignment="Top" Width="264" Height="36">
+        <ComboBox HorizontalAlignment="Left" Margin="879,81,0,0" VerticalAlignment="Top" Width="264" Height="36">
             <ComboBoxItem Content="--Fecha--" IsSelected="True"/>
             <ComboBoxItem Content="Enero" />
             <ComboBoxItem Content="Febrero" />
@@ -100,9 +100,9 @@
             <ComboBoxItem Content="Noviembre" />
             <ComboBoxItem Content="Diciembre" />
         </ComboBox>
-        <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="943" Fill="#800000"/>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="383,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="760" Fill="#800000"/>
 
-        <ListView Name="lvPedidosProveedores" Margin="321,158,89,158" Background="#00008B">
+        <ListView Name="lvPedidosProveedores" Margin="409,158,169,158" Background="#00008B">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Background" Value="Transparent"/>
@@ -118,14 +118,14 @@
             <ListView.View>
                 <GridView>
 
-                    <GridViewColumn Header="Nombre del Proveedor" Width="150">
+                    <GridViewColumn Header="Nombre del Proveedor" Width="220">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding NombreProveedor}" 
                                     Foreground="White" 
                                     HorizontalAlignment="Center" 
                                     VerticalAlignment="Center" 
-                                    FontSize="24" />
+                                    FontSize="20" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -154,14 +154,14 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header=" " Width="215">
+                    <GridViewColumn Header=" " Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Ver detalles" Width="120" Height="40" Background="Goldenrod" Click="VerDetallesPedidoProveedor"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    
+
                 </GridView>
             </ListView.View>
         </ListView>

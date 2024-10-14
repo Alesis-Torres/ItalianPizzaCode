@@ -1,6 +1,4 @@
-﻿using ItalianPicza.DatabaseModel.DAO_s;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -52,5 +50,26 @@ namespace ItalianPicza
             public string DescripcionProveedor { get; set; }
             public string ImagenProveedor { get; set; }
         }
+
+        private void LvProveedores_Loaded(object sender, RoutedEventArgs e)
+        {
+            AjustarAnchoColumnas();
+        }
+
+        private void LvProveedores_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            AjustarAnchoColumnas();
+        }
+
+        private void AjustarAnchoColumnas()
+        {
+            double totalWidth = lvProveedores.ActualWidth - 35; // Resta para el borde/scrollbar
+
+            colImagen.Width = totalWidth * 0.15;
+            colNombre.Width = totalWidth * 0.25;
+            colDescripcion.Width = totalWidth * 0.40;
+            colModificar.Width = totalWidth * 0.20;
+        }
+
     }
 }

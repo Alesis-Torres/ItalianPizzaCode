@@ -31,7 +31,8 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                     }*/
                 }
 
-            }catch(InvalidOperationException ex)
+            }
+            catch (InvalidOperationException ex)
             {
                 throw new InvalidOperationException("Operación no válida al acceder a la base de datos.", ex);
             }
@@ -48,13 +49,13 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 using (var context = new italianpizzaEntities())
                 {
                     context.usuario.Add(nuevoUsuario);
-                    resultado = context.SaveChanges(); 
+                    resultado = context.SaveChanges();
                     nuevoEmpleado.idUsuario = nuevoUsuario.idUsuario;
                     context.empleado.Add(nuevoEmpleado);
-                    resultado = context.SaveChanges(); 
+                    resultado = context.SaveChanges();
                 }
 
-                return resultado; 
+                return resultado;
             }
             catch (EntityException ex)
             {

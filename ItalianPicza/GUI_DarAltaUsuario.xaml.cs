@@ -23,7 +23,7 @@ namespace ItalianPicza
             DataObject.AddPastingHandler(cuadroTextoTelefono, new DataObjectPastingEventHandler(VerificarPegado));
         }
 
-        string nombre, apellidoPaterno, apellidoMaterno, nombreUsuario, 
+        string nombre, apellidoPaterno, apellidoMaterno, nombreUsuario,
             telefono, email, contrasena, contrasenaConfirmar, rutaArchivo;
         byte[] imagenEmpleado;
 
@@ -57,18 +57,19 @@ namespace ItalianPicza
 
                 UsuariosDAO usuariosDAO = new UsuariosDAO();
 
-                try { 
-                
+                try
+                {
+
                     int resultado = usuariosDAO.DarDeAltaNuevoUsuario(empleado, usuario);
 
-                    if(resultado == 1)
+                    if (resultado == 1)
                     {
                         GestorCuadroDialogo.MostrarInformacion
                             ("Usuario registrado de manera exitosa en el sistema",
                             "Usuario dado de alta");
                         VentanaPrincipal.CambiarPagina(new GUI_Usuarios());
                     }
-                    else 
+                    else
                     {
                         GestorCuadroDialogo.MostrarError
                             ("El usuario no pudo ser registrado de manera correcta en el sistema",
@@ -76,7 +77,7 @@ namespace ItalianPicza
                     }
 
                 }
-                catch(EntityException ex)
+                catch (EntityException ex)
                 {
                     //GestorCuadroDialogo.MostrarError
                     //      ("No hay conexión con la base de datos, por favor, intentelo más tarde",
@@ -99,11 +100,11 @@ namespace ItalianPicza
 
         private void SeleccionarImagen(object sender, RoutedEventArgs e)
         {
-            
+
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = "Archivos de imagen (*.png;*.jpg)|*.png;*.jpg",
-                Multiselect = false 
+                Multiselect = false
             };
 
             if (openFileDialog.ShowDialog() == true)
@@ -116,10 +117,10 @@ namespace ItalianPicza
                     BitmapImage bitmap = new BitmapImage();
                     bitmap.BeginInit();
                     bitmap.UriSource = new Uri(rutaArchivo);
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad; 
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
                     bitmap.EndInit();
 
-                    imagenUsuario.Source = bitmap; 
+                    imagenUsuario.Source = bitmap;
 
                     imagenEmpleado = File.ReadAllBytes(rutaArchivo);
 
@@ -204,8 +205,8 @@ namespace ItalianPicza
         {
             bool existenCamposVacios = false;
 
-            if(ValidarDatos.EsCadenaVacia(nombre) || ValidarDatos.EsCadenaVacia(apellidoPaterno)
-                || ValidarDatos.EsCadenaVacia(apellidoMaterno) || ValidarDatos.EsCadenaVacia(telefono) 
+            if (ValidarDatos.EsCadenaVacia(nombre) || ValidarDatos.EsCadenaVacia(apellidoPaterno)
+                || ValidarDatos.EsCadenaVacia(apellidoMaterno) || ValidarDatos.EsCadenaVacia(telefono)
                 || ValidarDatos.EsCadenaVacia(email) || cbRol.SelectedIndex == 0 || cbEstado.SelectedIndex == 0
                 || rutaArchivo == null)
             {
@@ -239,7 +240,7 @@ namespace ItalianPicza
                 hayCamposInvalidos = true;
             }
 
-            if(!hayCamposInvalidos && !ValidarDatos.SonLaMismaContrasena(contrasena, contrasenaConfirmar))
+            if (!hayCamposInvalidos && !ValidarDatos.SonLaMismaContrasena(contrasena, contrasenaConfirmar))
             {
                 GestorCuadroDialogo.MostrarAdvertencia(
                    "Las contraseñas son diferentes, por favor, ingreselas nuevamente.",
@@ -270,7 +271,7 @@ namespace ItalianPicza
         {
             bool estado = false;
 
-            if(cbEstado.SelectedIndex == 1)
+            if (cbEstado.SelectedIndex == 1)
             {
                 estado = true;
             }

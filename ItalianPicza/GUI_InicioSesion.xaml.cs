@@ -1,13 +1,13 @@
-﻿using System.Data;
-using System.Windows;
-using System.Windows.Controls;
-using ItalianPicza.DatabaseModel.DAO_s;
+﻿using ItalianPicza.DatabaseModel.DAO_s;
 using ItalianPicza.DatabaseModel.DataBaseMapping;
 using Seguridad;
+using System.Data;
+using System.Windows;
+using System.Windows.Controls;
 
 namespace ItalianPicza
 {
-    
+
     public partial class GUI_InicioSesion : Page
     {
         public GUI_InicioSesion()
@@ -23,14 +23,14 @@ namespace ItalianPicza
             if (!ValidarDatos.EsCadenaVacia(nombreUsuario) &&
                 !ValidarDatos.EsCadenaVacia(contrasena))
             {
-                if(!ExistenDatosInvalidos(nombreUsuario, contrasena))
+                if (!ExistenDatosInvalidos(nombreUsuario, contrasena))
                 {
 
                     usuario usuario = new usuario()
                     {
                         nombreUsuario = nombreUsuario,
                         password = contrasena
-                    };  
+                    };
 
                     UsuariosDAO usuariosDAO = new UsuariosDAO();
 
@@ -40,10 +40,10 @@ namespace ItalianPicza
                         //if(usuarioVerificado != null)
                         //{
 
-                            VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
-                            ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
+                        VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
+                        ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
 
-                            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+                        VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
 
                         //}
                         //else
@@ -76,10 +76,10 @@ namespace ItalianPicza
         {
             bool hayCamposInvalidos = false;
 
-            if(ValidarDatos.ExistenCaracteresInvalidosParaContrasena(contrasena))
+            if (ValidarDatos.ExistenCaracteresInvalidosParaContrasena(contrasena))
             {
                 GestorCuadroDialogo.MostrarAdvertencia(
-                    "La contraseña es inválida, por favor, ingrese una contraseña válida.", 
+                    "La contraseña es inválida, por favor, ingrese una contraseña válida.",
                     "Contraseña inválida");
                 hayCamposInvalidos = true;
             }
@@ -88,17 +88,17 @@ namespace ItalianPicza
                 ExistenCaracteresInvalidosParaNombreUsuario(nombreUsuario))
             {
                 GestorCuadroDialogo.MostrarAdvertencia(
-                    "El nombre de usuario no es válido, por favor, ingreselo nuevamente.", 
+                    "El nombre de usuario no es válido, por favor, ingreselo nuevamente.",
                     "Nombre de usuario inválido");
                 hayCamposInvalidos = true;
             }
 
-            if(hayCamposInvalidos && ExistenLongitudesExcedidas(nombreUsuario, contrasena))
+            if (hayCamposInvalidos && ExistenLongitudesExcedidas(nombreUsuario, contrasena))
             {
                 GestorCuadroDialogo.MostrarAdvertencia(
                     "El nombre de usuario es muy largo, por favor, vuelvalo a ingresar.",
                     "Longitud de nombre de usaurio");
-                hayCamposInvalidos = true;  
+                hayCamposInvalidos = true;
             }
 
             return hayCamposInvalidos;

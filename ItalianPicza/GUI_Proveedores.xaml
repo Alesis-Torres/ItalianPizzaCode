@@ -8,84 +8,12 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_Usuarios">
 
-    <Page.Resources>
-        <Style TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="Background" Value="#2B2B2B" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="30" />
-                            </Grid.ColumnDefinitions>
-
-                            <Border 
-                                x:Name="Border"
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="5"
-                                Grid.ColumnSpan="2">
-
-                                <Grid>
-                                    <ContentPresenter
-                                        Margin="4"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"
-                                        Content="{TemplateBinding SelectionBoxItem}" />
-                                </Grid>
-                            </Border>
-
-                            <ToggleButton 
-                                Grid.Column="1"
-                                Name="ToggleButton"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Focusable="False"
-                                IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                                ClickMode="Press">
-                                <Path
-                                    x:Name="Arrow"
-                                    Fill="Gray"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Data="M 0 0 L 4 4 L 8 0 Z"/>
-                            </ToggleButton>
-
-                            <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Slide">
-                                <Border 
-                                    Background="{TemplateBinding Background}" 
-                                    BorderBrush="Gray" 
-                                    BorderThickness="1">
-                                    <ScrollViewer Margin="4">
-                                        <StackPanel IsItemsHost="True" />
-                                    </ScrollViewer>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
         <TextBox HorizontalAlignment="Left" Margin="288,52,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
         <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="943" Fill="#800000"/>
 
-        <ListView Name="lvProveedores" Margin="321,158,89,158" Background="#00008B">
+        <ListView Name="lvProveedores" Margin="321,158,89,158" Background="#00008B" Loaded="LvProveedores_Loaded" SizeChanged="LvProveedores_SizeChanged">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Background" Value="Transparent"/>
@@ -100,7 +28,7 @@
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header=" " Width="150">
+                    <GridViewColumn Header="Imagen" x:Name="colImagen">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Image Source="{Binding ImagenProveedor}" Width="80" Height="80" />
@@ -108,31 +36,33 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Nombre" Width="350">
+                    <GridViewColumn Header="Nombre" x:Name="colNombre">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding NombreProveedor}" 
                                    Foreground="White" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" 
-                                   FontSize="24" />
+                                   FontSize="18" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Estatus" Width="150">
+                    <GridViewColumn Header="Descripcion" x:Name="colDescripcion">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding DescripcionProveedor}" 
-                                   Foreground="White" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center" 
-                                   FontSize="24" />
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"
+                                    FontSize="16"
+                                    TextWrapping="Wrap"
+                                    MaxWidth="300" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header=" " Width="215">
+                    <GridViewColumn Header=" " x:Name="colModificar">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Modificar proveedor" Width="120" Height="40" Background="Goldenrod" />

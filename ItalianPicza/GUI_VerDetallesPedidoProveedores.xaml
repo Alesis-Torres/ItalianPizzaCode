@@ -6,85 +6,13 @@
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="GUI_Usuarios">
-
-    <Page.Resources>
-        <Style TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="Background" Value="#2B2B2B" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="30" />
-                            </Grid.ColumnDefinitions>
-
-                            <Border 
-                                x:Name="Border"
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="5"
-                                Grid.ColumnSpan="2">
-
-                                <Grid>
-                                    <ContentPresenter
-                                        Margin="4"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"
-                                        Content="{TemplateBinding SelectionBoxItem}" />
-                                </Grid>
-                            </Border>
-
-                            <ToggleButton 
-                                Grid.Column="1"
-                                Name="ToggleButton"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Focusable="False"
-                                IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                                ClickMode="Press">
-                                <Path
-                                    x:Name="Arrow"
-                                    Fill="Gray"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Data="M 0 0 L 4 4 L 8 0 Z"/>
-                            </ToggleButton>
-
-                            <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Slide">
-                                <Border 
-                                    Background="{TemplateBinding Background}" 
-                                    BorderBrush="Gray" 
-                                    BorderThickness="1">
-                                    <ScrollViewer Margin="4">
-                                        <StackPanel IsItemsHost="True" />
-                                    </ScrollViewer>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
+      Title="GUI_VerDetallesPedidoProveedores">
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="943" Fill="#800000"/>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="382,132,0,0" Stroke="Black" VerticalAlignment="Top" Width="760" Fill="#800000"/>
 
-        <ListView Name="lvPedidosProveedores" Margin="321,158,89,158" Background="#00008B">
+        <ListView Name="lvPedidosProveedores" Margin="415,153,174,163" Background="#00008B">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="Background" Value="Transparent"/>
@@ -99,7 +27,7 @@
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Nombre" Width="350">
+                    <GridViewColumn Header="Nombre" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding NombreProducto}" 
@@ -111,7 +39,7 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Cantidad" Width="350">
+                    <GridViewColumn Header="Cantidad" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding CantidadProducto}" 
@@ -146,14 +74,14 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-        
+
                 </GridView>
             </ListView.View>
         </ListView>
 
         <Button Content="Regresar" HorizontalAlignment="Left" Margin="654,600,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="Regresar" Background="Red" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20"/>
         <Label Content="Contenido del Pedido" HorizontalAlignment="Left" Margin="547,36,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Modern No. 20" Height="58" Width="418" FontSize="48"/>
-        <Label x:Name="lbCostoTotal" Content="Costo total: $96.00" HorizontalAlignment="Left" Margin="925,594,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+        <Label Content="Costo total: $96.00" HorizontalAlignment="Left" Margin="925,594,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
 
     </Grid>
 </Page>

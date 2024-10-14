@@ -3,8 +3,8 @@
     "",
     "\\ItalianPicza",
     "\\ItalianPicza\\DatabaseModel",
-    "\\ItalianPicza\\DatabaseModel\\DataBaseMapping"
+    "\\ItalianPicza\\DatabaseModel\\DAO\u0027s"
   ],
-  "SelectedNode": "\\ItalianPicza\\GUI_VerDetallesPedidoProveedores.xaml.cs",
+  "SelectedNode": "\\ItalianPicza\\GUI_AgregarPedidoProveedor.xaml",
   "PreviewInSolutionExplorer": false
 }

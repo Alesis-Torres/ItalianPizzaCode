@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 
 namespace ItalianPicza
 {
-  
+
     public partial class GUI_Usuarios : Page
     {
         public GUI_Usuarios()
