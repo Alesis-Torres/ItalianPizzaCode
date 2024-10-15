@@ -13,7 +13,11 @@ namespace Seguridad
 
         private const string PatronContrasena = "^(?=\\w*\\d)(?=\\w*[A-Z])(?=\\w*[a-z])\\S{8,}$";
 
+        private const string PatronNombre = @"^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)?$";
+
         private const string PatronNombreUsuario = @"^[a-zA-Z0-9]+(?:\s[a-zA-Z0-9]+)?$";
+
+        private const string PatronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
         public static bool ExisteLongitudExcedidaEnContrasena(string contrasena)
         {
@@ -43,7 +47,7 @@ namespace Seguridad
         {
             bool contrasenaInvalida = false;
 
-            if (!Regex.IsMatch(contrasena, PatronContrasena, RegexOptions.None,
+            if (contrasena.Length < 10 || !Regex.IsMatch(contrasena, PatronContrasena, RegexOptions.None,
                 TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
             {
                 contrasenaInvalida = true;
@@ -56,13 +60,50 @@ namespace Seguridad
         {
             bool resultado = false;
 
-            if (!Regex.IsMatch(nombreUsuario, PatronNombreUsuario, RegexOptions.None,
+            if (nombreUsuario.Length < 10 || !Regex.IsMatch(nombreUsuario, PatronNombreUsuario, RegexOptions.None,
                 TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
             {
                 resultado = true;
             }
 
             return resultado;
+        }
+
+        public static bool ExistenCaracteresInvalidosParaNombre(string nombre)
+        {
+            bool resultado = false;
+
+            if (!Regex.IsMatch(nombre, PatronNombre, RegexOptions.None,
+                TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static bool ExistenCaracteresInvalidosParaCorreo(string correo)
+        {
+            bool resultado = false;
+
+            if (!Regex.IsMatch(correo, PatronCorreo, RegexOptions.None,
+                TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static bool SonLaMismaContrasena(string contrasena, string contrasenaConfirmacion) 
+        { 
+
+            if (contrasena.Equals(contrasenaConfirmacion))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public static bool EsCadenaVacia(string cadena)
@@ -76,5 +117,6 @@ namespace Seguridad
 
             return resultado;
         }
+
     }
 }
