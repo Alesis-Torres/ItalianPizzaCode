@@ -62,8 +62,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DatabaseModel\DAO%27s\PedidosProveedoresDAO.cs" />
-    <Compile Include="DatabaseModel\DAO%27s\ProveedoresDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\InsumosDAO.cs" />
+    <Compile Include="GUI_DarAltaReceta.xaml.cs">
+      <DependentUpon>GUI_DarAltaReceta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseModel\DAO%27s\ProductosDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\RecetaDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\UsuariosDAO.cs" />
     <Compile Include="DatabaseModel\DataBaseMapping\baja.cs">
       <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
@@ -156,11 +160,8 @@
       <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
     </Compile>
     <Compile Include="GestorCuadroDialogo.cs" />
-    <Compile Include="GUI_AgregarPedidoProveedor.xaml.cs">
-      <DependentUpon>GUI_AgregarPedidoProveedor.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_AgregarProveedores.xaml.cs">
-      <DependentUpon>GUI_AgregarProveedores.xaml</DependentUpon>
+    <Compile Include="GUI_ConsultarReceta.xaml.cs">
+      <DependentUpon>GUI_ConsultarReceta.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
@@ -171,29 +172,17 @@
     <Compile Include="GUI_MenuPrincipal.xaml.cs">
       <DependentUpon>GUI_MenuPrincipal.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GUI_Pedidos.xaml.cs">
-      <DependentUpon>GUI_Pedidos.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_PedidosProveedores.xaml.cs">
-      <DependentUpon>GUI_PedidosProveedores.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_Proveedores.xaml.cs">
-      <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GUI_Usuarios.xaml.cs">
       <DependentUpon>GUI_Usuarios.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="GUI_VerDetallesPedidoProveedores.xaml.cs">
-      <DependentUpon>GUI_VerDetallesPedidoProveedores.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
-    <Page Include="GUI_AgregarPedidoProveedor.xaml">
+    <Page Include="GUI_DarAltaReceta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUI_AgregarProveedores.xaml">
+    <Page Include="GUI_ConsultarReceta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -220,23 +209,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUI_Pedidos.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GUI_PedidosProveedores.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GUI_Proveedores.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="GUI_Usuarios.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="GUI_VerDetallesPedidoProveedores.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -327,6 +300,7 @@
       <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
       <LastGenOutput>ModeloBaseDatos.cs</LastGenOutput>
     </Content>
+    <Resource Include="Imagenes\Logos\logoPizza.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

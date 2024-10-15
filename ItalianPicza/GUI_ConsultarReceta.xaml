@@ -1,0 +1,83 @@
+﻿<Page x:Class="ItalianPicza.GUI_ConsultarReceta"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_ConsultarReceta">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
+        <Rectangle HorizontalAlignment="Left" Height="720" Margin="895,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="375" Fill="Maroon"/>
+
+        <ListView Name="lvIngredientes" Margin="930,97,27,404" Background="#00008B">
+            <!-- Definir el estilo para los ListViewItems -->
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <!-- Color por defecto del fondo -->
+                    <Setter Property="Background" Value="Transparent"/>
+                    <!-- Cambiar el color del texto al pasar el cursor -->
+                    <Setter Property="Foreground" Value="White"/>
+                    <Style.Triggers>
+                        <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#020250"/>
+                            <!-- Color cuando está el cursor encima -->
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header=" " Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Name Column -->
+                    <GridViewColumn Header="Nombre" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding nombre}" 
+                         Foreground="White" 
+                         HorizontalAlignment="Center" 
+                         VerticalAlignment="Center" 
+                         FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Cantidad" Width="100">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding cantidad}" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="24"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Image HorizontalAlignment="Left" Height="296" Margin="373,168,0,0" VerticalAlignment="Top" Width="425" Source="/Imagenes/Logos/image 1.png" />
+        <Label Name="lbNombreProducto"  Content="Label" Margin="425,61,0,0" VerticalAlignment="Top" Width="318" Height="66" Foreground="White" FontSize="36" HorizontalAlignment="Left" HorizontalContentAlignment="Center" 
+            VerticalContentAlignment="Center"/>
+        <Button Content="Regresar" Click="Regresar" HorizontalAlignment="Left" Margin="465,567,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
+        <Button Content="Modificar receta" Click="ModificarReceta" HorizontalAlignment="Left" Margin="963,586,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="#00008B" Foreground="#FFFAFAFA"/>
+        <Label Content="Ingredientes" HorizontalAlignment="Left" Margin="963,49,0,0" VerticalAlignment="Top" Width="271" Height="43" Foreground="White" FontSize="24"/>
+        <Label Content="Instrucciones" HorizontalAlignment="Left" Margin="963,0,0,0" VerticalAlignment="Center" Width="271" Height="44" Foreground="White" FontSize="24"/>
+        <TextBlock Name="tbInstrucciones" HorizontalAlignment="Left" Margin="942,387,0,0" TextWrapping="Wrap" Text="Instrucciones" VerticalAlignment="Top" Height="163" Width="281" FontSize="18"/>
+        <Button Name="btnAgregarReceta" Content="Agregar receta" Click="AgregarReceta" Visibility="Collapsed" HorizontalAlignment="Left" Margin="963,586,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+
+    </Grid>
+</Page>

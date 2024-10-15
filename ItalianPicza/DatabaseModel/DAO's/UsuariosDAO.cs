@@ -1,5 +1,6 @@
 ﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -60,6 +61,33 @@ namespace ItalianPicza.DatabaseModel.DAO_s
             catch (EntityException ex)
             {
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+        }
+
+        public List<empleado> ObtenerEmpleados()
+        {
+            List<empleado> empleados = new List<empleado>();
+
+            try
+            {
+                using (var context =new italianpizzaEntities())
+                {
+                    empleados = context.empleado.Include("usuario").ToList();
+                }
+
+            }catch(EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+
+            return empleados;
+        }
+
+        public List<empleado> ObtenerEmpleadosPorRol(int idRol)
+        {
+            using (var context = new italianpizzaEntities())
+            {
+                return context.empleado.Where(e => e.idRol == idRol).ToList();
             }
         }
 
