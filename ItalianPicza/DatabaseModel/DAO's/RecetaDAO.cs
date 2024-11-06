@@ -97,7 +97,7 @@ namespace ItalianPicza.DatabaseModel.DAO_s
 
                     producto.idReceta = idRecetaCreada;
 
-                    context.Entry(producto).State = EntityState.Modified;
+                    context.Entry(producto).State = System.Data.Entity.EntityState.Modified;
 
                     foreach (var ingrediente in ingredientesReceta)
                     {
