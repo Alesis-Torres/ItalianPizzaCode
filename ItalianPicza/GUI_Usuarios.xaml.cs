@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace ItalianPicza
 {
-  
+
     public partial class GUI_Usuarios : Page
     {
         private List<empleado> empleados;

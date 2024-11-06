@@ -1,0 +1,87 @@
+﻿<Page x:Class="ItalianPicza.GUI_VerDetallesPedidoProveedores"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_VerDetallesPedidoProveedores">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="382,132,0,0" Stroke="Black" VerticalAlignment="Top" Width="760" Fill="#800000"/>
+
+        <ListView Name="lvPedidosProveedores" Margin="415,153,174,163" Background="#00008B">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#020250"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NombreProducto}" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Cantidad" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CantidadProducto}" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Unidad de medida" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding UnidaMedidaPedido}" 
+                                   Foreground="White" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Costo por unidad" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CostoUnidadPedido}" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="Regresar" HorizontalAlignment="Left" Margin="654,600,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="Regresar" Background="Red" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20"/>
+        <Label Content="Contenido del Pedido" HorizontalAlignment="Left" Margin="547,36,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Modern No. 20" Height="58" Width="418" FontSize="48"/>
+        <Label Content="Costo total: $96.00" HorizontalAlignment="Left" Margin="925,594,0,0" VerticalAlignment="Top" Foreground="White" FontSize="20"/>
+
+    </Grid>
+</Page>

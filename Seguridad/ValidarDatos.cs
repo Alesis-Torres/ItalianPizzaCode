@@ -19,6 +19,9 @@ namespace Seguridad
 
         private const string PatronCorreo = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
+        private const string PatronTexto =  @"^[a-zA-Z\s\-]+$";
+
+
         public static bool ExisteLongitudExcedidaEnContrasena(string contrasena)
         {
             bool camposExcedidos = false;
@@ -87,6 +90,19 @@ namespace Seguridad
             bool resultado = false;
 
             if (!Regex.IsMatch(correo, PatronCorreo, RegexOptions.None,
+                TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
+            {
+                resultado = true;
+            }
+
+            return resultado;
+        }
+
+        public static bool ExistenCaracteresInvalidosParaDescripcion(string descripcion)
+        {
+            bool resultado = false;
+
+            if (!Regex.IsMatch(descripcion, PatronTexto, RegexOptions.None,
                 TimeSpan.FromMilliseconds(MilisegundosMaximosParaExpresionRegular)))
             {
                 resultado = true;

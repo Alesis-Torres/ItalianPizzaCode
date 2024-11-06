@@ -23,8 +23,8 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public int idPedidoProveedor { get; set; }
         public string fecha { get; set; }
         public byte[] monto { get; set; }
-        public Nullable<int> idProveedor { get; set; }
-        public Nullable<int> idEmpleado { get; set; }
+        public int idProveedor { get; set; }
+        public int idEmpleado { get; set; }
     
         public virtual proveedor proveedor { get; set; }
         public virtual ICollection<pedidoproveedoringrediente> pedidoproveedoringrediente { get; set; }

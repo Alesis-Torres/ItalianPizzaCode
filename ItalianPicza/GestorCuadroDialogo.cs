@@ -21,6 +21,11 @@ namespace ItalianPicza
             MessageBox.Show(mensaje, titulo, MessageBoxButton.OK,
                 MessageBoxImage.Information);
         }
-
+        public static MessageBoxResult MostrarConfirmacion(string mensaje, string titulo)
+        {
+            MessageBoxResult respuesta =  MessageBox.Show(mensaje, titulo, MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+            return respuesta;
+        }
     }
 }

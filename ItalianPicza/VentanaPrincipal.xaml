@@ -27,7 +27,7 @@
                     <TextBlock Text="Inventario" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
+            <Button HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irPedidos">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="/Imagenes/Logos/order-now 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Pedidos" Foreground="White" FontSize="24" Height="34"/>
@@ -39,7 +39,7 @@
                     <TextBlock Text="Finanzas" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,581,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
+            <Button HorizontalAlignment="Left" Margin="0,581,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irProveedores">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Image Source="/Imagenes/Logos/delivery-man 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Proveedores" Foreground="White" FontSize="24" Height="34"/>

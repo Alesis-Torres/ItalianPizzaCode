@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace ItalianPicza
 {
-    
+
     public partial class GUI_Inventario : Page
     {
         public GUI_Inventario()
