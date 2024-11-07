@@ -33,3 +33,8 @@ C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_ConsultarReceta.baml
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_DarAltaReceta.g.cs
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_DarAltaReceta.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\EntityFramework.SqlServer.xml
