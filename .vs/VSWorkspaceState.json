@@ -3,9 +3,15 @@
     "",
     "\\ItalianPicza",
     "\\ItalianPicza\\DatabaseModel",
+<<<<<<< Updated upstream
     "\\ItalianPicza\\DatabaseModel\\DAO\u0027s",
     "\\ItalianPicza\\DatabaseModel\\DataBaseMapping"
   ],
   "SelectedNode": "\\ItalianPicza\\DatabaseModel\\DataBaseMapping\\ModeloBaseDatos.edmx",
+=======
+    "\\ItalianPizzaTest"
+  ],
+  "SelectedNode": "\\ItalianPicza\\GUI_AgregarPedidoProveedor.xaml.cs",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
