@@ -10,19 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\App.xaml
-<<<<<<< Updated upstream
 121542681982
 2129895837
-481098433883
+49-983654735
 191474361236
 GUI_AgregarPedidoProveedor.xaml;GUI_AgregarProveedores.xaml;GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_MenuPrincipal.xaml;GUI_Pedidos.xaml;GUI_PedidosProveedores.xaml;GUI_Proveedores.xaml;GUI_Usuarios.xaml;GUI_VerDetallesPedidoProveedores.xaml;VentanaPrincipal.xaml;
-=======
-8-1985430313
-2129895837
-461394322219
-21-562128519
-GUI_DarAltaReceta.xaml;GUI_ConsultarReceta.xaml;GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_MenuPrincipal.xaml;GUI_Usuarios.xaml;VentanaPrincipal.xaml;
->>>>>>> Stashed changes
 
 True
 
