@@ -1,8 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+<<<<<<< Updated upstream
     "\\ItalianPicza"
   ],
   "SelectedNode": "\\ItalianPicza\\GUI_InicioSesion.xaml",
+=======
+    "\\ItalianPicza",
+    "\\ItalianPicza\\DatabaseModel",
+    "\\ItalianPizzaTest"
+  ],
+  "SelectedNode": "\\ItalianPizzaTest\\ProveedorDAOTest.cs",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
