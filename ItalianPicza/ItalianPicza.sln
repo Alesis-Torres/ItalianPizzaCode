@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad", "..\Seguridad\S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "..\Pruebas\Pruebas.csproj", "{C11546DC-CF92-4C8A-9F53-8F5622456BCA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{768DE2A5-7BE4-4114-98BE-430F31F491E2}"
+	ProjectSection(SolutionItems) = preProject
+		GUI_Pedidos.xaml = GUI_Pedidos.xaml
+		GUI_Pedidos.xaml.cs = GUI_Pedidos.xaml.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
