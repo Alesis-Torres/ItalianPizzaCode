@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ItalianPicza", "ItalianPicz
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad", "..\Seguridad\Seguridad.csproj", "{FC3399FD-303F-4427-BABE-95B59CC42417}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas", "..\Pruebas\Pruebas.csproj", "{C11546DC-CF92-4C8A-9F53-8F5622456BCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FC3399FD-303F-4427-BABE-95B59CC42417}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC3399FD-303F-4427-BABE-95B59CC42417}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC3399FD-303F-4427-BABE-95B59CC42417}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C11546DC-CF92-4C8A-9F53-8F5622456BCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C11546DC-CF92-4C8A-9F53-8F5622456BCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C11546DC-CF92-4C8A-9F53-8F5622456BCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C11546DC-CF92-4C8A-9F53-8F5622456BCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

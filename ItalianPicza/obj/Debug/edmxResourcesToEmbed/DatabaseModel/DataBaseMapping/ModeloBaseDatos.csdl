@@ -88,7 +88,7 @@
     </Key>
     <Property Name="idIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="caducidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-    <Property Name="cantidad" Type="Int32" />
+    <Property Name="cantidad" Type="String" />
     <Property Name="codigo" Type="Int32" />
     <Property Name="lote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="medida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -238,7 +238,7 @@
     <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="telefono" Type="String" />
+    <Property Name="telefono" Type="Int32" />
     <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
     <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
     <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />
@@ -260,7 +260,7 @@
       <PropertyRef Name="idRecetaIngrediente" />
     </Key>
     <Property Name="idRecetaIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="cantidad" Type="Int32" />
+    <Property Name="cantidad" Type="String" />
     <Property Name="idReceta" Type="Int32" />
     <Property Name="idIngrediente" Type="Int32" />
     <NavigationProperty Name="ingrediente" Relationship="Self.FK_recetaingrediente_ingrediente" FromRole="recetaingrediente" ToRole="ingrediente" />

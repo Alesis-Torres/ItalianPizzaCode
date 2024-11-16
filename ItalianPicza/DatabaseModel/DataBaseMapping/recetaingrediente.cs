@@ -15,7 +15,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
     public partial class recetaingrediente
     {
         public int idRecetaIngrediente { get; set; }
-        public Nullable<int> cantidad { get; set; }
+        public string cantidad { get; set; }
         public Nullable<int> idReceta { get; set; }
         public Nullable<int> idIngrediente { get; set; }
     
