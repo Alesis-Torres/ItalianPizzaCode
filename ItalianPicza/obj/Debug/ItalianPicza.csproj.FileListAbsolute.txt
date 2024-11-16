@@ -38,3 +38,11 @@ C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\ItalianPicza.csproj.CopyComplete
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\ItalianPicza.exe
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\ItalianPicza.pdb
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_ModificarUsuario.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_ModificarUsuario.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignColors.dll
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignColors.pdb
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\App.baml
