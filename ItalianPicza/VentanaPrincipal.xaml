@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItalianPicza"
         mc:Ignorable="d"
-        Background="#993939"
+        Background="#b4b4b4"
         Title="Italian pizza" Height="720" Width="1280">
     <Grid>
         <StackPanel Margin="0,0,0,0" Width="1280" Height="720">
@@ -13,36 +13,40 @@
         </StackPanel>
         <Grid Name="panelBloqueo" Background="Black" Opacity="0.7" Visibility="Hidden"/>
         <Grid x:Name="panelNavegacion" Visibility="Collapsed" HorizontalAlignment="Left" Height="710" Width="230">
-            <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-            <Image Source="/Imagenes/Indicadores/logout 2.png" HorizontalAlignment="Left" Height="55" Margin="166,10,0,0" VerticalAlignment="Top" Width="49" MouseDown="CerrarSesion"/>
-            <Button HorizontalAlignment="Left" Margin="0,182,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irUsuarios">
+            <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="#231B1B"/>
+            <Button HorizontalAlignment="Center" Margin="0,174,0,0" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24" Click="irUsuarios">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Imagenes/Logos/empleados 1.png" Height="70" Width="84"/>
+                    <Image Source="/Imagenes/Logos/users 3.png" Height="70" Width="84"/>
                     <TextBlock Text="Usuarios" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,282,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irInventario">
+            <Button HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24" Click="irInventario">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Imagenes/Logos/libro-de-cocina 1.png" Height="70" Width="84"/>
+                    <Image Source="/Imagenes/Logos/inventory 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Inventario" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,382,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irPedidos">
+            <Button HorizontalAlignment="Center" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24" Margin="0,342,0,0">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Imagenes/Logos/order-now 1.png" Height="70" Width="84"/>
+                    <Image Source="/Imagenes/Logos/order 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Pedidos" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,482,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24">
+            <Button HorizontalAlignment="Center" Margin="0,426,0,0" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Imagenes/Logos/budget 1.png" Height="70" Width="84"/>
+                    <Image Source="/Imagenes/Logos/inventory 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Finanzas" Foreground="White" FontSize="24" Height="34"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,581,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="Maroon" FontFamily="Bold" Foreground="White" FontSize="24" Click="irProveedores">
+            <Button HorizontalAlignment="Center" Margin="0,510,0,0" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="/Imagenes/Logos/delivery-man 1.png" Height="70" Width="84"/>
+                    <Image Source="/Imagenes/Logos/deliverywoman 1.png" Height="70" Width="84"/>
                     <TextBlock Text="Proveedores" Foreground="White" FontSize="24" Height="34"/>
+                </StackPanel>
+            </Button>
+            <Button HorizontalAlignment="Center" Margin="0,594,0,0" VerticalAlignment="Top" Height="84" Width="230" Background="#231B1B" FontFamily="Bold" Foreground="White" FontSize="24" Click="CerrarSesion">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="/Imagenes/Indicadores/logout 6.png" Height="70" Width="84"/>
                 </StackPanel>
             </Button>
         </Grid>

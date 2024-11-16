@@ -238,7 +238,7 @@
     <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
-    <Property Name="telefono" Type="String" />
+    <Property Name="telefono" Type="Int32" />
     <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
     <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
     <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />

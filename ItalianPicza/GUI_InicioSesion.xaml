@@ -10,12 +10,12 @@
       Title="GUI_InicioSesion">
 
     <Grid>
-        <Label Content="Italian pizza" HorizontalAlignment="Left" Margin="331,57,0,0" VerticalAlignment="Top" Height="107" Width="656" FontFamily="Ravie" FontSize="72" Foreground="#FFFFBC06"/>
+        <Label Content="Italian pizza" HorizontalAlignment="Left" Margin="622,10,0,0" VerticalAlignment="Top" Height="114" Width="648" FontFamily="Ravie" FontSize="72" Foreground="#FFFFBC06"/>
         <TextBox Name="cuadroTextoNombreUsuario" HorizontalAlignment="Left" Margin="685,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Height="40" FontSize="24"/>
         <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="685,254,0,0" VerticalAlignment="Top" Width="319" Foreground="White" FontSize="36"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="685,412,0,0" VerticalAlignment="Top" Foreground="White" FontSize="36"/>
         <Button Content="Iniciar sesión" HorizontalAlignment="Left" Margin="685,597,0,0" VerticalAlignment="Top" Height="62" Width="422" Background="#008000" FontSize="36" Foreground="#FFF9F5F5" BorderBrush="White" Click="IniciarSesion"/>
-        <Image Source="/Imagenes/Logos/pizza.png" HorizontalAlignment="Left" Height="358" Margin="146,254,0,0" VerticalAlignment="Top" Width="353"/>
+        <Image Source="/Imagenes/Indicadores/pizza_background 1.png" HorizontalAlignment="Left" Height="710" VerticalAlignment="Top" Width="691" Margin="10,0,0,0"/>
         <PasswordBox Name="cuadroContrasenaContrasena" Margin="685,475,173,206" FontSize="24"/>
     </Grid>
 </Page>

@@ -102,5 +102,17 @@ namespace ItalianPicza
             }
         }
 
+        private void ModificarUsuario(object sender, RoutedEventArgs e)
+        {
+
+            Button botonModificarUsuario = sender as Button;
+            empleado empleadoSeleccionado = botonModificarUsuario.DataContext as empleado;
+
+            if (empleadoSeleccionado != null)
+            {
+                VentanaPrincipal.CambiarPagina(new GUI_ModificarUsuario((int)empleadoSeleccionado.idUsuario));
+            }
+        }
+
     }
 }

@@ -159,7 +159,7 @@
                     <GridViewColumn Header=" " Width="215">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Modificar usuario" Width="120" Height="40" Background="Goldenrod" />
+                                <Button Content="Modificar usuario" Width="120" Height="40" Background="Goldenrod" Click="ModificarUsuario"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

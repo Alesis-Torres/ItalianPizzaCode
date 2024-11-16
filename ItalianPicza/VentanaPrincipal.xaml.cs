@@ -30,7 +30,7 @@ namespace ItalianPicza
             return (VentanaPrincipal)GetWindow(PaginaActual);
         }
 
-        private void CerrarSesion(object objetoOrigen, MouseButtonEventArgs evento)
+        private void CerrarSesion(object sender, RoutedEventArgs e)
         {
             CambiarPagina(new GUI_InicioSesion());
             panelNavegacion.Visibility = Visibility.Collapsed;
@@ -46,14 +46,14 @@ namespace ItalianPicza
             CambiarPagina(new GUI_Inventario());
         }
 
-        private void irPedidos(object sender, RoutedEventArgs e)
+        /*private void irPedidos(object sender, RoutedEventArgs e)
         {
             CambiarPagina(new GUI_Pedidos());
-        }
+        }*
 
-        private void irProveedores(object sender, RoutedEventArgs e)
+        /*private void irProveedores(object sender, RoutedEventArgs e)
         {
             CambiarPagina(new GUI_Proveedores());
-        }
+        }*/
     }
 }

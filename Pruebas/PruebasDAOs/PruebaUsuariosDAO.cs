@@ -13,7 +13,9 @@ namespace Pruebas.PruebasDAOs
         private static UsuariosDAO usuarioDAO;
         private static usuario usuarioParaRegistrar;
         private static usuario usuarioRegistrado;
+        private static usuario usuarioParaModificar;
         private static empleado empleadoParaRegistrar;
+        private static empleado empleadoParaModificar;
 
         [ClassInitialize]
         public static void ClassInitialize(TestContext context)
@@ -21,7 +23,8 @@ namespace Pruebas.PruebasDAOs
             usuarioDAO = new UsuariosDAO();
             usuarioRegistrado = new usuario
             {
-                nombreUsuario = "ItalianLuis",
+                idUsuario = 11,
+                nombreUsuario = "ItalianLuis3",
                 password = "Xhantusz17"
             };
             empleadoParaRegistrar = new empleado()
@@ -38,6 +41,19 @@ namespace Pruebas.PruebasDAOs
             {
                 nombreUsuario = "ItalianPrueba",
                 password = "Italian17@"
+            };
+            empleadoParaModificar = new empleado()
+            {
+                nombre = "LuisAngel",
+                apellidoPaterno = "Papu",
+                apellidoMaterno = "Arroyo",
+                email = "luisel@gmail.com",
+                telefono = "2222222223",
+                idRol = 2
+            };
+            usuarioParaModificar = new usuario
+            {
+                nombreUsuario = "ItalianPruebaModificacion",
             };
         }
 
@@ -81,6 +97,29 @@ namespace Pruebas.PruebasDAOs
                 List<empleado> empleadosCocineros = usuarioDAO.ObtenerEmpleadosPorRol(2);
                 Assert.IsTrue(empleadosGerentes.Count > 0);
                 Assert.IsTrue(empleadosCocineros.Count > 0);
+            }
+        }
+
+        [TestMethod]
+        public void PruebaModificarUsuario()
+        {
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            {
+                int resultado = usuarioDAO.ModificarUsuario(usuarioRegistrado.idUsuario, empleadoParaModificar, usuarioParaModificar);
+                Assert.IsTrue(resultado > 0);
+            }
+        }
+
+        [TestMethod]
+        public void PruebaObtenerInformacionEmpleado()
+        {
+            using (var scope = new TransactionScope(TransactionScopeOption.Required,
+                        new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            {
+                var resultado = usuarioDAO.ObtenerInformacionEmpleado(usuarioRegistrado.idUsuario);
+
+                Assert.IsNotNull(resultado.Empleado, "El empleado no fue encontrado en la base de datos.");
+                Assert.IsNotNull(resultado.NombreUsuario, "El nombre de usuario no fue encontrado en la base de datos.");
             }
         }
 
