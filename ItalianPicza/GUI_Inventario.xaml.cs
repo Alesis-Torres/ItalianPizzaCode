@@ -1,60 +1,45 @@
-﻿using ItalianPicza.DatabaseModel.DAO_s;
-using ItalianPicza.DatabaseModel.DataBaseMapping;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
-
     public partial class GUI_Inventario : Page
     {
         public GUI_Inventario()
         {
             InitializeComponent();
-            CargarProductos();
-            
         }
 
-        private void irMenuPrincipal(object sender, RoutedEventArgs e)
+        private void VerProductos(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+            VentanaPrincipal.CambiarPagina(new GUI_Productos());
         }
 
-        private void VerReceta(object sender, RoutedEventArgs e)
+        private void VerRecetas(object sender, RoutedEventArgs e)
         {
 
-            Button botonVerReceta = sender as Button;
-            producto productoSeleccionado = botonVerReceta.DataContext as producto;
-
-            if (productoSeleccionado != null)
-            {
-                VentanaPrincipal.CambiarPagina(new GUI_ConsultarReceta(productoSeleccionado));
-            }
         }
 
-
-        private void CargarProductos()
+        private void VerInventario(object sender, RoutedEventArgs e)
         {
-            ProductosDAO productosDAO = new ProductosDAO();
-
-            List<producto> productos = new List<producto>();
-
-            try
-            {
-                productos = productosDAO.ObtenerProductos();
-                lvProductos.ItemsSource = productos;
-
-            }
-            catch (EntityException)
-            {
-                GestorCuadroDialogo.MostrarError
-                           ("No hay conexión con la base de datos, por favor, intentelo más tarde",
-                           "Sin conexión a la base de datos");
-            }
 
         }
 
+        private void irRegresar(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -3,16 +3,82 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="DarAltaReceta">
 
+    <Page.Resources>
+        <Style x:Key="IconButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="#231B1B"/>
+            <!-- Fondo negro -->
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="White"/>
+            <!-- Color del ícono -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CircleButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="40" />
+            <Setter Property="Height" Value="40" />
+            <Setter Property="Background" Value="Red" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Ellipse Fill="{TemplateBinding Background}" />
+                            <materialDesign:PackIcon Kind="Close" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Page.Resources>
+
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="508,20,0,0" VerticalAlignment="Top" Width="539" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Dar de alta receta" HorizontalAlignment="Left" Height="59" Margin="630,34,0,0" VerticalAlignment="Top" Width="394" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="60" Margin="548,34,0,0" VerticalAlignment="Top" Width="56" Source="/Imagenes/Logos/script 2.png"/>
+
         <Grid x:Name="panelInsumos" Visibility="Visible" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
-            <Rectangle HorizontalAlignment="Left" Height="431" Stroke="Black" VerticalAlignment="Top" Width="652" Fill="Maroon" Margin="258,118,0,0"/>
-            <ListView Name="lvInsumos" Margin="273,134,397,194" Background="#00008B">
+            <Rectangle HorizontalAlignment="Left" Height="431" Stroke="Black" VerticalAlignment="Top" Width="598" Fill="#231B1B" Margin="285,118,0,0"/>
+            <ListView Name="lvInsumos" Margin="299,142,391,194" Background="#231B1B">
+
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="Gray" />
+                        <!-- Color de fondo gris -->
+                        <Setter Property="Foreground" Value="White" />
+                        <!-- Color del texto blanco -->
+                        <Setter Property="FontSize" Value="20" />
+                        <!-- Tamaño de fuente más grande -->
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <!-- Texto en negrita -->
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <!-- Centrar texto -->
+                        <Setter Property="Padding" Value="10,5" />
+                        <!-- Espaciado en la cabecera -->
+                    </Style>
+                </ListView.Resources>
+
                 <!-- Definir el estilo para los ListViewItems -->
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -23,7 +89,7 @@
                         <Style.Triggers>
                             <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#020250"/>
+                                <Setter Property="Background" Value="#3f3030"/>
                                 <!-- Color cuando está el cursor encima -->
                             </Trigger>
                         </Style.Triggers>
@@ -33,7 +99,7 @@
                 <ListView.View>
                     <GridView>
                         <!-- Image Column -->
-                        <GridViewColumn Header=" " Width="150">
+                        <GridViewColumn Header=" " Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image Source="{Binding imagen}" Width="80" Height="80" />
@@ -42,7 +108,7 @@
                         </GridViewColumn>
 
                         <!-- Name Column -->
-                        <GridViewColumn Header="Nombre" Width="150">
+                        <GridViewColumn Header="Nombre" Width="220">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding nombre}" 
@@ -59,23 +125,26 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBox x:Name="cuadroTextoCantidad" 
-                                    Foreground="Black" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24" 
-                                    Width="150" 
-                                    MaxLength="3"
-                                    TextChanged="CuadroTextoCantidad_TextChanged"/>
+                                        Foreground="Black" 
+                                        Background="White"
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24" 
+                                        Width="150" 
+                                        MaxLength="3"
+                                        TextAlignment="Center"
+                                        TextChanged="CuadroTextoCantidad_TextChanged"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
                         <!-- Button Column -->
-                        <GridViewColumn Header=" " Width="150">
+                        <GridViewColumn Header=" " Width="80">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Añadir" Width="120" Height="40" Background="Goldenrod" 
-                                    Click="AñadirIngrediente_Click"/>
+                                    <Button Width="40" Height="40" Style="{StaticResource IconButtonStyle}" Click="AñadirIngrediente_Click">
+                                        <materialDesign:PackIcon Kind="Plus" Foreground="White" />
+                                    </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -83,7 +152,27 @@
                 </ListView.View>
             </ListView>
 
-            <ListView Name="lvReceta" Margin="930,134,27,293" Background="#00008B">
+            <Rectangle HorizontalAlignment="Left" Height="387" Stroke="Black" VerticalAlignment="Top" Width="318" Fill="#231B1B" Margin="915,134,0,0"/>
+            <Label Content="Receta" HorizontalAlignment="Left" Height="47" Margin="1015,146,0,0" VerticalAlignment="Top" Width="118" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4"/>
+            <ListView Name="lvReceta" Margin="915,214,27,213" Background="#231B1B">
+
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="Gray" />
+                        <!-- Color de fondo gris -->
+                        <Setter Property="Foreground" Value="White" />
+                        <!-- Color del texto blanco -->
+                        <Setter Property="FontSize" Value="20" />
+                        <!-- Tamaño de fuente más grande -->
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <!-- Texto en negrita -->
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <!-- Centrar texto -->
+                        <Setter Property="Padding" Value="10,5" />
+                        <!-- Espaciado en la cabecera -->
+                    </Style>
+                </ListView.Resources>
+
                 <!-- Definir el estilo para los ListViewItems -->
                 <ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
@@ -94,7 +183,7 @@
                         <Style.Triggers>
                             <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#020250"/>
+                                <Setter Property="Background" Value="#3f3030"/>
                                 <!-- Color cuando está el cursor encima -->
                             </Trigger>
                         </Style.Triggers>
@@ -104,52 +193,134 @@
                 <ListView.View>
                     <GridView>
                         <!-- Name Column -->
-                        <GridViewColumn Header="Nombre" Width="120">
+                        <GridViewColumn Header="Nombre" Width="150">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding nombre}" 
-                                    Foreground="White" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24" />
+                                        Foreground="White" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
                         <!-- Status Column -->
-                        <GridViewColumn Header="Cantidad" Width="80">
+                        <GridViewColumn Header="Cantidad" Width="110">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding cantidad}" 
-                                    Foreground="White" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24"/>
+                                        Foreground="White" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <!-- Button Column -->
+                        <GridViewColumn Header=" " Width="60">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Width="40" Height="40" Background="Red" BorderBrush="Transparent" Style="{StaticResource CircleButtonStyle}" Click="EliminarIngrediente">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Grid>
+                                                    <Ellipse Fill="{TemplateBinding Background}" />
+                                                    <materialDesign:PackIcon Kind="Close" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
-                        <!-- Button Column -->
-                        <GridViewColumn Header=" " Width="150">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Content="Eliminar" Width="100" Height="40" Background="Red" Click="EliminarIngrediente"/>
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
                     </GridView>
                 </ListView.View>
             </ListView>
-            <Button Content="Cancelar" Click="Cancelar" HorizontalAlignment="Left" Margin="488,567,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-            <Button Name="btnAgregarReceta" Content="Agregar receta" Click="AgregarReceta" HorizontalAlignment="Left" Margin="780,567,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+
+            <Button HorizontalAlignment="Left" Height="63" Margin="856,576,0,0" VerticalAlignment="Top" Width="180" Background="#FF0000" Click="Cancelar">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Cancelar" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="63" Margin="1041,576,0,0" VerticalAlignment="Top" Width="180" Background="#008000" Click="AgregarReceta">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Siguiente" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
 
         <Grid x:Name="panelInstrucciones" Visibility="Collapsed" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
-            <Rectangle HorizontalAlignment="Left" Height="454" Stroke="Black" VerticalAlignment="Top" Width="936" Fill="Maroon" Margin="261,84,0,0"/>
-            <Button Content="Regresar" Click="Regresar" HorizontalAlignment="Left" Margin="488,567,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-            <Button Name="btnRegistrarInstrucciones" Content="Registrar instrucciones" Click="RegistrarInstrucciones" HorizontalAlignment="Left" Margin="780,567,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
-            <TextBox Name="tbInstrucciones" HorizontalAlignment="Left" Margin="323,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="812" Height="394" FontSize="26"/>
+            <Rectangle HorizontalAlignment="Left" Height="442" Stroke="Black" VerticalAlignment="Top" Width="882" Fill="#231B1B" Margin="291,120,0,0"/>
+            <Button HorizontalAlignment="Center" Height="63" Margin="0,583,0,0" VerticalAlignment="Top" Width="180" Background="#FF0000" Click="Regresar">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Regresar" 
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="63" Margin="774,583,0,0" VerticalAlignment="Top" Width="279" Background="#008000" Click="RegistrarInstrucciones">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                CornerRadius="20"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="0"
+                Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Registrar instrucciones" 
+                    VerticalAlignment="Center"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBox Name="tbInstrucciones" HorizontalAlignment="Left" Margin="323,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="812" Height="352" FontSize="26" Foreground="White" Background="#3f3030" MaxLength="150"/>
+            <Label Content="Instrucciones" HorizontalAlignment="Left" Height="47" Margin="614,134,0,0" VerticalAlignment="Top" Width="236" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4"/>
         </Grid>
-
     </Grid>
 </Page>

@@ -61,6 +61,8 @@
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="ingrediente">
     <Key>
@@ -73,7 +75,7 @@
     <Property Name="lote" Type="varchar" MaxLength="10" />
     <Property Name="medida" Type="varchar" MaxLength="10" />
     <Property Name="nombre" Type="varchar" MaxLength="20" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="imagen" Type="varbinary(max)" />
     <Property Name="idProveedor" Type="int" />
     <Property Name="idInventario" Type="int" />
   </EntityType>
@@ -220,6 +222,8 @@
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="tipoproducto">
     <Key>

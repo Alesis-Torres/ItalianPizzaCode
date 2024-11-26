@@ -8,186 +8,32 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_Inventario">
 
-    <Page.Resources>
-        <!-- Estilo para el ComboBox -->
-        <Style TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="Background" Value="#2B2B2B" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <!-- Definir columnas: una para el contenido y otra para la flecha -->
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <!-- Para el contenido del ComboBox -->
-                                <ColumnDefinition Width="30" />
-                                <!-- Para la flecha de despliegue -->
-                            </Grid.ColumnDefinitions>
-
-                            <!-- Borde del ComboBox -->
-                            <Border 
-                            x:Name="Border"
-                            Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="5"
-                            Grid.ColumnSpan="2">
-
-                                <Grid>
-                                    <!-- Muestra el contenido seleccionado del ComboBox -->
-                                    <ContentPresenter
-                                    Margin="4"
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Left"
-                                    Content="{TemplateBinding SelectionBoxItem}" />
-                                </Grid>
-                            </Border>
-
-                            <!-- Botón de despliegue con la flecha -->
-                            <ToggleButton 
-                            Grid.Column="1"
-                            Name="ToggleButton"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Focusable="False"
-                            IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                            ClickMode="Press">
-                                <Path
-                                x:Name="Arrow"
-                                Fill="Gray"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Data="M 0 0 L 4 4 L 8 0 Z"/>
-                            </ToggleButton>
-
-                            <!-- Popup que contiene los elementos del ComboBox desplegados -->
-                            <Popup Name="Popup"
-                               Placement="Bottom"
-                               IsOpen="{TemplateBinding IsDropDownOpen}"
-                               AllowsTransparency="True"
-                               Focusable="False"
-                               PopupAnimation="Slide">
-                                <Border 
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="Gray" 
-                                BorderThickness="1">
-                                    <ScrollViewer Margin="4">
-                                        <StackPanel IsItemsHost="True" />
-                                    </ScrollViewer>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
-
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox HorizontalAlignment="Left" Margin="304,34,0,0" TextWrapping="Wrap" Text="Buscar" VerticalAlignment="Top" Width="471" Height="44" FontSize="26"/>
-        <Rectangle HorizontalAlignment="Left" Height="412" Margin="304,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="891" Fill="#800000"/>
-        <Label Content="Filtrar por:" HorizontalAlignment="Left" Height="44" Margin="817,35,0,0" VerticalAlignment="Top" Width="146" Foreground="White" FontSize="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="968,42,0,0" VerticalAlignment="Top" Width="201" Height="36">
-            <ComboBoxItem Content="--Tipo de usuario--" IsSelected="True"/>
-            <ComboBoxItem Content="Artículo"/>
-            <ComboBoxItem Content="Insumo"/>
-        </ComboBox>
+        <Grid  Margin="12,-4,-12,4" Background="#D3D3D3D3">
+            <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
 
-        <ListView Name="lvProductos" Margin="321,182,111,158" Background="#020250">
-            <!-- Definir el estilo para los ListViewItems -->
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <!-- Color por defecto del fondo -->
-                    <Setter Property="Background" Value="Transparent"/>
-                    <!-- Cambiar el color del texto al pasar el cursor -->
-                    <Setter Property="Foreground" Value="White"/>
-                    <Style.Triggers>
-                        <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#020250"/>
-                            <!-- Color cuando está el cursor encima -->
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListView.ItemContainerStyle>
+            <Button Margin="240,10,922,630" Click="irRegresar" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+                <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+            </Button>
 
-            <ListView.View>
-                <GridView>
-                    <!-- Image Column -->
-                    <GridViewColumn Header=" " Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding imagen}" Width="80" Height="80" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+            <Rectangle HorizontalAlignment="Left" Height="78" Margin="504,10,0,0" VerticalAlignment="Top" Width="541" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+            <Label Content="Inventario" HorizontalAlignment="Left" Height="44" Margin="697,27,0,0" VerticalAlignment="Top" Width="187" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+            <Image Source="/Imagenes/Iconos/inventory.png" Height="70" Width="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,13,0,0"/>
 
-                    <!-- Name Column -->
-                    <GridViewColumn Header="Nombre" Width="250">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding nombre}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center" 
-                           FontSize="24" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+            <Rectangle HorizontalAlignment="Left" Height="492" Margin="332,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="254" Fill="#FF797070"/>
+            <Label Content="Productos" HorizontalAlignment="Left" Margin="339,137,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50" Height="57"/>
+            <Image Source="/Imagenes/Iconos/ingredient.png" Height="256" Width="252" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="332,202,0,0" AllowDrop="True"/>
+            <Button Content="🔎 Ver Productos" HorizontalAlignment="Left" Margin="366,520,0,0" VerticalAlignment="Top" Height="60" Width="203"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerProductos"/>
 
-                    <!-- Status Column -->
-                    <GridViewColumn Header="Tipo" Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding tipo}" 
-                                    Foreground="White" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+            <Rectangle HorizontalAlignment="Left" Height="492" Margin="631,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="254" Fill="#FF797070"/>
+            <Button Content="🔎 Ver Recetas" HorizontalAlignment="Left" Margin="662,518,0,0" VerticalAlignment="Top" Height="62" Width="198"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerRecetas"/>
+            <Label Content="Recetas" HorizontalAlignment="Left" Margin="670,137,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
+            <Image Source="/Imagenes/Iconos/script.png" Height="256" Width="248" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="634,207,0,0" AllowDrop="True"/>
 
-                    <!-- Status Column -->
-                    <GridViewColumn Header="Estatus" Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding EstatusUsuario}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center" 
-                           FontSize="24" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-                    <!-- Columna con ambos botones (uno encima del otro) -->
-                    <GridViewColumn Header=" " Width="250">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- StackPanel con orientación vertical -->
-                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <!-- Botón "Modificar artículo" -->
-                                    <Button Content="Modificar artículo" Width="120" Height="40" Background="Goldenrod" Margin="0,0,0,10" />
-
-                                    <!-- Botón "Ver receta" -->
-                                    <Button Content="Ver receta" Width="120" Height="40" Background="#00008B" Foreground="White" Click="VerReceta"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Agregar producto" Foreground="White" HorizontalAlignment="Left" Height="50" Margin="992,606,0,0" VerticalAlignment="Top" Width="260" Background="#008000" FontSize="24"/>
-        <Button Content="Regresar" Foreground="White" HorizontalAlignment="Left" Height="50" Margin="657,606,0,0" VerticalAlignment="Top" Width="269" Background="#A52A2A" FontSize="24" Click="irMenuPrincipal"/>
-
+            <Rectangle HorizontalAlignment="Left" Height="492" Margin="934,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="254" Fill="#FF797070"/>
+            <Label Content="Inventario" HorizontalAlignment="Left" Margin="942,138,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
+            <Image Source="/Imagenes/Iconos/stock.png" Height="256" Width="248" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="936,206,0,0" AllowDrop="True"/>
+            <Button Content="🔎 Ver Inventario" HorizontalAlignment="Left" Margin="964,518,0,0" VerticalAlignment="Top" Height="62" Width="198"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerInventario"/>
+        </Grid>
     </Grid>
 </Page>

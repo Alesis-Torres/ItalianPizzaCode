@@ -33,7 +33,7 @@ namespace ItalianPicza
                 proveedor proveedor = new proveedor()
                 {
                     nombre = nombreProveedor,
-                    telefono = telefono,
+                    //telefono = telefono,
                     descripcion = descripcion,
                     imagen = imagenProveedor
                 };

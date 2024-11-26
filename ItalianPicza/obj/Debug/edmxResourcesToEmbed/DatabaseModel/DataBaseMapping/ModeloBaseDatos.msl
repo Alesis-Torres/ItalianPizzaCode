@@ -62,6 +62,8 @@
     <EntitySetMapping Name="entradaextraordinaria">
       <EntityTypeMapping TypeName="italianpizzaModel.entradaextraordinaria">
         <MappingFragment StoreEntitySet="entradaextraordinaria">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
           <ScalarProperty Name="idEntradaExtraordinaria" ColumnName="idEntradaExtraordinaria" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
@@ -238,6 +240,8 @@
     <EntitySetMapping Name="salidaextraordinaria">
       <EntityTypeMapping TypeName="italianpizzaModel.salidaextraordinaria">
         <MappingFragment StoreEntitySet="salidaextraordinaria">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
           <ScalarProperty Name="idSalidaExtraordinaria" ColumnName="idSalidaExtraordinaria" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
