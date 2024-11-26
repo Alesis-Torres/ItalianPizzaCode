@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\ItalianPicza"
+    "\\ItalianPicza",
+    "\\Pruebas",
+    "\\Pruebas\\PruebasDAOs"
   ],
-  "SelectedNode": "\\ItalianPicza\\GUI_InicioSesion.xaml",
+  "SelectedNode": "\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
   "PreviewInSolutionExplorer": false
 }

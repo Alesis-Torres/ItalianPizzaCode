@@ -61,7 +61,7 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                         ingredientes.Add(new ingrediente
                         {
                             nombre = item.Nombre,
-                            cantidad = item.Cantidad
+                            cantidadRegistrada = item.Cantidad
                         });
                     }
                 }
@@ -105,7 +105,7 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                         {
                             idReceta = idRecetaCreada,   
                             idIngrediente = ingrediente.idIngrediente,  
-                            cantidad = ingrediente.cantidad 
+                            cantidad = ingrediente.cantidadRegistrada 
                         };
 
                         context.recetaingrediente.Add(recetaIngrediente);

@@ -136,7 +136,7 @@ namespace ItalianPicza
                                     ingrediente nuevoIngrediente = new ingrediente
                                     {
                                         nombre = nombreIngrediente,
-                                        cantidad = cantidadTexto,
+                                        cantidadActual = cantidadTexto,
                                         idIngrediente = idInsumo
                                     };
 

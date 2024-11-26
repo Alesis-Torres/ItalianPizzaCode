@@ -22,8 +22,8 @@ namespace Pruebas.PruebasDAOs
             recetaDAO = new RecetaDAO();
             ingredientesPrueba = new List<ingrediente>
             {
-                new ingrediente { idIngrediente = 1, nombre = "Queso", cantidad = "200" },
-                new ingrediente { idIngrediente = 2, nombre = "Tomate", cantidad = "500" },
+                new ingrediente { idIngrediente = 1, nombre = "Queso", cantidadRegistrada = "200" },
+                new ingrediente { idIngrediente = 2, nombre = "Tomate", cantidadRegistrada = "500" },
             };
 
             recetaRegistrada = new receta

@@ -25,41 +25,25 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 throw new EntityException("Error al guardar el pedido del proveedor: " + ex.Message, ex);
             }
         }
-        /*
-        public int GuardarProductoPedidoProveedor(pedidoproveedorproducto productoPedido)
+
+        public List<pedidoproveedor> ObtenerPedidosProveedores()
         {
-            int resultado = 0;
+            List<pedidoproveedor> pedidosproveedores = new List<pedidoproveedor>();
 
             try
             {
                 using (var context = new italianpizzaEntities())
                 {
-                    context.pedidoproveedorproducto.Add(productoPedido);
-                    resultado = context.SaveChanges();
+                    pedidosproveedores = context.pedidoproveedor.Include("pedidoproveedor").ToList();
                 }
 
-                return resultado;
             }
             catch (EntityException ex)
             {
-                throw new EntityException("Error al guardar los productos del pedido en la base de datos.", ex);
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
-        }
 
-        public List<pedidoproveedor> ObtenerTodosLosPedidos()
-        {
-            try
-            {
-                using (var context = new italianpizzaEntities())
-                {
-                    return context.pedidoproveedor.Include("pedidoproveedoringrediente").Include("pedidoproveedorproducto").ToList();
-                }
-            }
-            catch (EntityException ex)
-            {
-                throw new EntityException("Error al obtener los pedidos de proveedores.", ex);
-            }
+            return pedidosproveedores;
         }
-        */
     }
 }
