@@ -18,6 +18,8 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public Nullable<decimal> cantidad { get; set; }
         public Nullable<int> idCorteCaja { get; set; }
         public Nullable<int> idEmpleado { get; set; }
+        public Nullable<System.DateTime> fechaRealizacion { get; set; }
+        public string descripcion { get; set; }
     
         public virtual cortecaja cortecaja { get; set; }
         public virtual empleado empleado { get; set; }

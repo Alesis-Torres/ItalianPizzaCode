@@ -61,6 +61,7 @@
     <Compile Include="PruebasDAOs\PruebaInsumosDAO.cs" />
     <Compile Include="PruebasDAOs\PruebaProductosDAO.cs" />
     <Compile Include="PruebasDAOs\PruebaRecetasDAO.cs" />
+    <Compile Include="PruebasDAOs\PruebaTransaccionesDAO.cs" />
     <Compile Include="PruebasDAOs\PruebaUsuariosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

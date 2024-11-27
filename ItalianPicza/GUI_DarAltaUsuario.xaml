@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
@@ -86,51 +87,229 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="PasswordBox" x:Key="MaterialDesignOutlinedPasswordBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="PasswordBox">
+                        <Grid>
+                            <!-- Borde estilizado -->
+                            <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="4" Background="White" Padding="5">
+                                <!-- Contenido real del PasswordBox -->
+                                <ScrollViewer x:Name="PART_ContentHost" Background="Transparent" />
+                            </Border>
+
+                            <!-- Hint (Texto sugerido) -->
+                            <TextBlock Text="{TemplateBinding materialDesign:HintAssist.Hint}" 
+                               Foreground="Gray" FontSize="18" VerticalAlignment="Top" Margin="5,0,0,0" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
     </Page.Resources>
+
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <Rectangle HorizontalAlignment="Left" Height="676" Margin="262,34,0,0" Stroke="Black" VerticalAlignment="Top" Width="995" Fill="#800000"/>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="478,20,0,0" VerticalAlignment="Top" Width="541" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Dar alta usuario" HorizontalAlignment="Left" Height="59" Margin="598,35,0,0" VerticalAlignment="Top" Width="400" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="503,24,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+        <Rectangle HorizontalAlignment="Left" Height="541" Margin="285,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="954" Fill="White"/>
+
         <Grid x:Name="panelNavegacion" Visibility="Visible" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
-            <TextBox Name="cuadroTextoNombre" HorizontalAlignment="Left" Margin="286,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
-            <Label Content="Nombre" HorizontalAlignment="Left" Margin="286,47,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Foreground="White"/>
-            <TextBox Name="cuadroTextoApellidoPaterno"  HorizontalAlignment="Left" Margin="802,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
-            <Label Content="Apellido paterno" HorizontalAlignment="Left" Margin="802,47,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
-            <TextBox Name="cuadroTextoApellidoMaterno"  HorizontalAlignment="Left" Margin="286,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="30" FontSize="24"/>
-            <Label Content="Apellido materno" HorizontalAlignment="Left" Margin="286,193,0,0" VerticalAlignment="Top" Width="284" FontSize="36" Foreground="White"/>
-            <TextBox Name="cuadroTextoEmail"  HorizontalAlignment="Left" Margin="802,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="50" FontSize="24"/>
-            <Label Content="Email" HorizontalAlignment="Left" Margin="802,158,0,0" VerticalAlignment="Top" Width="325" FontSize="36" Foreground="White"/>
-            <Button Content="Seleccionar imagen" HorizontalAlignment="Left" Margin="364,574,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="DarkBlue" Foreground="#FFFAFAFA" Click="SeleccionarImagen"/>
-            <Label Content="Rol" HorizontalAlignment="Left" Margin="802,280,0,0" VerticalAlignment="Top" Width="70" FontSize="36" Foreground="White"/>
-            <Label Content="Estado" HorizontalAlignment="Left" Margin="802,358,0,0" VerticalAlignment="Top" Width="128" FontSize="36" Foreground="White"/>
-            <ComboBox Name="cbRol" HorizontalAlignment="Left" Margin="935,288,0,0" VerticalAlignment="Top" Width="281" Height="41">
+            <Label Content="Nombre:" HorizontalAlignment="Left" Height="32" Margin="427,144,0,0" VerticalAlignment="Top" Width="102" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Apellido Paterno:" HorizontalAlignment="Left" Height="38" Margin="325,208,0,0" VerticalAlignment="Top" Width="204" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Apellido Materno:" HorizontalAlignment="Left" Height="38" Margin="319,274,0,0" VerticalAlignment="Top" Width="210" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Email:" HorizontalAlignment="Left" Height="38" Margin="451,542,0,0" VerticalAlignment="Top" Width="87" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Teléfono:" HorizontalAlignment="Left" Height="38" Margin="416,468,0,0" VerticalAlignment="Top" Width="113" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Rol:" HorizontalAlignment="Left" Height="38" Margin="472,400,0,0" VerticalAlignment="Top" Width="57" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+            <Label Content="Estado:" HorizontalAlignment="Left" Height="38" Margin="438,348,0,0" VerticalAlignment="Top" Width="92" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+
+            <TextBox Name="cuadroTextoNombre" HorizontalAlignment="Left" Height="55" Margin="553,132,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Nombre" Foreground="Gray" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox Name="cuadroTextoApellidoPaterno" HorizontalAlignment="Left" Height="55" Margin="553,200,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Apellido paterno" Foreground="Gray" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox Name="cuadroTextoApellidoMaterno" HorizontalAlignment="Left" Height="55" Margin="553,266,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Apellido materno" Foreground="Gray" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox Name="cuadroTextoEmail" HorizontalAlignment="Left" Height="54" Margin="553,534,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Email" Foreground="Gray" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <TextBox Name="cuadroTextoTelefono" HorizontalAlignment="Left" MaxLength="10" Height="55" Margin="553,457,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Telefono" Foreground="Gray" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+
+            <ComboBox Name="cbRol" HorizontalAlignment="Left" Height="38" Margin="553,400,0,0" VerticalAlignment="Top" Width="284" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0">
                 <ComboBoxItem Content="--Seleecione un rol--" IsSelected="True"/>
                 <ComboBoxItem Content="Gerente de sucursal"/>
                 <ComboBoxItem Content="Cocinero"/>
             </ComboBox>
-            <ComboBox Name="cbEstado" HorizontalAlignment="Left" Margin="935,372,0,0" VerticalAlignment="Top" Width="281" Height="41">
+
+            <ComboBox Name="cbEstado" HorizontalAlignment="Left" Height="38" Margin="553,0,0,0" Width="284" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0">
                 <ComboBoxItem Content="-- Seleccione un estado--" IsSelected="True"/>
                 <ComboBoxItem Content="Activo"/>
                 <ComboBoxItem Content="Baja"/>
             </ComboBox>
-            <TextBox Name="cuadroTextoTelefono"  HorizontalAlignment="Left" Margin="802,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="394" Height="48" MaxLength="10" FontSize="24"/>
-            <Label Content="Telefono" HorizontalAlignment="Left" Margin="802,442,0,0" VerticalAlignment="Top" Width="162" FontSize="36" Foreground="White"/>
-            <Button Content="Cancelar" Click="Cancelar" HorizontalAlignment="Left" Margin="746,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-            <Button Content="Siguiente" Click="Siguiente" HorizontalAlignment="Left" Margin="999,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
-            <Image Name="imagenUsuario" Source="/Imagenes/Indicadores/Group 1.png" HorizontalAlignment="Left" Height="192" Margin="383,348,0,0" VerticalAlignment="Top" Width="212"/>
+
+            <!-- Nuevo diseño -->
+
+            <Button
+                Height="50"
+                Background="#00008B"
+                Foreground="White"
+                FontWeight="Bold"
+                Style="{StaticResource MaterialDesignFlatButton}"
+                BorderBrush="#00008B" Margin="937,462,115,203" Click="SeleccionarImagen">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Kind="Paperclip" 
+                                     Width="20" 
+                                     Height="20" 
+                                     Foreground="White" 
+                                     Margin="0,0,5,0"/>
+                                <TextBlock Text="Seleccionar Imagen" 
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontWeight="Bold"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="63" Margin="856,576,0,0" VerticalAlignment="Top" Width="180" Background="#FF0000" Click="Cancelar">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Cancelar" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="63" Margin="1041,576,0,0" VerticalAlignment="Top" Width="180" Background="#008000" Click="Siguiente">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Siguiente" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Image Name="imagenUsuario" HorizontalAlignment="Left" Height="242" Margin="920,200,0,0" VerticalAlignment="Top" Width="260" Source="Imagenes/Indicadores/Group 1.png"/>
         </Grid>
 
         <Grid x:Name="panelNavegacionUsuario" Visibility="Collapsed" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
-            <PasswordBox Name="cuadroContrasenaContrasena" HorizontalAlignment="Left" Margin="706,256,0,0" VerticalAlignment="Top" Width="457" Height="48" MaxLength="10" FontSize="24"/>
-            <Label Content="Contraseña" HorizontalAlignment="Left" Margin="310,251,0,0" VerticalAlignment="Top" Width="204" FontSize="36" Foreground="White"/>
-            <PasswordBox Name="cuadroContasenaConfirmarContrasena" HorizontalAlignment="Left" Margin="706,413,0,0" VerticalAlignment="Top" Width="457" Height="48" MaxLength="10" FontSize="24"/>
-            <Label Content="Confirmar contraseña" HorizontalAlignment="Left" Margin="310,403,0,0" VerticalAlignment="Top" Width="359" FontSize="36" Foreground="White"/>
-            <TextBox Name="cuadroTextoNombreUsuario"  HorizontalAlignment="Left" Margin="706,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="457" Height="48" MaxLength="20" FontSize="24"/>
-            <Label Content="Nombre de usuario" HorizontalAlignment="Left" Margin="310,96,0,0" VerticalAlignment="Top" Width="359" FontSize="36" Foreground="White"/>
-            <Button Content="Regresar" Click="RegresarPanel" HorizontalAlignment="Left" Margin="746,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-            <Button Content="Guardar" Click="GuardarUsuario" HorizontalAlignment="Left" Margin="999,615,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+            <Label Content="Nombre de usuario:" HorizontalAlignment="Left" Height="32" Margin="431,208,0,0" VerticalAlignment="Top" Width="256" FontSize="24" FontFamily="Georgia" FontWeight="Bold"/>
+            <TextBox Name="cuadroTextoNombreUsuario" MaxLength="20" HorizontalAlignment="Left" Height="56" Margin="706,196,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="457" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Nombre" Foreground="Gray" FontSize="20"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+            <Label Content="Contraseña:" HorizontalAlignment="Left" Height="32" Margin="528,307,0,0" VerticalAlignment="Top" Width="159" FontSize="24" FontFamily="Georgia" FontWeight="Bold"/>
+            <PasswordBox Name="cuadroContrasenaContrasena"
+                HorizontalAlignment="Left"
+                Margin="706,307,0,0"
+                VerticalAlignment="Top"
+                Width="457"
+                Height="48"
+                MaxLength="10"
+                FontSize="24"
+                Style="{StaticResource MaterialDesignOutlinedPasswordBox}">
+            </PasswordBox>
+            <Label Content="Confirmar contraseña:" HorizontalAlignment="Left" Height="32" Margin="396,415,0,0" VerticalAlignment="Top" Width="291" FontSize="24" FontFamily="Georgia" FontWeight="Bold"/>
+            <PasswordBox Name="cuadroContasenaConfirmarContrasena"
+                HorizontalAlignment="Left"
+                Margin="706,413,0,0"
+                VerticalAlignment="Top"
+                Width="457"
+                Height="48"
+                MaxLength="10"
+                FontSize="24"
+                Style="{StaticResource MaterialDesignOutlinedPasswordBox}">
+            </PasswordBox>
+            <Button HorizontalAlignment="Center" Height="64" Margin="0,507,0,0" VerticalAlignment="Top" Width="244" Background="#FF0000" Click="RegresarPanel">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Regresar" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="63" Margin="777,508,0,0" VerticalAlignment="Top" Width="286" Background="#008000" Click="GuardarUsuario">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="20"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="0"
+                            Padding="10">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock Text="Dar de alta usuario" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
 
-        <Label Content="Todos los campos son obligatorios" HorizontalAlignment="Left" Height="37" Margin="279,635,0,0" VerticalAlignment="Top" Width="274" Foreground="White" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Height="44" Margin="303,597,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="419" IsEnabled="False">
+            <Run Text="Todos los campos presentes son obligatorios" Foreground="Black" FontFamily="Segoe UI Black" FontSize="18"/>
+            <Run Text="*" Foreground="Red" FontSize="18"/>
+        </TextBlock>
     </Grid>
 </Page>

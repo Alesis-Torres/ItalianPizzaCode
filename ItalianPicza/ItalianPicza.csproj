@@ -78,6 +78,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DatabaseModel\DAO%27s\InsumosDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\TransaccionesDAO.cs" />
+    <Compile Include="GUI_AgregarProveedores.xaml.cs">
+      <DependentUpon>GUI_AgregarProveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DarAltaReceta.xaml.cs">
       <DependentUpon>GUI_DarAltaReceta.xaml</DependentUpon>
     </Compile>
@@ -181,21 +185,41 @@
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Finanzas.xaml.cs">
+      <DependentUpon>GUI_Finanzas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Inventario.xaml.cs">
       <DependentUpon>GUI_Inventario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Productos.xaml.cs">
+      <DependentUpon>GUI_Productos.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_MenuPrincipal.xaml.cs">
       <DependentUpon>GUI_MenuPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ModificarReceta.xaml.cs">
+      <DependentUpon>GUI_ModificarReceta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ModificarUsuario.xaml.cs">
       <DependentUpon>GUI_ModificarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Proveedores.xaml.cs">
+      <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RegistrarTransaccionFinanciera.xaml.cs">
+      <DependentUpon>GUI_RegistrarTransaccionFinanciera.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_Usuarios.xaml.cs">
       <DependentUpon>GUI_Usuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProveedoresDAO.cs" />
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Page Include="GUI_AgregarProveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GUI_DarAltaReceta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +229,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI_DarAltaUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_Finanzas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -223,11 +251,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUI_Productos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_MenuPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUI_ModificarReceta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GUI_ModificarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_Proveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_RegistrarTransaccionFinanciera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -322,6 +366,17 @@
       <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
       <LastGenOutput>ModeloBaseDatos.cs</LastGenOutput>
     </Content>
+    <Resource Include="Imagenes\Iconos\users.png" />
+    <Resource Include="Imagenes\Iconos\order.png" />
+    <Resource Include="Imagenes\Iconos\money.png" />
+    <Resource Include="Imagenes\Iconos\logout.png" />
+    <Resource Include="Imagenes\Iconos\deliverywoman.png" />
+    <Resource Include="Imagenes\Iconos\stock.png" />
+    <Resource Include="Imagenes\Iconos\script.png" />
+    <Resource Include="Imagenes\Iconos\ingredient.png" />
+    <Resource Include="Imagenes\Iconos\inventory.png" />
+    <Resource Include="Imagenes\Uses\return.png" />
+    <Resource Include="Imagenes\Logos\script 2.png" />
     <Resource Include="Imagenes\Indicadores\pizza_background 1.png" />
     <Resource Include="Imagenes\Indicadores\logout 6.png" />
     <Resource Include="Imagenes\Indicadores\fondo.png" />
