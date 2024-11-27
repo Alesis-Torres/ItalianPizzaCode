@@ -35,7 +35,7 @@
                     <TextBlock Text="Pedidos" Foreground="White" FontSize="24" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,420,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24">
+            <Button HorizontalAlignment="Left" Margin="0,420,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irFinanzas">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/money.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Finanzas" Foreground="White" FontSize="24" Margin="10,0,0,0" VerticalAlignment="Center"/>

@@ -47,7 +47,8 @@ namespace Pruebas.PruebasDAOs
         [TestMethod]
         public void PruebaDarDeAltaReceta()
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
             {
                 int resultado = recetaDAO.DarDeAltaReceta(recetaParaRegistrar.instrucciones, ingredientesPrueba, productoPrueba);
                 Assert.AreEqual(3, resultado);
@@ -57,7 +58,8 @@ namespace Pruebas.PruebasDAOs
         [TestMethod]
         public void PruebaObtenerIngredientesReceta()
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
             {
                 List<ingrediente> ingredientesReceta = recetaDAO.ObtenerIngredientesReceta(recetaRegistrada.idReceta);
                 Assert.IsTrue(ingredientesReceta.Count > 0);
@@ -67,10 +69,24 @@ namespace Pruebas.PruebasDAOs
         [TestMethod]
         public void PruebaObtenerRecetaProducto()
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
             {
                 receta resultado = recetaDAO.ObtenerRecetaProducto(recetaRegistrada.idReceta);
                 Assert.IsNotNull(resultado);
+            }
+        }
+
+
+        [TestMethod]
+        public void PruebaModificarReceta()
+        {
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            {
+                int resultado = recetaDAO.ModificarReceta(recetaRegistrada.idReceta, 
+                    recetaParaRegistrar.instrucciones , ingredientesPrueba);
+                Assert.IsTrue(resultado > 0);
             }
         }
 

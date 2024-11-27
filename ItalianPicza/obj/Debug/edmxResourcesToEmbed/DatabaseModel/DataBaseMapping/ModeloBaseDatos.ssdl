@@ -63,6 +63,8 @@
     <Property Name="descripcion" Type="varchar" MaxLength="250" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="ingrediente">
     <Key>
@@ -230,6 +232,8 @@
     <Property Name="descripcion" Type="varchar" MaxLength="250" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="tipoproducto">
     <Key>

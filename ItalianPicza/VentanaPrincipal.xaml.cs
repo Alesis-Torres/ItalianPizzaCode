@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -10,6 +11,8 @@ namespace ItalianPicza
         private static Page PaginaActual { get; set; }
 
         public static Page PaginaAnterior { get; set; }
+
+        public static int empleado;
 
         public VentanaPrincipal()
         {
@@ -56,9 +59,9 @@ namespace ItalianPicza
             CambiarPagina(new GUI_Proveedores());
         }
 
-        private void marcoPaginaActual_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        private void irFinanzas(object sender, RoutedEventArgs e)
         {
-
+            CambiarPagina(new GUI_Finanzas());
         }
     }
 }

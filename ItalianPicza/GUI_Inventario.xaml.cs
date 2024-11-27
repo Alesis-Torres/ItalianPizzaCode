@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
-
     public partial class GUI_Inventario : Page
     {
         public GUI_Inventario()
@@ -25,7 +24,7 @@ namespace ItalianPicza
 
         private void irRegresar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+            VentanaPrincipal.CambiarPagina(new GUI_Productos());
         }
 
         private void VerInventario(object sender, RoutedEventArgs e)

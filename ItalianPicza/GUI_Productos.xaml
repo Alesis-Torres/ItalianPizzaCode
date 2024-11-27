@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
@@ -88,82 +89,119 @@
         </Style>
     </Page.Resources>
 
-
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox HorizontalAlignment="Left" Margin="304,34,0,0" TextWrapping="Wrap" Text="Buscar" VerticalAlignment="Top" Width="471" Height="44" FontSize="26"/>
-        <Rectangle HorizontalAlignment="Left" Height="412" Margin="304,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="891" Fill="#800000"/>
-        <Label Content="Filtrar por:" HorizontalAlignment="Left" Height="44" Margin="817,35,0,0" VerticalAlignment="Top" Width="146" Foreground="White" FontSize="24"/>
-        <ComboBox HorizontalAlignment="Left" Margin="968,42,0,0" VerticalAlignment="Top" Width="201" Height="36">
-            <ComboBoxItem Content="--Tipo de usuario--" IsSelected="True"/>
+        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="#2B2B2B"/>
+
+        <Rectangle HorizontalAlignment="Left" Height="83" Stroke="Black" VerticalAlignment="Top" Width="92" Fill="White" Margin="250,15,0,0" StrokeThickness="2" RadiusX="20" RadiusY="20"/>
+        <Label Content="Regresar" HorizontalAlignment="Left" Height="36" Margin="261,70,0,0" VerticalAlignment="Top" Width="70" Background="Transparent" Foreground="Black" FontSize="16"/>
+        <Button Margin="240,10,922,630" Click="irInventario" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        </Button>
+
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="580,15,0,0" VerticalAlignment="Top" Width="418" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Productos" HorizontalAlignment="Left" Height="59" Margin="713,29,0,0" VerticalAlignment="Top" Width="239" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="605,19,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+
+        <Grid HorizontalAlignment="Left" Height="60" Margin="330,-440,0,0" Width="400">
+            <!-- TextBox con estilo MaterialDesign -->
+            <TextBox Name="cuadroTextoNombreEmpleado" 
+                FontSize="20"
+                VerticalAlignment="Center"
+                Background="White"
+                Style="{StaticResource MaterialDesignOutlinedTextBox}"
+                Padding="5,0,55,0" Height="40">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Buscar..." Foreground="Black" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+
+            <!-- Ícono de lupa -->
+            <materialDesign:PackIcon Kind="Magnify"
+                      VerticalAlignment="Center"
+                      HorizontalAlignment="Right"
+                      Margin="0,0,10,0"
+                      Width="24"
+                      Height="24"
+                      Foreground="Gray"/>
+        </Grid>
+
+        <ComboBox HorizontalAlignment="Left" Height="38" Margin="942,122,0,0" VerticalAlignment="Top" Width="231" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0" Background="White">
             <ComboBoxItem Content="Artículo"/>
             <ComboBoxItem Content="Insumo"/>
         </ComboBox>
 
-        <ListView Name="lvProductos" Margin="321,182,111,158" Background="#020250">
-            <!-- Definir el estilo para los ListViewItems -->
+        <Rectangle HorizontalAlignment="Left" Height="412" Margin="304,170,0,0" Stroke="Black" VerticalAlignment="Top" Width="891" Fill="#231B1B"/>
+        <Label Content="Filtrar por:" HorizontalAlignment="Left" Height="44" Margin="811,118,0,0" VerticalAlignment="Top" Width="126" Foreground="White" FontSize="24"/>
+
+        <!-- Nuevo diseño -->
+
+        <ListView Name="lvProductos" Margin="321,182,111,158"
+            BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+            SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontFamily" Value="Georgia"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <!-- Color por defecto del fondo -->
-                    <Setter Property="Background" Value="Transparent"/>
-                    <!-- Cambiar el color del texto al pasar el cursor -->
-                    <Setter Property="Foreground" Value="White"/>
-                    <Style.Triggers>
-                        <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#020250"/>
-                            <!-- Color cuando está el cursor encima -->
-                        </Trigger>
-                    </Style.Triggers>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
                 </Style>
             </ListView.ItemContainerStyle>
 
             <ListView.View>
                 <GridView>
-                    <!-- Image Column -->
                     <GridViewColumn Header=" " Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding imagen}" Width="80" Height="80" />
+                                <Image Source="{Binding imagen}" Width="110" Height="110" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Name Column -->
                     <GridViewColumn Header="Nombre" Width="250">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding nombre}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center" 
-                           FontSize="24" />
+                             Foreground="Black" 
+                             HorizontalAlignment="Center" 
+                             VerticalAlignment="Center" 
+                             FontSize="20"
+                             FontFamily="Georgia"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
                     <!-- Status Column -->
-                    <GridViewColumn Header="Tipo" Width="150">
+                    <GridViewColumn Header="Caducidad" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding tipo}" 
-                                    Foreground="White" 
+                                <TextBlock Text="{Binding caducidad}" 
+                                    Foreground="Black" 
                                     HorizontalAlignment="Center" 
                                     VerticalAlignment="Center" 
-                                    FontSize="24" />
+                                    FontSize="24"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Status Column -->
-                    <GridViewColumn Header="Estatus" Width="150">
+                    <GridViewColumn Header="Medida" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding EstatusUsuario}" 
-                           Foreground="White" 
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center" 
-                           FontSize="24" />
+                                <TextBlock Text="{Binding medida}"
+                                    Foreground="Black" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="18"
+                                    FontFamily="Georgia" 
+                                    TextWrapping="Wrap"
+                                    MaxWidth="280"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -186,8 +224,34 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Agregar producto" Foreground="White" HorizontalAlignment="Left" Height="50" Margin="992,606,0,0" VerticalAlignment="Top" Width="260" Background="#008000" FontSize="24" Click="AgregarProducto"/>
-        <Button Content="Regresar" Foreground="White" HorizontalAlignment="Left" Height="50" Margin="657,606,0,0" VerticalAlignment="Top" Width="269" Background="#A52A2A" FontSize="24" Click="irMenuPrincipal"/>
+
+
+        <!-- Nuevo diseño -->
+
+        <Button HorizontalAlignment="Left" Height="63" Margin="616,600,0,0" VerticalAlignment="Top" Width="280" Background="#008000">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        Padding="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Plus" 
+                             VerticalAlignment="Center" 
+                             Foreground="White"
+                             Width="24" 
+                             Height="24" />
+                            <TextBlock Text="Agregar producto" 
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
 
     </Grid>
 </Page>

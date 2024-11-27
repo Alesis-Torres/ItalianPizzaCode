@@ -145,6 +145,7 @@
     <Compile Include="GUI_AgregarPedidoProveedor.xaml.cs">
       <DependentUpon>GUI_AgregarPedidoProveedor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseModel\DAO%27s\TransaccionesDAO.cs" />
     <Compile Include="GUI_AgregarProveedores.xaml.cs">
       <DependentUpon>GUI_AgregarProveedores.xaml</DependentUpon>
     </Compile>
@@ -251,6 +252,9 @@
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Finanzas.xaml.cs">
+      <DependentUpon>GUI_Finanzas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_Inventario.xaml.cs">
       <DependentUpon>GUI_Inventario.xaml</DependentUpon>
     </Compile>
@@ -265,6 +269,8 @@
     </Compile>
     <Compile Include="GUI_ModificarProveedor.xaml.cs">
       <DependentUpon>GUI_ModificarProveedor.xaml</DependentUpon>
+    <Compile Include="GUI_ModificarReceta.xaml.cs">
+      <DependentUpon>GUI_ModificarReceta.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_ModificarUsuario.xaml.cs">
       <DependentUpon>GUI_ModificarUsuario.xaml</DependentUpon>
@@ -280,6 +286,11 @@
     </Compile>
     <Compile Include="GUI_ReporteInventario.xaml.cs">
       <DependentUpon>GUI_ReporteInventario.xaml</DependentUpon>
+    <Compile Include="GUI_Proveedores.xaml.cs">
+      <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RegistrarTransaccionFinanciera.xaml.cs">
+      <DependentUpon>GUI_RegistrarTransaccionFinanciera.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_Usuarios.xaml.cs">
       <DependentUpon>GUI_Usuarios.xaml</DependentUpon>
@@ -294,6 +305,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ProveedoresDAO.cs" />
+    <Compile Include="VentanaPrincipal.xaml.cs">
+      <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
+    </Compile>
     <Page Include="GUI_AgregarProveedores.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -307,6 +322,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI_DarAltaUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_Finanzas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -338,6 +357,7 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI_ModificarProveedor.xaml">
+    <Page Include="GUI_ModificarReceta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -358,6 +378,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="GUI_ReporteInventario.xaml">
+    <Page Include="GUI_RegistrarTransaccionFinanciera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
