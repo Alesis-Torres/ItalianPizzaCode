@@ -96,6 +96,12 @@ namespace ItalianPicza {
             {
             case 1:
             this.marcoPaginaActual = ((System.Windows.Controls.Frame)(target));
+            
+            #line 12 "..\..\VentanaPrincipal.xaml"
+            this.marcoPaginaActual.Navigated += new System.Windows.Navigation.NavigatedEventHandler(this.marcoPaginaActual_Navigated);
+            
+            #line default
+            #line hidden
             return;
             case 2:
             this.panelBloqueo = ((System.Windows.Controls.Grid)(target));

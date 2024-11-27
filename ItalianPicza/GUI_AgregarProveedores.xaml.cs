@@ -7,6 +7,7 @@ using System.Data;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 
 namespace ItalianPicza
@@ -16,25 +17,29 @@ namespace ItalianPicza
         public GUI_AgregarProveedores()
         {
             InitializeComponent();
+            cuadroTextoTelefono.PreviewTextInput += SoloNumeros;
+            DataObject.AddPastingHandler(cuadroTextoTelefono, new DataObjectPastingEventHandler(VerificarPegado));
 
         }
 
-        string nombreProveedor, telefono, descripcion, rutaArchivo;
+        string nombre, telefono, descripcion, rutaArchivo;
         byte[] imagenProveedor;
 
         private void GuardarProveedor(object sender, RoutedEventArgs e)
         {
-            nombreProveedor = cuadroTextoNombre.Text.Trim();
+            nombre = cuadroTextoNombre.Text.Trim();
             telefono = cuadroTextoTelefono.Text.Trim();
             descripcion = cuadroTextoDescripcion.Text.Trim();
+            bool estado = verificarEstado();
 
             if (!ExistenCamposVacíosProveedor() && !ExistenCamposInvalidosProveedor())
             {
                 proveedor proveedor = new proveedor()
                 {
-                    nombre = nombreProveedor,
-                    //telefono = telefono,
+                    nombre = nombre,
+                    telefono = telefono,
                     descripcion = descripcion,
+                    idTipoProducto = cbTipoProducto.SelectedIndex,
                     imagen = imagenProveedor
                 };
 
@@ -50,7 +55,7 @@ namespace ItalianPicza
                         GestorCuadroDialogo.MostrarInformacion
                             ("Proveedor registrado de manera exitosa en el sistema",
                             "Proveedor dado de alta");
-                        VentanaPrincipal.CambiarPagina(new GUI_Usuarios());
+                        VentanaPrincipal.CambiarPagina(new GUI_Proveedores());
                     }
                     else
                     {
@@ -74,7 +79,7 @@ namespace ItalianPicza
             VentanaPrincipal.CambiarPagina(new GUI_Proveedores());
         }
 
-        private void SeleccionarImagen(object sender, RoutedEventArgs e)
+        private void seleccionarImagen(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -111,7 +116,7 @@ namespace ItalianPicza
         {
             bool hayCamposInvalidos = false;
 
-            if (ValidarDatos.ExistenCaracteresInvalidosParaNombre(nombreProveedor))
+            if (ValidarDatos.ExistenCaracteresInvalidosParaNombre(nombre))
             {
                 GestorCuadroDialogo.MostrarAdvertencia(
                     "El Nombre es inválido, por favor, ingreselo nuevamente.",
@@ -134,8 +139,8 @@ namespace ItalianPicza
         {
             bool existenCamposVacios = false;
 
-            if (ValidarDatos.EsCadenaVacia(nombreProveedor) || ValidarDatos.EsCadenaVacia(telefono)
-                || ValidarDatos.EsCadenaVacia(descripcion) || rutaArchivo == null)
+            if (ValidarDatos.EsCadenaVacia(nombre) || ValidarDatos.EsCadenaVacia(telefono)
+                || cbTipoProducto.SelectedIndex <= 0 || ValidarDatos.EsCadenaVacia(descripcion) || rutaArchivo == null)
             {
                 existenCamposVacios = true;
                 GestorCuadroDialogo.MostrarAdvertencia(
@@ -144,6 +149,44 @@ namespace ItalianPicza
             }
 
             return existenCamposVacios;
+        }
+
+        private bool verificarEstado()
+        {
+            bool estado = false;
+
+            if (cbTipoProducto.SelectedIndex <= 0)
+            {
+                estado = true;
+            }
+
+            return estado;
+        }
+
+        private void SoloNumeros(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !EsNumero(e.Text);
+        }
+
+        private bool EsNumero(string texto)
+        {
+            return int.TryParse(texto, out _);
+        }
+
+        private void VerificarPegado(object sender, DataObjectPastingEventArgs e)
+        {
+            if (e.DataObject.GetDataPresent(typeof(string)))
+            {
+                string textoPegado = (string)e.DataObject.GetData(typeof(string));
+                if (!EsNumero(textoPegado))
+                {
+                    e.CancelCommand();
+                }
+            }
+            else
+            {
+                e.CancelCommand();
+            }
         }
     }
 }

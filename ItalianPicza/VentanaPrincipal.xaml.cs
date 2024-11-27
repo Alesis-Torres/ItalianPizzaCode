@@ -51,7 +51,7 @@ namespace ItalianPicza
 
         private void irPedidos(object sender, RoutedEventArgs e)
         {
-            //CambiarPagina(new GUI_Pedidos());
+           CambiarPagina(new GUI_Pedidos());
         }
 
         private void irProveedores(object sender, RoutedEventArgs e)

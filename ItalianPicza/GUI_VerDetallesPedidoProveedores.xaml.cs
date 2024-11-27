@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,8 +7,11 @@ namespace ItalianPicza
 {
     public partial class GUI_VerDetallesPedidoProveedores : Page
     {
-        public GUI_VerDetallesPedidoProveedores()
+        private static int pedidoproveedorID;
+        private static pedidoproveedor pedidoproveedorRegistrado;
+        public GUI_VerDetallesPedidoProveedores(int idPedidoProveedor)
         {
+            pedidoproveedorID = idPedidoProveedor;
             InitializeComponent();
 
             List<DetallesPedidoProveedor> detallesPedidoProveedor = new List<DetallesPedidoProveedor>()
@@ -18,12 +22,12 @@ namespace ItalianPicza
                 new DetallesPedidoProveedor() { NombreProducto = "Cebollin", CantidadProducto = "4", UnidaMedidaPedido = "Kilogramo", CostoUnidadPedido = "$ 25.00" },
             };
 
-            lvPedidosProveedores.ItemsSource = detallesPedidoProveedor;
+            lvPedidoProveedor.ItemsSource = detallesPedidoProveedor;
         }
 
-        private void Regresar(object sender, RoutedEventArgs e)
+        private void irRegresar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_PedidosProveedores());
+            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
         }
 
         public class DetallesPedidoProveedor
@@ -32,6 +36,11 @@ namespace ItalianPicza
             public string CantidadProducto { get; set; }
             public string UnidaMedidaPedido { get; set; }
             public string CostoUnidadPedido { get; set; }
+        }
+
+        private void CancelarPedido(object sender, RoutedEventArgs e)
+        {
+            //TODO
         }
     }
 }

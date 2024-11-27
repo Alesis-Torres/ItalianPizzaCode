@@ -108,7 +108,8 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                     empleados = context.empleado.Include("usuario").ToList();
                 }
 
-            }catch(EntityException ex)
+            }
+            catch(EntityException ex)
             {
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }

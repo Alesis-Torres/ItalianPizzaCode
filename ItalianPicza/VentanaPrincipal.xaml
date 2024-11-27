@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ItalianPicza"
         mc:Ignorable="d"
-        Background="#b4b4b4"
+        Background="#262626"
         Title="Italian pizza" Height="720" Width="1280">
     <Grid>
         <StackPanel Margin="0,0,0,0" Width="1280" Height="720">
-            <Frame Name="marcoPaginaActual" Width="1280" Height="720" NavigationUIVisibility="Hidden"/>
+            <Frame Name="marcoPaginaActual" Width="1280" Height="720" NavigationUIVisibility="Hidden" Navigated="marcoPaginaActual_Navigated"/>
         </StackPanel>
         <Grid Name="panelBloqueo" Background="#231B1B" Opacity="0.7" Visibility="Hidden"/>
         <Grid x:Name="panelNavegacion" Visibility="Collapsed" HorizontalAlignment="Left" Height="710" Width="230">

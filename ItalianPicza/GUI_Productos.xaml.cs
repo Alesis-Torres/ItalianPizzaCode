@@ -14,11 +14,12 @@ namespace ItalianPicza
         {
             InitializeComponent();
             CargarProductos();
+            
         }
 
-        private void irInventario(object sender, RoutedEventArgs e)
+        private void irMenuPrincipal(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_Inventario());
+            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
         }
 
         private void VerReceta(object sender, RoutedEventArgs e)
@@ -55,5 +56,9 @@ namespace ItalianPicza
 
         }
 
+        private void AgregarProducto(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

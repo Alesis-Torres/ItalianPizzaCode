@@ -8,136 +8,64 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_Usuarios">
 
-    <Page.Resources>
-        <Style TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="Background" Value="#2B2B2B" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="30" />
-                            </Grid.ColumnDefinitions>
+    <Grid Margin="12,-4,-12,4" Background="#D3D3D3D3">
+        <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
 
-                            <Border 
-                                x:Name="Border"
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="5"
-                                Grid.ColumnSpan="2">
+        <Button Margin="240,10,922,630" Click="irRegresar" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        </Button>
 
-                                <Grid>
-                                    <ContentPresenter
-                                        Margin="4"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"
-                                        Content="{TemplateBinding SelectionBoxItem}" />
-                                </Grid>
-                            </Border>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="484,10,0,0" VerticalAlignment="Top" Width="590" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Revisar Pedidos Proveedores" HorizontalAlignment="Left" Height="44" Margin="570,26,0,0" VerticalAlignment="Top" Width="486" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+        <Image Source="/Imagenes/Stock/deliveryorder.png" Height="70" Width="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487,13,0,0"/>
 
-                            <ToggleButton 
-                                Grid.Column="1"
-                                Name="ToggleButton"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Focusable="False"
-                                IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                                ClickMode="Press">
-                                <Path
-                                    x:Name="Arrow"
-                                    Fill="Gray"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Data="M 0 0 L 4 4 L 8 0 Z"/>
-                            </ToggleButton>
+        <TextBox HorizontalAlignment="Left" Margin="260,109,0,0" TextWrapping="Wrap" Text="🔎 Buscar..." FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" Width="444" Height="36" BorderBrush="Black" Background="White"/>
 
-                            <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Slide">
-                                <Border 
-                                    Background="{TemplateBinding Background}" 
-                                    BorderBrush="Gray" 
-                                    BorderThickness="1">
-                                    <ScrollViewer Margin="4">
-                                        <StackPanel IsItemsHost="True" />
-                                    </ScrollViewer>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
-    <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox HorizontalAlignment="Left" Margin="383,81,0,0" TextWrapping="Wrap" Text="Ingrese el nombre..." FontSize="24" VerticalAlignment="Top" Width="444" Height="36"/>
-        <Label Content="Filtrar por:" Foreground="White" HorizontalAlignment="Left" Margin="881,34,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
-
-        <ComboBox HorizontalAlignment="Left" Margin="879,81,0,0" VerticalAlignment="Top" Width="264" Height="36">
-            <ComboBoxItem Content="--Fecha--" IsSelected="True"/>
-            <ComboBoxItem Content="Enero" />
-            <ComboBoxItem Content="Febrero" />
-            <ComboBoxItem Content="Marzo" />
-            <ComboBoxItem Content="Abril" />
-            <ComboBoxItem Content="Mayo" />
-            <ComboBoxItem Content="Junio" />
-            <ComboBoxItem Content="Julio" />
-            <ComboBoxItem Content="Agosto" />
-            <ComboBoxItem Content="Septiembre" />
-            <ComboBoxItem Content="Octubre" />
-            <ComboBoxItem Content="Noviembre" />
-            <ComboBoxItem Content="Diciembre" />
-        </ComboBox>
-        <Rectangle HorizontalAlignment="Left" Height="446" Margin="383,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="760" Fill="#800000"/>
-
-        <ListView Name="lvPedidosProveedores" Margin="409,158,169,158" Background="#00008B">
+        <ListView Name="lvPedidosProveedores" Margin="258,147,39,133" 
+          BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+          SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=4}">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontFamily" Value="Georgia"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="Background" Value="Transparent"/>
-                    <Setter Property="Foreground" Value="White"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#020250"/>
-                        </Trigger>
-                    </Style.Triggers>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
                 </Style>
             </ListView.ItemContainerStyle>
 
             <ListView.View>
                 <GridView>
 
-                    <GridViewColumn Header="Nombre del Proveedor" Width="220">
+                    <GridViewColumn Header="Nombre" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding NombreProveedor}" 
-                                    Foreground="White" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="20" />
+                                <TextBlock Text="{Binding NombrePedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Fecha de realización" Width="150">
+                    <GridViewColumn Header="Fecha de realización" Width="180">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding FechaRealizacionPedidoProveedor}" 
-                                    Foreground="White" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24" />
+                                <TextBlock Text="{Binding FechaPedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -145,19 +73,44 @@
                     <GridViewColumn Header="Costo total" Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding CostoPedidoProveedor}" 
-                                   Foreground="White" 
+                                <TextBlock Text="{Binding CostoTotalPedidoProveedor}" 
+                                   Foreground="Black" 
                                    HorizontalAlignment="Center" 
                                    VerticalAlignment="Center" 
-                                   FontSize="24" />
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header=" " Width="150">
+                    <GridViewColumn Header="Estado" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Ver detalles" Width="120" Height="40" Background="Goldenrod" Click="VerDetallesPedidoProveedor"/>
+                                <TextBlock Text="{Binding EstadoPedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header=" " Width="230">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button Click="Modificar" Content="✏️ Modificar" Width="200" Height="40" Margin="5,5,5,5" 
+                                        Background="#00008B" Foreground="White" FontSize="16" 
+                                        FontFamily="Georgia" FontWeight="Bold"/>
+                                    <Button Click="VerDetalles" Content="👁️ Ver Detalles" Width="200" Height="40" Margin="5,5,5,5" 
+                                        Background="#6A5ACD" Foreground="White" FontSize="16" 
+                                        FontFamily="Georgia" FontWeight="Bold" Cursor=""/>
+                                </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -166,7 +119,8 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="Agregar pedido" HorizontalAlignment="Left" Margin="654,600,0,0" VerticalAlignment="Top" Height="62" Width="212"  Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="AgregarPedido"/>
+        <Button Content="➕ Agregar pedido" HorizontalAlignment="Left" Margin="775,600,0,0" VerticalAlignment="Top" Height="62" Width="330" Click="AgregarPedido" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontFamily="Georgia" FontWeight="Bold" FontSize="26"/>
+        <Button Content="✔️ Confirmar entrega" HorizontalAlignment="Left" Margin="442,600,0,0" VerticalAlignment="Top" Height="62" Width="330" Click="ConfirmarPedido" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontFamily="Georgia" FontWeight="Bold" FontSize="26"/>
 
     </Grid>
 </Page>
