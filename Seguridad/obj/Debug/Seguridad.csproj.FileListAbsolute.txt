@@ -1,12 +1,12 @@
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\bin\Debug\Seguridad.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\bin\Debug\Seguridad.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.csproj.CoreCompileInputs.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.pdb
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\bin\Debug\Seguridad.dll
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\bin\Debug\Seguridad.pdb
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\obj\Debug\Seguridad.csproj.AssemblyReference.cache
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\obj\Debug\Seguridad.csproj.CoreCompileInputs.cache
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\obj\Debug\Seguridad.dll
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\Seguridad\obj\Debug\Seguridad.pdb
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\bin\Debug\Seguridad.dll
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\bin\Debug\Seguridad.pdb
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.csproj.AssemblyReference.cache
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.csproj.CoreCompileInputs.cache
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.dll
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\Seguridad\obj\Debug\Seguridad.pdb

@@ -40,14 +40,6 @@ namespace ItalianPicza {
     /// </summary>
     public partial class GUI_Inventario : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector, System.Windows.Markup.IStyleConnector {
         
-        
-        #line 103 "..\..\GUI_Inventario.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal System.Windows.Controls.ListView lvProductos;
-        
-        #line default
-        #line hidden
-        
         private bool _contentLoaded;
         
         /// <summary>
@@ -79,12 +71,33 @@ namespace ItalianPicza {
             switch (connectionId)
             {
             case 1:
-            this.lvProductos = ((System.Windows.Controls.ListView)(target));
+            
+            #line 15 "..\..\GUI_Inventario.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.irRegresar);
+            
+            #line default
+            #line hidden
             return;
             case 3:
             
-            #line 190 "..\..\GUI_Inventario.xaml"
-            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.irMenuPrincipal);
+            #line 26 "..\..\GUI_Inventario.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.VerProductos);
+            
+            #line default
+            #line hidden
+            return;
+            case 3:
+            
+            #line 29 "..\..\GUI_Inventario.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.VerRecetas);
+            
+            #line default
+            #line hidden
+            return;
+            case 4:
+            
+            #line 36 "..\..\GUI_Inventario.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.VerInventario);
             
             #line default
             #line hidden

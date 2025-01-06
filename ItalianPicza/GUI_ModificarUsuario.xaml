@@ -11,16 +11,18 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="720" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="White"/>
+        
         <Rectangle HorizontalAlignment="Left" Height="78" Margin="478,20,0,0" VerticalAlignment="Top" Width="541" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
         <Label Content="Modificar usuario" HorizontalAlignment="Left" Height="59" Margin="598,35,0,0" VerticalAlignment="Top" Width="400" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
         <Image HorizontalAlignment="Left" Height="70" Margin="503,24,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+        
         <Rectangle HorizontalAlignment="Left" Height="541" Margin="285,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="954" Fill="White"/>
-        <Label Content="Nombre:" HorizontalAlignment="Left" Height="32" Margin="427,144,0,0" VerticalAlignment="Top" Width="102" FontSize="22" FontFamily="Segoe UI Black"/>
-        <Label Content="Apellido Paterno:" HorizontalAlignment="Left" Height="38" Margin="325,208,0,0" VerticalAlignment="Top" Width="204" FontSize="22" FontFamily="Segoe UI Black"/>
-        <Label Content="Apellido Materno:" HorizontalAlignment="Left" Height="38" Margin="319,274,0,0" VerticalAlignment="Top" Width="210" FontSize="22" FontFamily="Segoe UI Black"/>
-        <Label Content="Nombre de Usuario:" HorizontalAlignment="Left" Height="38" Margin="303,0,0,0" VerticalAlignment="Center" Width="226" FontSize="22" FontFamily="Segoe UI Black"/>
-        <Label Content="Rol:" HorizontalAlignment="Left" Height="38" Margin="477,400,0,0" VerticalAlignment="Top" Width="52" FontSize="22" FontFamily="Segoe UI Black"/>
-        <Label Content="Teléfono:" HorizontalAlignment="Left" Height="38" Margin="416,468,0,0" VerticalAlignment="Top" Width="113" FontSize="22" FontFamily="Segoe UI Black"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Height="32" Margin="423,144,0,0" VerticalAlignment="Top" Width="113" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+        <Label Content="Apellido Paterno:" HorizontalAlignment="Left" Height="38" Margin="325,208,0,0" VerticalAlignment="Top" Width="211" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+        <Label Content="Apellido Materno:" HorizontalAlignment="Left" Height="38" Margin="318,274,0,0" VerticalAlignment="Top" Width="218" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+        <Label Content="Nombre de Usuario:" HorizontalAlignment="Left" Height="38" Margin="294,0,0,0" VerticalAlignment="Center" Width="244" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+        <Label Content="Rol:" HorizontalAlignment="Left" Height="38" Margin="477,400,0,0" VerticalAlignment="Top" Width="52" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
+        <Label Content="Teléfono:" HorizontalAlignment="Left" Height="38" Margin="416,468,0,0" VerticalAlignment="Top" Width="113" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
         <TextBox Name="cuadroTextoNombre" HorizontalAlignment="Left" Height="55" Margin="553,132,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
             <materialDesign:HintAssist.Hint>
                 <TextBlock Text="Nombre" Foreground="Gray" FontSize="18"/>
@@ -41,12 +43,12 @@
                 <TextBlock Text="Nombre usuario" Foreground="Gray" FontSize="18"/>
             </materialDesign:HintAssist.Hint>
         </TextBox>
-        <TextBox Name="cuadroTextoTelefono" HorizontalAlignment="Left" Height="55" Margin="553,457,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+        <TextBox Name="cuadroTextoTelefono" HorizontalAlignment="Left" Height="55" MaxLength="10" Margin="553,457,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
             <materialDesign:HintAssist.Hint>
                 <TextBlock Text="Telefono" Foreground="Gray" FontSize="18"/>
             </materialDesign:HintAssist.Hint>
         </TextBox>
-        <TextBox Name="cuadroTextoCorreo" HorizontalAlignment="Left" Height="54" Margin="553,526,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
+        <TextBox Name="cuadroTextoCorreo" HorizontalAlignment="Left" Height="54" Margin="553,534,0,0" TextWrapping="Wrap" FontSize="20" VerticalAlignment="Top" Width="284" Style="{StaticResource MaterialDesignOutlinedTextBox}" Padding="5,0,5,0">
             <materialDesign:HintAssist.Hint>
                 <TextBlock Text="Email" Foreground="Gray" FontSize="18"/>
             </materialDesign:HintAssist.Hint>
@@ -124,9 +126,9 @@
             </Button.Template>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="44" Margin="303,597,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="419" IsEnabled="False">
-            <Run Text="Todos los campos presente son obligatorios" Foreground="Black" FontFamily="Segoe UI Black" FontSize="18"/>
+            <Run Text="Todos los campos presentes son obligatorios" Foreground="Black" FontFamily="Segoe UI Black" FontSize="18"/>
             <Run Text="*" Foreground="Red" FontSize="18"/>
         </TextBlock>
-        <Label Content="Email:" HorizontalAlignment="Left" Height="38" Margin="451,534,0,0" VerticalAlignment="Top" Width="87" FontSize="22" FontFamily="Segoe UI Black"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Height="38" Margin="451,542,0,0" VerticalAlignment="Top" Width="87" FontSize="22" FontFamily="Georgia" FontWeight="Bold"/>
     </Grid>
 </Page>

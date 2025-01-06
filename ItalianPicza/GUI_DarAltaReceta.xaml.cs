@@ -111,8 +111,9 @@ namespace ItalianPicza
                 if (listViewItem != null)
                 {
                     TextBox cuadroTextoCantidad = FindChild<TextBox>(listViewItem, "cuadroTextoCantidad");
+                    string cantidadTexto = cuadroTextoCantidad.Text;
 
-                    if (cuadroTextoCantidad != null)
+                    if (!string.IsNullOrWhiteSpace(cantidadTexto))
                     {
                         var ingrediente = listViewItem.DataContext as ingrediente;
 
@@ -121,8 +122,6 @@ namespace ItalianPicza
                             string nombreIngrediente = ingrediente.nombre;
 
                             int idInsumo = ingrediente.idIngrediente;
-
-                            string cantidadTexto = cuadroTextoCantidad.Text;
 
                                 
                                 bool ingredienteYaExiste = ingredientesReceta.Any(i => i.nombre == nombreIngrediente);
@@ -136,7 +135,7 @@ namespace ItalianPicza
                                     ingrediente nuevoIngrediente = new ingrediente
                                     {
                                         nombre = nombreIngrediente,
-                                        cantidad = cantidadTexto,
+                                        cantidadActual = cantidadTexto,
                                         idIngrediente = idInsumo
                                     };
 
@@ -146,6 +145,10 @@ namespace ItalianPicza
                                     lvReceta.ItemsSource = ingredientesReceta;
                                 }
                         }
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Por favor, ingrese una cantidad del ingrediente");
                     }
                 }
             }

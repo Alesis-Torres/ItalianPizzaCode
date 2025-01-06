@@ -8,7 +8,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_InicioSesion">
-
     <Grid Background="#FF993939">
         <Label Content="Italian pizza" HorizontalAlignment="Left" Margin="604,32,0,0" VerticalAlignment="Top" Height="104" Width="584" FontFamily="Cooper Black" FontSize="90" Foreground="#FFFFBC06" FontWeight="Bold"/>
         <TextBox Name="cuadroTextoNombreUsuario" HorizontalAlignment="Left" Margin="611,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="577" Height="40" FontSize="28" FontFamily="Georgia" Background="White"/>

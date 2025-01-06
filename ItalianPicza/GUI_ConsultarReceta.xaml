@@ -10,9 +10,27 @@
 
     <Grid>
         <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <Rectangle HorizontalAlignment="Left" Height="720" Margin="895,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="375" Fill="Maroon"/>
+        <Rectangle HorizontalAlignment="Left" Height="720" Margin="895,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="375" Fill="#2B2B2B"/>
 
-        <ListView Name="lvIngredientes" Margin="930,97,27,404" Background="#00008B">
+        <ListView Name="lvIngredientes" Margin="930,61,27,440" Background="#00008B">
+
+            <ListView.Resources>
+                <Style TargetType="GridViewColumnHeader">
+                    <Setter Property="Background" Value="Gray" />
+                    <!-- Color de fondo gris -->
+                    <Setter Property="Foreground" Value="White" />
+                    <!-- Color del texto blanco -->
+                    <Setter Property="FontSize" Value="20" />
+                    <!-- Tamaño de fuente más grande -->
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <!-- Texto en negrita -->
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <!-- Centrar texto -->
+                    <Setter Property="Padding" Value="10,5" />
+                    <!-- Espaciado en la cabecera -->
+                </Style>
+            </ListView.Resources>
+
             <!-- Definir el estilo para los ListViewItems -->
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
@@ -32,16 +50,8 @@
 
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header=" " Width="100">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
                     <!-- Name Column -->
-                    <GridViewColumn Header="Nombre" Width="120">
+                    <GridViewColumn Header="Nombre" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding nombre}" 
@@ -54,7 +64,7 @@
                     </GridViewColumn>
 
                     <!-- Status Column -->
-                    <GridViewColumn Header="Cantidad" Width="100">
+                    <GridViewColumn Header="Cantidad" Width="130">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding cantidad}" 
@@ -69,14 +79,36 @@
             </ListView.View>
         </ListView>
 
-        <Image HorizontalAlignment="Left" Height="296" Margin="373,168,0,0" VerticalAlignment="Top" Width="425" Source="/Imagenes/Logos/image 1.png" />
-        <Label Name="lbNombreProducto"  Content="Label" Margin="425,61,0,0" VerticalAlignment="Top" Width="318" Height="66" Foreground="White" FontSize="36" HorizontalAlignment="Left" HorizontalContentAlignment="Center" 
+        <Image Name="imagenProducto" HorizontalAlignment="Left" Height="296" Margin="373,168,0,0" VerticalAlignment="Top" Width="425" Source="/Imagenes/Logos/image 1.png" />
+        <Label Name="lbNombreProducto"  Content="Label" Margin="353,61,0,0" VerticalAlignment="Top" Width="462" Height="66" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4" HorizontalAlignment="Left" HorizontalContentAlignment="Center" 
             VerticalContentAlignment="Center"/>
-        <Button Content="Regresar" Click="Regresar" HorizontalAlignment="Left" Margin="465,567,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Red" Foreground="#FFFAFAFA"/>
-        <Button Content="Modificar receta" Click="ModificarReceta" HorizontalAlignment="Left" Margin="963,586,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="#00008B" Foreground="#FFFAFAFA"/>
-        <Label Content="Ingredientes" HorizontalAlignment="Left" Margin="963,49,0,0" VerticalAlignment="Top" Width="271" Height="43" Foreground="White" FontSize="24"/>
-        <Label Content="Instrucciones" HorizontalAlignment="Left" Margin="963,0,0,0" VerticalAlignment="Center" Width="271" Height="44" Foreground="White" FontSize="24"/>
-        <TextBlock Name="tbInstrucciones" HorizontalAlignment="Left" Margin="942,387,0,0" TextWrapping="Wrap" Text="Instrucciones" VerticalAlignment="Top" Height="163" Width="281" FontSize="18"/>
+        <Button HorizontalAlignment="Left" Height="63" Margin="500,567,0,0" VerticalAlignment="Top" Width="180" Background="#FF0000" Click="Regresar">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                CornerRadius="20"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="0"
+                Padding="10" Margin="-64,0,0,0">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Regresar" 
+                        VerticalAlignment="Center"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Content="✏ Modificar" Margin="979,571,89,86" Height="50"
+    Background="#00008B" 
+    Foreground="White" FontSize="16" 
+    FontFamily="Georgia" FontWeight="Bold"
+    Click="ModificarReceta"/>
+        <Label Content="Ingredientes" HorizontalAlignment="Left" Margin="999,0,0,0" VerticalAlignment="Top" Width="205" Height="47" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4"/>
+        <Label Content="Instrucciones" HorizontalAlignment="Left" Margin="979,289,0,0" VerticalAlignment="Top" Width="225" Height="44" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4"/>
+        <TextBlock Name="tbInstrucciones" HorizontalAlignment="Left" Margin="942,338,0,0" TextWrapping="Wrap" Text="Instrucciones" VerticalAlignment="Top" Height="212" Width="281" FontSize="18" Foreground="White"/>
         <Button Name="btnAgregarReceta" Content="Agregar receta" Click="AgregarReceta" Visibility="Collapsed" HorizontalAlignment="Left" Margin="963,586,0,0" VerticalAlignment="Top" Height="57" Width="239" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
 
     </Grid>

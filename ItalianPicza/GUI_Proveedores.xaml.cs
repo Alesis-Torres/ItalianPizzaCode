@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using ItalianPicza.DatabaseModel.DAO_s;
+using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,69 +10,50 @@ namespace ItalianPicza
 {
     public partial class GUI_Proveedores : Page
     {
+        private List<proveedor> proveedores;
         public GUI_Proveedores()
         {
             InitializeComponent();
-
-            List<Proveedor> proveedores = new List<Proveedor>()
-            {
-                new Proveedor() { NombreProveedor = "Molinos Italia", DescripcionProveedor = "Empresa especializada en la producción de harinas de alta calidad para pizzerías. Ofrecen una variedad de mezclas de harina para diferentes estilos de pizza, desde la napolitana clásica hasta opciones sin gluten.", ImagenProveedor = "/Imagenes/Logos/image 9.png" },
-                new Proveedor() { NombreProveedor = "Lacteos Frescos S.A.", DescripcionProveedor = "Proveedor de productos lácteos frescos, incluyendo mozzarella de alta calidad, queso parmesano y ricotta. Trabajan directamente con granjas locales para garantizar la frescura y calidad de sus productos.", ImagenProveedor = "/Imagenes/Logos/image 9.png" },
-                new Proveedor() { NombreProveedor = "Huerta Organica", DescripcionProveedor = "Cooperativa de agricultores que suministra verduras y hierbas orgánicas frescas. Ofrecen una amplia gama de ingredientes para pizzas, como tomates, albahaca, rúcula y pimientos, todos cultivados sin pesticidas.", ImagenProveedor = "/Imagenes/Logos/image 9.png" },
-                new Proveedor() { NombreProveedor = "Carnes Selectas", DescripcionProveedor = "Proveedor especializado en carnes curadas y embutidos de alta calidad. Ofrecen una selección de pepperoni, salami, jamón y otros productos cárnicos ideales para pizzas gourmet.", ImagenProveedor = "/Imagenes/Logos/image 9.png" },
-            };
-
-            lvProveedores.ItemsSource = proveedores;
-
-            //CargarProveedores();
+            CargarProveedores();
         }
-        /*
         private void CargarProveedores()
         {
-            ProveedoresDAO proveedoresDAO = new ProveedoresDAO();
+            ProveedoresDAO proveedoresDAO= new ProveedoresDAO();
 
             try
             {
-                List<Proveedor> proveedores = proveedoresDAO.ObtenerListaProveedores();
-
+                proveedores = proveedoresDAO.ObtenerProveedores();
                 lvProveedores.ItemsSource = proveedores;
+
             }
-            catch (EntityException ex)
+            catch (EntityException)
             {
-                MessageBox.Show("Error al cargar la lista de proveedores: " + ex.Message);
+                GestorCuadroDialogo.MostrarError
+                           ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                           "Sin conexión a la base de datos");
             }
+
         }
-        */
         private void AgregarProveedor(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_AgregarProveedores());
         }
 
-        public class Proveedor
+        private void Modificar(object sender, RoutedEventArgs e)
         {
-            public string NombreProveedor { get; set; }
-            public string DescripcionProveedor { get; set; }
-            public string ImagenProveedor { get; set; }
+
+            Button botonModificar = sender as Button;
+            proveedor proveedorSeleccionado = botonModificar.DataContext as proveedor;
+
+            if (proveedorSeleccionado != null)
+            {
+                VentanaPrincipal.CambiarPagina(new GUI_ModificarProveedor((int)proveedorSeleccionado.idProveedor));
+            }
         }
 
-        private void LvProveedores_Loaded(object sender, RoutedEventArgs e)
+        private void irRegresar(object sender, RoutedEventArgs e)
         {
-            AjustarAnchoColumnas();
-        }
-
-        private void LvProveedores_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            AjustarAnchoColumnas();
-        }
-
-        private void AjustarAnchoColumnas()
-        {
-            double totalWidth = lvProveedores.ActualWidth - 35; // Resta para el borde/scrollbar
-
-            colImagen.Width = totalWidth * 0.15;
-            colNombre.Width = totalWidth * 0.25;
-            colDescripcion.Width = totalWidth * 0.40;
-            colModificar.Width = totalWidth * 0.20;
+            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
         }
 
     }

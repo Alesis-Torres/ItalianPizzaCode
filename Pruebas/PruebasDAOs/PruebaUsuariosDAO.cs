@@ -60,7 +60,8 @@ namespace Pruebas.PruebasDAOs
         [TestMethod]
         public void PruebaRegistrarUsuarioValido()
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
             {
                 int resultado = usuarioDAO.DarDeAltaNuevoUsuario(empleadoParaRegistrar, usuarioParaRegistrar);
                 Assert.AreEqual(1, resultado);
@@ -103,9 +104,11 @@ namespace Pruebas.PruebasDAOs
         [TestMethod]
         public void PruebaModificarUsuario()
         {
-            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.ReadUncommitted }))
+            using (var scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions 
+            { IsolationLevel = IsolationLevel.ReadUncommitted }))
             {
-                int resultado = usuarioDAO.ModificarUsuario(usuarioRegistrado.idUsuario, empleadoParaModificar, usuarioParaModificar);
+                int resultado = usuarioDAO.ModificarUsuario(usuarioRegistrado.idUsuario, 
+                    empleadoParaModificar, usuarioParaModificar);
                 Assert.IsTrue(resultado > 0);
             }
         }

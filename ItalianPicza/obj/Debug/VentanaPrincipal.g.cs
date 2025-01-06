@@ -137,11 +137,21 @@ namespace ItalianPicza {
             
             #line 44 "..\..\VentanaPrincipal.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.irProveedores);
+            #line 38 "..\..\VentanaPrincipal.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.irFinanzas);
             
             #line default
             #line hidden
             return;
             case 8:
+            
+            #line 44 "..\..\VentanaPrincipal.xaml"
+            ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.irProveedores);
+            
+            #line default
+            #line hidden
+            return;
+            case 9:
             
             #line 50 "..\..\VentanaPrincipal.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.CerrarSesion);

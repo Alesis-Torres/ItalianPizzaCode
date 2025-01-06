@@ -36,22 +36,22 @@ namespace ItalianPicza
 
                     try
                     {
-                        //usuario usuarioVerificado = usuariosDAO.verificarExistenciaDeUsuario(usuario);
-                        //if(usuarioVerificado != null)
-                        //{
+                        usuario usuarioVerificado = usuariosDAO.verificarExistenciaDeUsuario(usuario);
+                        if(usuarioVerificado != null)
+                        {
 
-                        VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
-                        ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
+                            VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
+                            ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
 
-                        VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+                            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
 
-                        //}
-                        //else
-                        //{
-                        // GestorCuadroDialogo.MostrarAdvertencia(
-                        //"El usuario ingresado no existe, por favor, verifique la información ingresada", 
-                        //"Usuario inexistente");
-                        //}
+                        }
+                        else
+                        {
+                            GestorCuadroDialogo.MostrarAdvertencia(
+                            "El usuario ingresado no existe, por favor, verifique la información ingresada", 
+                            "Usuario inexistente");
+                        }
 
                     }
                     catch (EntityException)

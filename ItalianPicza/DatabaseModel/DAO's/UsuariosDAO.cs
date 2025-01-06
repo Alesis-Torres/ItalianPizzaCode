@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 
 namespace ItalianPicza.DatabaseModel.DAO_s
 {
@@ -33,32 +34,40 @@ namespace ItalianPicza.DatabaseModel.DAO_s
 
         public usuario verificarExistenciaDeUsuario(usuario empleadoCuenta)
         {
-            usuario empleadoVerificado = null;
+            usuario usuarioVerificado = new usuario();
+            empleado empleadoEncontrado =  new empleado();
 
             try
             {
                 using (var context = new italianpizzaEntities())
                 {
                     // Verificar si existe el usuario con el nombreUsuario y password especificados
-                    empleadoVerificado = context.usuario
+                    usuarioVerificado = context.usuario
                         .FirstOrDefault(u => u.nombreUsuario == empleadoCuenta.nombreUsuario
                                           && u.password == empleadoCuenta.password);
 
-                    /*if (usuarioEncontrado != null)
+                    if (usuarioVerificado != null)
                     {
                         // Si el usuario existe, buscar el empleado relacionado
-                        empleadoVerificado = context.empleado
-                            .FirstOrDefault(e => e.idUsuario == usuarioEncontrado.idUsuario);
-                    }*/
+                        empleadoEncontrado = context.empleado
+                            .FirstOrDefault(e => e.idUsuario == usuarioVerificado.idUsuario);
+                        VentanaPrincipal.empleado = empleadoEncontrado.idEmpleado;
+                        Console.WriteLine(VentanaPrincipal.empleado);  
+                    }
                 }
 
             }
+            catch (TargetException te) 
+            {
+                throw new TargetException("Error al colocar un target", te);
+            }
+
             catch (InvalidOperationException ex)
             {
                 throw new InvalidOperationException("Operación no válida al acceder a la base de datos.", ex);
             }
 
-            return empleadoVerificado;
+            return usuarioVerificado;
         }
 
         public int DarDeAltaNuevoUsuario(empleado nuevoEmpleado, usuario nuevoUsuario)
@@ -99,7 +108,8 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                     empleados = context.empleado.Include("usuario").ToList();
                 }
 
-            }catch(EntityException ex)
+            }
+            catch(EntityException ex)
             {
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }

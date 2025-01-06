@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using ItalianPicza.DatabaseModel.DAO_s;
+using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -6,35 +10,71 @@ namespace ItalianPicza
 {
     public partial class GUI_PedidosProveedores : Page
     {
+
+        //private List<pedidoproveedor> pedidosproveedores;
         public GUI_PedidosProveedores()
         {
             InitializeComponent();
-            List<PedidoProveedor> pedidosProveedor = new List<PedidoProveedor>()
+            CargarPedidosProveedores();
+        }
+
+        private void Modificar(object sender, RoutedEventArgs e)
+        {
+
+            Button botonModificarProveedor = sender as Button;
+            pedidoproveedor pedidoproveedorSeleccionado = botonModificarProveedor.DataContext as pedidoproveedor;
+
+            if (pedidoproveedorSeleccionado != null)
             {
-                new PedidoProveedor() { NombreProveedor = "Molinos Italia", FechaRealizacionPedidoProveedor = "07/05/2023" , CostoPedidoProveedor = "$ 264.21" },
-                new PedidoProveedor() { NombreProveedor = "Lacteos Frescos S.A.", FechaRealizacionPedidoProveedor = "15/07/2023", CostoPedidoProveedor = "$ 121.10" },
-                new PedidoProveedor() { NombreProveedor = "Huerta Organica", FechaRealizacionPedidoProveedor = "02/07/2023", CostoPedidoProveedor = "$ 824.04" },
-                new PedidoProveedor() { NombreProveedor = "Carnes Selectas", FechaRealizacionPedidoProveedor = "24/11/2023", CostoPedidoProveedor = "$ 454.21" },
-            };
-
-            lvPedidosProveedores.ItemsSource = pedidosProveedor;
+                VentanaPrincipal.CambiarPagina(new GUI_ModificarUsuario((int)pedidoproveedorSeleccionado.idPedidoProveedor));
+            }
         }
 
-        private void VerDetallesPedidoProveedor(object sender, RoutedEventArgs e)
+        private void VerDetalles(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_VerDetallesPedidoProveedores());
+
+            Button botonVerDetallesProveedor = sender as Button;
+            pedidoproveedor pedidoproveedorSeleccionado = botonVerDetallesProveedor.DataContext as pedidoproveedor;
+
+            if (pedidoproveedorSeleccionado != null)
+            {
+                VentanaPrincipal.CambiarPagina(new GUI_VerDetallesPedidoProveedores((int)pedidoproveedorSeleccionado.idPedidoProveedor));
+            }
         }
 
-        public class PedidoProveedor
+        private void CargarPedidosProveedores()
         {
-            public string NombreProveedor { get; set; }
-            public string FechaRealizacionPedidoProveedor { get; set; }
-            public string CostoPedidoProveedor { get; set; }
+            PedidoProveedorDAO pedidosproveedoresDAO = new PedidoProveedorDAO();
+
+           List<pedidoproveedor> pedidosproveedores = new List<pedidoproveedor>();
+
+            try
+            {
+                pedidosproveedores = pedidosproveedoresDAO.ObtenerPedidosProveedores();
+                lvPedidosProveedores.ItemsSource = pedidosproveedores;
+
+            }
+            catch (EntityException)
+            {
+                GestorCuadroDialogo.MostrarError
+                           ("No hay conexión con la base de datos, por favor, intentelo más tarde",
+                           "Sin conexión a la base de datos");
+            }
         }
 
         private void AgregarPedido(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_AgregarPedidoProveedor());
+        }
+
+        private void ConfirmarPedido(object sender, RoutedEventArgs e)
+        {
+            //TO DO
+        }
+
+        private void irRegresar(object sender, RoutedEventArgs e)
+        {
+            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
         }
     }
 }

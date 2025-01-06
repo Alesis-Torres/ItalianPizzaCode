@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
 using System.Data;
+using System.Data.Entity.Validation;
 
 
 namespace ItalianPicza.DatabaseModel.DAO_s
@@ -52,16 +53,19 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                                 where ri.idReceta == idReceta
                                 select new
                                 {
-                                    Nombre = ing.nombre,   
-                                    Cantidad = ri.cantidad 
+                                    IDIngrediente = ing.idIngrediente,
+                                    Nombre = ing.nombre,
+                                    Cantidad = ri.cantidad,
+                                    Imagen = ing.imagen 
                                 };
 
                     foreach (var item in query)
                     {
                         ingredientes.Add(new ingrediente
                         {
+                            idIngrediente = item.IDIngrediente,
                             nombre = item.Nombre,
-                            cantidad = item.Cantidad
+                            cantidadRegistrada = item.Cantidad
                         });
                     }
                 }
@@ -73,8 +77,6 @@ namespace ItalianPicza.DatabaseModel.DAO_s
 
             return ingredientes;
         }
-
-
 
         public int DarDeAltaReceta(string instrucciones, List<ingrediente> ingredientesReceta, producto producto)
         {
@@ -105,7 +107,7 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                         {
                             idReceta = idRecetaCreada,   
                             idIngrediente = ingrediente.idIngrediente,  
-                            cantidad = ingrediente.cantidad 
+                            cantidad = ingrediente.cantidadRegistrada 
                         };
 
                         context.recetaingrediente.Add(recetaIngrediente);
@@ -118,6 +120,48 @@ namespace ItalianPicza.DatabaseModel.DAO_s
             catch (Exception ex)
             {
                 throw new Exception("Error al registrar la receta en la base de datos.", ex);
+            }
+        }
+
+        public int ModificarReceta(int idReceta, string instrucciones, List<ingrediente> ingredientesReceta)
+        {
+            int resultado = 0;
+
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    receta recetaExistente = context.receta.FirstOrDefault(r => r.idReceta == idReceta);
+                    if (recetaExistente == null)
+                    {
+                        throw new Exception($"La receta con id {idReceta} no existe en la base de datos.");
+                    }
+
+                    recetaExistente.instrucciones = instrucciones;
+
+                    var ingredientesExistentes = context.recetaingrediente.Where(ri => ri.idReceta == idReceta).ToList();
+                    context.recetaingrediente.RemoveRange(ingredientesExistentes);
+
+                    foreach (var ingrediente in ingredientesReceta)
+                    {
+
+                        recetaingrediente nuevoIngrediente = new recetaingrediente
+                        {
+                            idReceta = idReceta,
+                            idIngrediente = ingrediente.idIngrediente,
+                            cantidad = ingrediente.cantidad
+                        };
+                        context.recetaingrediente.Add(nuevoIngrediente);
+                    }
+
+                    resultado = context.SaveChanges();
+                }
+
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar la receta y sus ingredientes.", ex);
             }
         }
 

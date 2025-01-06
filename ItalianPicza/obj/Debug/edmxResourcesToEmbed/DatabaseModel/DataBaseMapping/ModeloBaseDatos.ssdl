@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="italianpizzaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="italianpizzaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="baja">
     <Key>
       <PropertyRef Name="idBaja" />
@@ -59,8 +59,12 @@
     </Key>
     <Property Name="idEntradaExtraordinaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="ingrediente">
     <Key>
@@ -68,12 +72,14 @@
     </Key>
     <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="caducidad" Type="varchar" MaxLength="10" />
-    <Property Name="cantidad" Type="varchar" MaxLength="5" />
+    <Property Name="cantidadActual" Type="varchar" MaxLength="5" />
+    <Property Name="cantidadRegistrada" Type="varchar" MaxLength="5" />
     <Property Name="codigo" Type="int" />
     <Property Name="lote" Type="varchar" MaxLength="10" />
     <Property Name="medida" Type="varchar" MaxLength="10" />
-    <Property Name="nombre" Type="varchar" MaxLength="20" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="observacion" Type="varchar" MaxLength="250" />
+    <Property Name="nombre" Type="varchar" MaxLength="30" />
+    <Property Name="imagen" Type="varbinary(max)" />
     <Property Name="idProveedor" Type="int" />
     <Property Name="idInventario" Type="int" />
   </EntityType>
@@ -137,6 +143,7 @@
     <Property Name="idPedidoProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fecha" Type="varchar" MaxLength="10" />
     <Property Name="monto" Type="varbinary" MaxLength="1" />
+    <Property Name="estado" Type="varchar" MaxLength="20" />
     <Property Name="idProveedor" Type="int" />
     <Property Name="idEmpleado" Type="int" />
   </EntityType>
@@ -164,13 +171,15 @@
     </Key>
     <Property Name="idProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="caducidad" Type="varchar" MaxLength="10" />
-    <Property Name="cantidad" Type="int" />
+    <Property Name="cantidadActual" Type="int" />
+    <Property Name="cantidadRegistrada" Type="int" />
     <Property Name="codigo" Type="int" />
     <Property Name="lote" Type="varchar" MaxLength="10" />
     <Property Name="medida" Type="varchar" MaxLength="10" />
-    <Property Name="nombre" Type="varchar" MaxLength="20" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
     <Property Name="tipo" Type="varchar" MaxLength="20" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="observacion" Type="varchar" MaxLength="250" />
+    <Property Name="imagen" Type="varbinary(max)" />
     <Property Name="idProveedor" Type="int" />
     <Property Name="idInventario" Type="int" />
     <Property Name="idReceta" Type="int" />
@@ -184,8 +193,9 @@
     <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="descripcion" Type="varchar" MaxLength="200" />
     <Property Name="nombre" Type="varchar" MaxLength="30" />
-    <Property Name="telefono" Type="int" />
+    <Property Name="telefono" Type="varchar" MaxLength="10" />
     <Property Name="imagen" Type="varbinary(max)" />
+    <Property Name="idTipoProducto" Type="int" />
   </EntityType>
   <EntityType Name="receta">
     <Key>
@@ -218,8 +228,12 @@
     </Key>
     <Property Name="idSalidaExtraordinaria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
   </EntityType>
   <EntityType Name="tipoproducto">
     <Key>
@@ -233,8 +247,8 @@
       <PropertyRef Name="idUsuario" />
     </Key>
     <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombreUsuario" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="password" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="nombreUsuario" Type="nvarchar" MaxLength="30" />
+    <Property Name="password" Type="nvarchar" MaxLength="10" />
   </EntityType>
   <Association Name="FK_baja_cortecaja">
     <End Role="cortecaja" Type="Self.cortecaja" Multiplicity="0..1">
@@ -305,7 +319,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_empleado_usuario">
-    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="usuario">
@@ -630,6 +646,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_proveedor_tipoproducto">
+    <End Role="tipoproducto" Type="Self.tipoproducto" Multiplicity="0..1" />
+    <End Role="proveedor" Type="Self.proveedor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipoproducto">
+        <PropertyRef Name="idTipoProducto" />
+      </Principal>
+      <Dependent Role="proveedor">
+        <PropertyRef Name="idTipoProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_recetaingrediente_ingrediente">
     <End Role="ingrediente" Type="Self.ingrediente" Multiplicity="0..1">
       <OnDelete Action="Cascade" />
@@ -827,6 +855,10 @@
     <AssociationSet Name="FK_producto_tipoproducto" Association="Self.FK_producto_tipoproducto">
       <End Role="tipoproducto" EntitySet="tipoproducto" />
       <End Role="producto" EntitySet="producto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_proveedor_tipoproducto" Association="Self.FK_proveedor_tipoproducto">
+      <End Role="tipoproducto" EntitySet="tipoproducto" />
+      <End Role="proveedor" EntitySet="proveedor" />
     </AssociationSet>
     <AssociationSet Name="FK_recetaingrediente_ingrediente" Association="Self.FK_recetaingrediente_ingrediente">
       <End Role="ingrediente" EntitySet="ingrediente" />
