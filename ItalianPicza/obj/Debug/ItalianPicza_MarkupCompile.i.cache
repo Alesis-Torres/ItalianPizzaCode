@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\
 ItalianPicza
 none
 false
 DEBUG;TRACE
-C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\App.xaml
+C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\App.xaml
 91605319377
 2129895837
 47-736511555
-23-232563624
+23-1587391552
 GUI_DarAltaReceta.xaml;GUI_ConsultarReceta.xaml;GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_MenuPrincipal.xaml;GUI_ModificarUsuario.xaml;GUI_Usuarios.xaml;VentanaPrincipal.xaml;
 
-True
+False
 

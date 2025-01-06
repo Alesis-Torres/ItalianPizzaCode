@@ -45,15 +45,19 @@ namespace ItalianPicza
         {
             CambiarPagina(new GUI_Inventario());
         }
-
-        /*private void irPedidos(object sender, RoutedEventArgs e)
+        private void irPedidos(object sender, RoutedEventArgs e)
         {
-            CambiarPagina(new GUI_Pedidos());
-        }*
+            //CambiarPagina(new GUI_Pedidos());
+        }
 
-        /*private void irProveedores(object sender, RoutedEventArgs e)
+        private void irProveedores(object sender, RoutedEventArgs e)
         {
-            CambiarPagina(new GUI_Proveedores());
-        }*/
+            //CambiarPagina(new GUI_Proveedores());
+        }
+
+        private void marcoPaginaActual_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+        }
     }
 }

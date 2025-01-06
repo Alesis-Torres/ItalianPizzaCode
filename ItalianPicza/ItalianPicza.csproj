@@ -276,7 +276,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\pizza.png" />
+    <Resource Include="Imagenes\old\pizza.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Seguridad\Seguridad.csproj">
@@ -285,31 +285,25 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Indicadores\logout 2.png" />
+    <Resource Include="Imagenes\old\empleados 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\empleados 1.png" />
+    <Resource Include="Imagenes\old\libro-de-cocina 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\libro-de-cocina 1.png" />
+    <Resource Include="Imagenes\old\order-now 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\order-now 1.png" />
+    <Resource Include="Imagenes\old\budget 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\budget 1.png" />
+    <Resource Include="Imagenes\old\delivery-man 1.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\delivery-man 1.png" />
+    <Resource Include="Imagenes\Stock\pizza_pepperoni.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\Logos\image 1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Imagenes\Logos\image 9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Imagenes\Indicadores\Group 1.png" />
+    <Resource Include="Imagenes\Uses\unknown_user.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.Context.tt">
@@ -322,15 +316,21 @@
       <DependentUpon>ModeloBaseDatos.edmx</DependentUpon>
       <LastGenOutput>ModeloBaseDatos.cs</LastGenOutput>
     </Content>
-    <Resource Include="Imagenes\Indicadores\pizza_background 1.png" />
-    <Resource Include="Imagenes\Indicadores\logout 6.png" />
-    <Resource Include="Imagenes\Indicadores\fondo.png" />
-    <Resource Include="Imagenes\Logos\deliverywoman 1.png" />
-    <Resource Include="Imagenes\Logos\money 1.png" />
-    <Resource Include="Imagenes\Logos\order 1.png" />
-    <Resource Include="Imagenes\Logos\inventory 1.png" />
-    <Resource Include="Imagenes\Logos\users 3.png" />
-    <Resource Include="Imagenes\Logos\logoPizza.png" />
+    <Resource Include="Imagenes\Iconos\logout.png" />
+    <Resource Include="Imagenes\Uses\return.png" />
+    <Resource Include="Imagenes\Uses\background.png" />
+    <Resource Include="Imagenes\Stock\pizza_background.png" />
+    <Resource Include="Imagenes\Iconos\users.png" />
+    <Resource Include="Imagenes\Iconos\order.png" />
+    <Resource Include="Imagenes\Iconos\money.png" />
+    <Resource Include="Imagenes\Iconos\inventory.png" />
+    <Resource Include="Imagenes\Iconos\deliverywoman.png" />
+    <Resource Include="Imagenes\old\deliverywoman 1.png" />
+    <Resource Include="Imagenes\old\money 1.png" />
+    <Resource Include="Imagenes\old\order 1.png" />
+    <Resource Include="Imagenes\old\inventory 1.png" />
+    <Resource Include="Imagenes\old\users 3.png" />
+    <Resource Include="Imagenes\old\logoPizza.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

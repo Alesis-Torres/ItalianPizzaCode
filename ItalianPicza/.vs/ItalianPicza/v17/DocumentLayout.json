@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\gui_iniciosesion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_iniciosesion.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\gui_menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_menuprincipal.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\gui_modificarusuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_modificarusuario.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,13 +35,46 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "GUI_InicioSesion.xaml",
-              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml",
-              "RelativeDocumentMoniker": "GUI_InicioSesion.xaml",
-              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_InicioSesion.xaml",
-              "RelativeToolTip": "GUI_InicioSesion.xaml",
+              "Title": "GUI_MenuPrincipal.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml",
+              "RelativeDocumentMoniker": "GUI_MenuPrincipal.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_MenuPrincipal.xaml",
+              "RelativeToolTip": "GUI_MenuPrincipal.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-11T22:31:09.974Z",
+              "WhenOpened": "2024-11-18T22:13:15.011Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "32aa9dab-551f-4840-a48a-d0ac3bb9f447",
+        "Display": 0,
+        "X": 126,
+        "Y": 256,
+        "Width": 1328,
+        "Height": 694,
+        "WindowState": 2
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUI_ModificarUsuario.xaml",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_ModificarUsuario.xaml",
+              "RelativeDocumentMoniker": "GUI_ModificarUsuario.xaml",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_ModificarUsuario.xaml",
+              "RelativeToolTip": "GUI_ModificarUsuario.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-18T22:21:58.386Z",
               "EditorCaption": ""
             }
           ]
