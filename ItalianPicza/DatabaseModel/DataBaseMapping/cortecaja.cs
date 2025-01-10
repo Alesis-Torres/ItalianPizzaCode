@@ -17,7 +17,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public cortecaja()
         {
             this.baja = new HashSet<baja>();
-            this.entradaextraordinaria = new HashSet<entradaextraordinaria>();
+            this.entradaextraordinaria = new HashSet<salidaextraordinaria>();
             this.pedido = new HashSet<pedido>();
             this.salidaextraordinaria = new HashSet<salidaextraordinaria>();
         }
@@ -29,7 +29,7 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
     
         public virtual ICollection<baja> baja { get; set; }
         public virtual empleado empleado { get; set; }
-        public virtual ICollection<entradaextraordinaria> entradaextraordinaria { get; set; }
+        public virtual ICollection<salidaextraordinaria> entradaextraordinaria { get; set; }
         public virtual ICollection<pedido> pedido { get; set; }
         public virtual ICollection<salidaextraordinaria> salidaextraordinaria { get; set; }
     }

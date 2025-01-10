@@ -1,38 +1,48 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
-    
     public partial class GUI_Inventario : Page
     {
         public GUI_Inventario()
         {
             InitializeComponent();
-
-            List<Productos> productos = new List<Productos>
-            {
-                new Productos { NombreProducto = "Pizza con piña", TipoProducto = "Tipo A", EstatusUsuario = "Disponible", ImagenProducto = "/Imagenes/Logos/image 1.png" },
-                new Productos { NombreProducto = "Pizza de pepperoni", TipoProducto = "Tipo B", EstatusUsuario = "Agotado", ImagenProducto = "/Imagenes/Logos/image 1.png" },
-                new Productos { NombreProducto = "Pizza 3 quesos", TipoProducto = "Tipo C", EstatusUsuario = "Disponible", ImagenProducto = "/Imagenes/Logos/image 1.png" }
-            };
-
-            lvProductos.ItemsSource = productos;
         }
 
-        private void irMenuPrincipal(object sender, RoutedEventArgs e)
+        private void irRegresar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+            VentanaPrincipal.CambiarPagina(new GUI_Productos());
         }
 
-        public class Productos
+        private void VerInventario(object sender, RoutedEventArgs e)
         {
-            public string NombreProducto { get; set; }
-            public string TipoProducto { get; set; }
-            public string EstatusUsuario { get; set; }
-            public string ImagenProducto { get; set; }  // Path de la imagen como string
+            VentanaPrincipal.CambiarPagina(new GUI_ReporteInventario());
+
         }
 
+        private void VerRecetas(object sender, RoutedEventArgs e)
+        {
+            //VentanaPrincipal.CambiarPagina(new GUI_Recetas());
+
+        }
+
+        private void VerProductos(object sender, RoutedEventArgs e)
+        {
+            //VentanaPrincipal.CambiarPagina(new GUI_Productos());
+
+        }
     }
 }

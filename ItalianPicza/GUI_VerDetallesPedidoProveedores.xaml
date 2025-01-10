@@ -1,0 +1,125 @@
+﻿<Page x:Class="ItalianPicza.GUI_VerDetallesPedidoProveedores"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_VerDetallesPedidoProveedores">
+
+    <Grid Margin="12,-4,-12,4" Background="#D3D3D3D3">
+        <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
+
+        <Button Margin="240,10,922,630" Click="irRegresar" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        </Button>
+
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="564,10,0,0" VerticalAlignment="Top" Width="468" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Detalles del pedido" HorizontalAlignment="Left" Height="44" Margin="664,26,0,0" VerticalAlignment="Top" Width="326" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+        <Image Source="/Imagenes/Iconos/order.png" Height="70" Width="72" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,13,0,0"/>
+
+        <ListView Name="lvPedidoProveedor" Margin="398,159,151,212" 
+          BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+          SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#FFD4BEBE">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontFamily" Value="Georgia"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="#FFB6C1"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NombreProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Cantidad" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CantidadInsumo}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Unidad de medida" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding UnidadInsumo}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Costo por unidad" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CostoUnidadInsumo}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button HorizontalAlignment="Left" Height="63" Margin="399,525,0,0" VerticalAlignment="Top" Width="224" Background="#FF0000" Click="CancelarPedido">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" CornerRadius="20" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" Padding="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Cancelar pedido" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Costo total: $96.00" HorizontalAlignment="Left" Margin="859,524,0,0" VerticalAlignment="Top" Foreground="White" FontSize="30" FontFamily="Georgia"/>
+
+    </Grid>
+</Page>

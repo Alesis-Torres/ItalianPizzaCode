@@ -9,9 +9,16 @@
       Title="GUI_MenuPrincipal">
 
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <Label Content="Italian pizza" HorizontalAlignment="Left" Margin="400,34,0,0" VerticalAlignment="Top" Height="108" Width="656" FontFamily="Ravie" FontSize="72" Foreground="#FFFFBC06"/>
-        <Label Content="Bienvenido a nuestra plataforma" HorizontalAlignment="Left" Margin="437,213,0,0" VerticalAlignment="Top" Foreground="White" FontFamily="Kristen ITC" FontSize="36"/>
-        <Image Source="/Imagenes/Logos/image 1.png" HorizontalAlignment="Left" Height="234" Margin="585,342,0,0" VerticalAlignment="Top" Width="313"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Imagenes/Uses/background.png"/>
+        </Grid.Background>
+        <Rectangle HorizontalAlignment="Left" Height="720" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#FF231B1B"/>
+        <Rectangle HorizontalAlignment="Left" Height="77" Margin="504,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="466" Fill="#FF231B1B"/>
+        <Label Content="¡Bienvenido al Sistema!" HorizontalAlignment="Left" Height="43" Margin="535,25,0,0" VerticalAlignment="Top" Width="400" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+        <StackPanel x:Name="panelTexto" Margin="290,113,96,73" Background="White">
+            <Label x:Name="label1" Content="Sobre nosotros:" FontFamily="Georgia" FontSize="28" FontWeight="Bold" Width="800"/>
+            <Label x:Name="label2" Content="En Italia Pizza, entendemos la importancia de evolucionar para brindar &#xD;&#xA;un servicio eficiente y de calidad. Con una gestión tradicional basada en &#xD;&#xA;registros en papel, enfrentamos problemas de control y tiempos de res-&#xD;&#xA;puesta que impactan la experiencia del cliente. &#xA;Para modernizar nuestras operaciones, hemos unido fuerzas con estudi-&#xD;&#xA;antes de Ingeniería de Software de la Universidad Veracruzana, quienes &#xD;&#xA;están desarrollando un sistema digital que optimizará procesos clave &#xD;&#xA;como la toma de pedidos, control de inventario y administración finan-&#xD;&#xA;ciera." FontFamily="Georgia" FontSize="24" Height="257" HorizontalContentAlignment="Stretch" Width="800"/>
+            <Label x:Name="label3" Content="Este proyecto busca transformar nuestras operaciones, brindando a nues-&#xD;&#xA;tro equipo acceso rápido a la información y reduciendo errores en la gesti-&#xD;&#xA;ón diaria. La colaboración con estos estudiantes no solo nos permitirá &#xD;&#xA;mejorar nuestra eficiencia y adaptarnos a las demandas del mercado, sino &#xD;&#xA;que también les ofrece una oportunidad invaluable de aplicar sus conoci-&#xD;&#xA;mientos en un contexto real. Estamos comprometidos en llevar a Italian &#xD;&#xA;Pizza hacia una nueva era de innovación y servicio de excelencia." FontFamily="Georgia" FontSize="24" Height="226" HorizontalContentAlignment="Stretch" Width="806"/>
+        </StackPanel>
     </Grid>
 </Page>

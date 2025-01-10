@@ -17,11 +17,13 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public tipoproducto()
         {
             this.producto = new HashSet<producto>();
+            this.proveedor = new HashSet<proveedor>();
         }
     
         public int idTipoProducto { get; set; }
         public string nombre { get; set; }
     
         public virtual ICollection<producto> producto { get; set; }
+        public virtual ICollection<proveedor> proveedor { get; set; }
     }
 }

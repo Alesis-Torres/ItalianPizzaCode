@@ -1,25 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ItalianPicza
 {
-    
+
     public partial class VentanaPrincipal : Window
     {
         private static Page PaginaActual { get; set; }
 
         public static Page PaginaAnterior { get; set; }
+
+        public static int empleado;
 
         public VentanaPrincipal()
         {
@@ -40,7 +33,7 @@ namespace ItalianPicza
             return (VentanaPrincipal)GetWindow(PaginaActual);
         }
 
-        private void CerrarSesion(object objetoOrigen, MouseButtonEventArgs evento)
+        private void CerrarSesion(object sender, RoutedEventArgs e)
         {
             CambiarPagina(new GUI_InicioSesion());
             panelNavegacion.Visibility = Visibility.Collapsed;
@@ -56,5 +49,25 @@ namespace ItalianPicza
             CambiarPagina(new GUI_Inventario());
         }
 
+        private void irPedidos(object sender, RoutedEventArgs e)
+        {
+           CambiarPagina(new GUI_Pedidos());
+        }
+
+        private void irProveedores(object sender, RoutedEventArgs e)
+        {
+            //CambiarPagina(new GUI_Proveedores());
+        }
+
+        private void marcoPaginaActual_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
+            CambiarPagina(new GUI_Proveedores());
+        }
+
+        private void irFinanzas(object sender, RoutedEventArgs e)
+        {
+            CambiarPagina(new GUI_Finanzas());
+        }
     }
 }

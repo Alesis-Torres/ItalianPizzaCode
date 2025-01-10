@@ -1,0 +1,126 @@
+﻿<Page x:Class="ItalianPicza.GUI_PedidosProveedores"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_Usuarios">
+
+    <Grid Margin="12,-4,-12,4" Background="#D3D3D3D3">
+        <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
+
+        <Button Margin="240,10,922,630" Click="irRegresar" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        </Button>
+
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="484,10,0,0" VerticalAlignment="Top" Width="590" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Revisar Pedidos Proveedores" HorizontalAlignment="Left" Height="44" Margin="570,26,0,0" VerticalAlignment="Top" Width="486" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+        <Image Source="/Imagenes/Stock/deliveryorder.png" Height="70" Width="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="487,13,0,0"/>
+
+        <TextBox HorizontalAlignment="Left" Margin="260,109,0,0" TextWrapping="Wrap" Text="🔎 Buscar..." FontFamily="Georgia" FontSize="24" VerticalAlignment="Top" Width="444" Height="36" BorderBrush="Black" Background="White"/>
+
+        <ListView Name="lvPedidosProveedores" Margin="258,147,39,133" 
+          BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+          SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=4}">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontFamily" Value="Georgia"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.Resources>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Header="Nombre" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NombrePedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Fecha de realización" Width="180">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FechaPedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="20"
+                                   FontFamily="Georgia"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Costo total" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding CostoTotalPedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="Estado" Width="200">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EstadoPedidoProveedor}" 
+                                   Foreground="Black" 
+                                   HorizontalAlignment="Center" 
+                                   VerticalAlignment="Center" 
+                                   FontSize="18"
+                                   FontFamily="Georgia" 
+                                   TextWrapping="Wrap"
+                                   MaxWidth="280"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header=" " Width="230">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button Click="Modificar" Content="✏️ Modificar" Width="200" Height="40" Margin="5,5,5,5" 
+                                        Background="#00008B" Foreground="White" FontSize="16" 
+                                        FontFamily="Georgia" FontWeight="Bold"/>
+                                    <Button Click="VerDetalles" Content="👁️ Ver Detalles" Width="200" Height="40" Margin="5,5,5,5" 
+                                        Background="#6A5ACD" Foreground="White" FontSize="16" 
+                                        FontFamily="Georgia" FontWeight="Bold" Cursor=""/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Content="➕ Agregar pedido" HorizontalAlignment="Left" Margin="775,600,0,0" VerticalAlignment="Top" Height="62" Width="330" Click="AgregarPedido" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontFamily="Georgia" FontWeight="Bold" FontSize="26"/>
+        <Button Content="✔️ Confirmar entrega" HorizontalAlignment="Left" Margin="442,600,0,0" VerticalAlignment="Top" Height="62" Width="330" Click="ConfirmarPedido" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontFamily="Georgia" FontWeight="Bold" FontSize="26"/>
+
+    </Grid>
+</Page>
