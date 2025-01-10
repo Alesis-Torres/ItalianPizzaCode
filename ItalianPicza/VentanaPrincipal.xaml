@@ -17,31 +17,31 @@
             <Border Background="#B71C1C" Width="203" Height="72" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,24,0,0">
                 <TextBlock Text="Italian Pizza" Foreground="White" FontSize="24" FontFamily="Georgia" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
-            <Button HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irUsuarios">
+            <Button HorizontalAlignment="Left" x:Name="btnUsuarios" Margin="0,120,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irUsuarios">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/users.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Usuarios" Foreground="White" FontSize="24" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,220,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irInventario">
+            <Button HorizontalAlignment="Left" x:Name="btnInventario" Margin="0,220,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irInventario">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/inventory.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Inventario" Foreground="White" FontSize="20" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,320,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irPedidos">
+            <Button HorizontalAlignment="Left" x:Name="btnPedidos" Margin="0,320,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irPedidos">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/order.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Pedidos" Foreground="White" FontSize="24" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,420,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irFinanzas">
+            <Button HorizontalAlignment="Left" x:Name="btnFinanzas" Margin="0,420,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irFinanzas">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/money.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Finanzas" Foreground="White" FontSize="24" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </Button>
-            <Button HorizontalAlignment="Left" Margin="0,520,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irProveedores">
+            <Button HorizontalAlignment="Left" x:Name="btnProveedores" Margin="0,520,0,0" VerticalAlignment="Top" Height="100" Width="230" Background="#231B1B" FontFamily="Georgia" FontWeight="Bold" Foreground="White" FontSize="24" Click="irProveedores">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="/Imagenes/Iconos/deliverywoman.png" Height="70" Width="70" VerticalAlignment="Center"/>
                     <TextBlock Text="Proveedores" Foreground="White" FontSize="18" Margin="10,0,0,0" VerticalAlignment="Center"/>

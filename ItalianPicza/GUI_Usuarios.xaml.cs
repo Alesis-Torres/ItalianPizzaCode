@@ -31,8 +31,6 @@ namespace ItalianPicza
         {
             UsuariosDAO usuariosDAO = new UsuariosDAO();
 
-            //List<empleado> empleados = new List<empleado>();
-
             try
             {
                 empleados = usuariosDAO.ObtenerEmpleados();

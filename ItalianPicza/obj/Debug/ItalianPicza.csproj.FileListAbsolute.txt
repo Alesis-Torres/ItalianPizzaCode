@@ -46,118 +46,17 @@ C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.pdb
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.xml
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\App.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\ItalianPicza.exe.config
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\ItalianPicza.exe
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\ItalianPicza.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\EntityFramework.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\MaterialDesignColors.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Logging.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Options.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Primitives.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Charting.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Quality.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Snippets.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.System.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.WPFonts.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Seguridad.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Buffers.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Diagnostics.DiagnosticSource.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Memory.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Threading.Tasks.Extensions.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.ValueTuple.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Seguridad.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\EntityFramework.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\MaterialDesignColors.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Logging.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Options.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Extensions.Primitives.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\Microsoft.Xaml.Behaviors.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Charting.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Charting.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Quality.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Quality.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.Snippets.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.System.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.System.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.WPFonts.pdb
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\PdfSharp.WPFonts.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Buffers.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Diagnostics.DiagnosticSource.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Memory.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\System.ValueTuple.xml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\de\PdfSharp.resources.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\bin\Debug\de\PdfSharp.Charting.resources.dll
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.csproj.AssemblyReference.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_AgregarPedidoProveedor.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_AgregarProveedores.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_DarAltaReceta.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ConsultarReceta.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_DarAltaUsuario.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_InicioSesion.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Inventario.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Productos.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_MenuPrincipal.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarPedidoProveedor.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarProveedor.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarUsuario.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Pedidos.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_PedidosProveedores.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Proveedores.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ReporteInventario.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Usuarios.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_VerDetallesPedidoProveedores.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\VentanaPrincipal.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\App.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza_Content.g.cs
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza_MarkupCompile.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza_MarkupCompile.lref
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\App.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_AgregarPedidoProveedor.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_AgregarProveedores.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_DarAltaReceta.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ConsultarReceta.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_DarAltaUsuario.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_InicioSesion.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Inventario.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Productos.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_MenuPrincipal.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarPedidoProveedor.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarProveedor.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ModificarUsuario.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Pedidos.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_PedidosProveedores.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Proveedores.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_ReporteInventario.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_Usuarios.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\GUI_VerDetallesPedidoProveedores.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\VentanaPrincipal.baml
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.g.resources
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.Properties.Resources.resources
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.csproj.GenerateResource.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.csproj.CoreCompileInputs.cache
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianP.D9F96206.Up2Date
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.exe
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\obj\Debug\ItalianPicza.pdb
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_ModificarReceta.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Proveedores.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_AgregarProveedores.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Proveedores.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_ModificarReceta.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_AgregarProveedores.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Finanzas.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_RegistrarTransaccionFinanciera.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Finanzas.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_RegistrarTransaccionFinanciera.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Productos.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Productos.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Recetas.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Recetas.baml

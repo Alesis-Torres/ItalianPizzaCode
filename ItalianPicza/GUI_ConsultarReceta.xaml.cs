@@ -21,7 +21,7 @@ namespace ItalianPicza
 
         private void Regresar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_Productos());
+            VentanaPrincipal.CambiarPagina(new GUI_Recetas());
         }
 
         private void ModificarReceta(object sender, RoutedEventArgs e)

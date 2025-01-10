@@ -51,7 +51,10 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                         // Si el usuario existe, buscar el empleado relacionado
                         empleadoEncontrado = context.empleado
                             .FirstOrDefault(e => e.idUsuario == usuarioVerificado.idUsuario);
-                        VentanaPrincipal.empleado = empleadoEncontrado.idEmpleado;
+                        if (empleadoEncontrado != null)
+                        {
+                            VentanaPrincipal.empleado = (int)empleadoEncontrado.idRol; 
+                        }
                         Console.WriteLine(VentanaPrincipal.empleado);  
                     }
                 }

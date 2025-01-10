@@ -164,24 +164,27 @@
                     <GridViewColumn Header="Nombre" Width="350">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding nombre}" 
-                                    Foreground="Black" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="20"
-                                    FontFamily="Georgia"/>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="nombre" />
+                                            <Binding Path="apellidoPaterno" />
+                                            <Binding Path="apellidoMaterno" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Estado" Width="160">
+                    <GridViewColumn Header="Email" Width="160">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding estado}" 
+                                <TextBlock Text="{Binding email}" 
                                     Foreground="Black" 
                                     HorizontalAlignment="Center" 
                                     VerticalAlignment="Center" 
-                                    FontSize="18"
+                                    FontSize="22"
                                     FontFamily="Georgia" 
                                     TextWrapping="Wrap"
                                     MaxWidth="280"/>

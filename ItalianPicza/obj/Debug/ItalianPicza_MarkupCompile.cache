@@ -9,12 +9,12 @@ ItalianPicza
 none
 false
 DEBUG;TRACE
-C:\Users\danie\OneDrive\Escritorio\DesarrolloSoftware\ItalianPizzaCode\ItalianPicza\App.xaml
-19-1082041478
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\App.xaml
+161747198212
 2129895837
-59-293532845
-45-184146390
-GUI_AgregarPedidoProveedor.xaml;GUI_AgregarProveedores.xaml;GUI_DarAltaReceta.xaml;GUI_ConsultarReceta.xaml;GUI_DarAltaUsuario.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_Productos.xaml;GUI_MenuPrincipal.xaml;GUI_ModificarPedidoProveedor.xaml;GUI_ModificarProveedor.xaml;GUI_ModificarUsuario.xaml;GUI_Pedidos.xaml;GUI_PedidosProveedores.xaml;GUI_Proveedores.xaml;GUI_ReporteInventario.xaml;GUI_Usuarios.xaml;GUI_VerDetallesPedidoProveedores.xaml;VentanaPrincipal.xaml;
+551871499741
+23-232563624
+GUI_AgregarProveedores.xaml;GUI_DarAltaReceta.xaml;GUI_ConsultarReceta.xaml;GUI_DarAltaUsuario.xaml;GUI_Finanzas.xaml;GUI_InicioSesion.xaml;GUI_Inventario.xaml;GUI_Productos.xaml;GUI_MenuPrincipal.xaml;GUI_ModificarReceta.xaml;GUI_ModificarUsuario.xaml;GUI_Proveedores.xaml;GUI_Recetas.xaml;GUI_RegistrarTransaccionFinanciera.xaml;GUI_Usuarios.xaml;VentanaPrincipal.xaml;
 
 False
 

@@ -27,6 +27,11 @@ namespace ItalianPicza
             VentanaPrincipal.CambiarPagina(new GUI_Productos());
         }
 
+        private void VerRecetas(object sender, RoutedEventArgs e)
+        {
+            VentanaPrincipal.CambiarPagina(new GUI_Recetas());
+        }
+
         private void VerInventario(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_ReporteInventario());

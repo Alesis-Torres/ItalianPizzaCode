@@ -60,8 +60,8 @@
         <Image HorizontalAlignment="Left" Height="60" Margin="558,34,0,0" VerticalAlignment="Top" Width="56" Source="/Imagenes/Logos/script 2.png"/>
 
         <Grid x:Name="panelInsumos" Visibility="Visible" HorizontalAlignment="Center" Width="1260" Margin="0,0,0,5">
-            <Rectangle HorizontalAlignment="Left" Height="431" Stroke="Black" VerticalAlignment="Top" Width="598" Fill="#231B1B" Margin="285,118,0,0"/>
-            <ListView Name="lvInsumos" Margin="299,142,391,194" Background="#231B1B">
+            <Rectangle HorizontalAlignment="Left" Height="431" Stroke="Black" VerticalAlignment="Top" Width="568" Fill="#231B1B" Margin="243,134,0,0"/>
+            <ListView Name="lvInsumos" Margin="257,138,463,198" Background="#231B1B">
 
                 <ListView.Resources>
                     <Style TargetType="GridViewColumnHeader">
@@ -100,7 +100,7 @@
                 <ListView.View>
                     <GridView>
                         <!-- Image Column -->
-                        <GridViewColumn Header=" " Width="120">
+                        <GridViewColumn Header=" " Width="110">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <Image Source="{Binding imagen}" Width="100" Height="100" HorizontalAlignment="Right"/>
@@ -109,7 +109,7 @@
                         </GridViewColumn>
 
                         <!-- Name Column -->
-                        <GridViewColumn Header="Nombre" Width="220">
+                        <GridViewColumn Header="Nombre" Width="170">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding nombre}" 
@@ -123,8 +123,20 @@
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
 
+                        <GridViewColumn Header="U.M." Width="70">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding medida}" 
+                                        Foreground="White" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
                         <!-- Status Column -->
-                        <GridViewColumn Header="Cantidad" Width="150">
+                        <GridViewColumn Header="Cantidad" Width="120">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBox x:Name="cuadroTextoCantidad" 
@@ -155,9 +167,9 @@
                 </ListView.View>
             </ListView>
 
-            <Rectangle HorizontalAlignment="Left" Height="387" Stroke="Black" VerticalAlignment="Top" Width="318" Fill="#231B1B" Margin="915,134,0,0"/>
+            <Rectangle HorizontalAlignment="Left" Height="387" Stroke="Black" VerticalAlignment="Top" Width="404" Fill="#231B1B" Margin="829,134,0,0"/>
             <Label Content="Receta" HorizontalAlignment="Left" Height="47" Margin="1015,146,0,0" VerticalAlignment="Top" Width="118" FontFamily="Britannic Bold" FontSize="36" Foreground="#FFFBD4"/>
-            <ListView Name="lvReceta" Margin="915,214,27,213" Background="#231B1B">
+            <ListView Name="lvReceta" Margin="843,214,27,213" Background="#231B1B">
 
                 <ListView.Resources>
                     <Style TargetType="GridViewColumnHeader">
@@ -213,10 +225,22 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <TextBlock Text="{Binding cantidad}" 
-                            Foreground="White" 
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center" 
-                            FontSize="24"/>
+                                        Foreground="White" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn Header="U.M." Width="70">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding medida}" 
+                                        Foreground="White" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        FontSize="24"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
