@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace ItalianPicza
 {
@@ -20,12 +21,12 @@ namespace ItalianPicza
 
         private void Regresar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_Inventario());
+            VentanaPrincipal.CambiarPagina(new GUI_Recetas());
         }
 
         private void ModificarReceta(object sender, RoutedEventArgs e)
         {
-            // MODULO PENDIENTE
+            VentanaPrincipal.CambiarPagina(new GUI_ModificarReceta((int)productoReceta.idReceta));
         }
 
         private void AgregarReceta(object sender, RoutedEventArgs e)
@@ -63,6 +64,11 @@ namespace ItalianPicza
         {
             lbNombreProducto.Content = producto.nombre;
 
+            if (producto.imagen != null)
+            {
+                imagenProducto.Source = ConvertirBytesAImagen(producto.imagen);
+            }
+
             if (producto.idReceta != null)
             {
                 CargarReceta((int)producto.idReceta);
@@ -72,7 +78,6 @@ namespace ItalianPicza
                     RecetaDAO recetaDAO = new RecetaDAO();
 
                     List<ingrediente> ingredientesReceta = recetaDAO.ObtenerIngredientesReceta((int)producto.idReceta);
-
                     lvIngredientes.ItemsSource = ingredientesReceta;
                 }
                 catch (EntityException)
@@ -86,6 +91,20 @@ namespace ItalianPicza
             {
                 btnAgregarReceta.Visibility = Visibility.Visible;
                 tbInstrucciones.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private BitmapImage ConvertirBytesAImagen(byte[] imageData)
+        {
+            using (var stream = new System.IO.MemoryStream(imageData))
+            {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.StreamSource = stream;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.EndInit();
+                image.Freeze();
+                return image;
             }
         }
 

@@ -18,5 +18,10 @@ namespace ItalianPicza
         {
             VentanaPrincipal.CambiarPagina(new GUI_PedidosProveedores());
         }
+
+        private void irRegresar(object sender, RoutedEventArgs e)
+        {
+            VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
+        }
     }
 }

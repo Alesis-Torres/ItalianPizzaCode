@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace ItalianPicza
 {
@@ -29,8 +30,6 @@ namespace ItalianPicza
         private void CargarEmpleados()
         {
             UsuariosDAO usuariosDAO = new UsuariosDAO();
-
-            //List<empleado> empleados = new List<empleado>();
 
             try
             {
@@ -99,6 +98,18 @@ namespace ItalianPicza
                 GestorCuadroDialogo.MostrarError
                     ("No hay conexión con la base de datos, por favor, inténtelo más tarde", 
                     "Sin conexión a la base de datos");
+            }
+        }
+
+        private void ModificarUsuario(object sender, RoutedEventArgs e)
+        {
+
+            Button botonModificarUsuario = sender as Button;
+            empleado empleadoSeleccionado = botonModificarUsuario.DataContext as empleado;
+
+            if (empleadoSeleccionado != null)
+            {
+                VentanaPrincipal.CambiarPagina(new GUI_ModificarUsuario((int)empleadoSeleccionado.idUsuario));
             }
         }
 

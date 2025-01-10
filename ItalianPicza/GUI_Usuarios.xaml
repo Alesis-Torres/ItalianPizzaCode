@@ -3,6 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
@@ -89,77 +90,116 @@
     </Page.Resources>
 
     <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-        <TextBox Name="cuadroTextoNombreEmpleado" HorizontalAlignment="Left" Margin="271,34,0,0" TextWrapping="Wrap" FontSize="24" VerticalAlignment="Top" Width="444" Height="36" TextChanged="FiltrarPorNombre"/>
-        <Label Content="Filtrar por" Foreground="White" HorizontalAlignment="Left" Margin="808,21,0,0" VerticalAlignment="Top" Width="130" FontSize="24"/>
-
-        <ComboBox HorizontalAlignment="Left" Margin="970,34,0,0" VerticalAlignment="Top" Width="221" Height="36" SelectionChanged="FiltrarPorRol">
-            <ComboBoxItem Content="Gerente de sucursal" />
-            <ComboBoxItem Content="Cocinero" />
-            <!-- Datos de ejemplo -->
-        </ComboBox>
-        <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="943" Fill="#800000"/>
+        <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
         
-        <ListView Name="lvUsuarios" Margin="321,158,89,158" Background="#00008B">
-            <!-- Definir el estilo para los ListViewItems -->
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="580,15,0,0" VerticalAlignment="Top" Width="418" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Usuarios" HorizontalAlignment="Left" Height="59" Margin="733,29,0,0" VerticalAlignment="Top" Width="219" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="605,19,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+
+        <Grid HorizontalAlignment="Left" Height="60" Margin="320,-465,0,0" Width="400">
+            <!-- TextBox con estilo MaterialDesign -->
+            <TextBox Name="cuadroTextoNombreEmpleado"
+             TextChanged="FiltrarPorNombre"
+             FontSize="20"
+             VerticalAlignment="Center"
+             Background="White"
+             Style="{StaticResource MaterialDesignOutlinedTextBox}"
+             Padding="5,0,50,0" Height="40">
+                <materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Buscar..." Foreground="Black" FontSize="18"/>
+                </materialDesign:HintAssist.Hint>
+            </TextBox>
+
+            <!-- Ícono de lupa -->
+            <materialDesign:PackIcon Kind="Magnify"
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Right"
+                              Margin="0,0,10,0"
+                              Width="24"
+                              Height="24"
+                              Foreground="Gray"/>
+        </Grid>
+
+        <Label Content="Filtrar por:" Foreground="White" HorizontalAlignment="Left" Margin="811,108,0,0" VerticalAlignment="Top" Width="151" FontSize="24" FontFamily="Georgia" FontWeight="Bold"/>
+
+        <ComboBox HorizontalAlignment="Left" Height="38" Margin="967,108,0,0" VerticalAlignment="Top" Width="231" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0" SelectionChanged="FiltrarPorRol" Background="White">
+            <ComboBoxItem Content="Gerente de sucursal"/>
+            <ComboBoxItem Content="Cocinero"/>
+        </ComboBox>
+
+        <Rectangle HorizontalAlignment="Left" Height="446" Margin="288,156,0,0" Stroke="Black" VerticalAlignment="Top" Width="943" Fill="#231B1B"/>
+
+        <!-- Nuevo diseño -->
+
+        <ListView Name="lvUsuarios" Margin="321,177,89,139"
+            BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+            SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Setter Property="FontFamily" Value="Georgia"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                </Style>
+            </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <!-- Color por defecto del fondo -->
-                    <Setter Property="Background" Value="Transparent"/>
-                    <!-- Cambiar el color del texto al pasar el cursor -->
-                    <Setter Property="Foreground" Value="White"/>
-                    <Style.Triggers>
-                        <!-- Trigger para cambiar el color cuando el cursor esté sobre el elemento -->
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="#020250"/>
-                            <!-- Color cuando está el cursor encima -->
-                        </Trigger>
-                    </Style.Triggers>
+                    <Setter Property="Background" Value="White"/>
+                    <Setter Property="Foreground" Value="Black"/>
                 </Style>
             </ListView.ItemContainerStyle>
 
             <ListView.View>
                 <GridView>
-                    <!-- Image Column -->
                     <GridViewColumn Header=" " Width="150">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding imagen}" Width="80" Height="80" />
+                                <Image Source="{Binding imagen}" Width="120" Height="120" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Name Column -->
                     <GridViewColumn Header="Nombre" Width="350">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding nombre}" 
-                                   Foreground="White" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center" 
-                                   FontSize="24" />
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} {1} {2}">
+                                            <Binding Path="nombre" />
+                                            <Binding Path="apellidoPaterno" />
+                                            <Binding Path="apellidoMaterno" />
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Status Column -->
-                    <GridViewColumn Header="Estatus" Width="150">
+                    <GridViewColumn Header="Email" Width="160">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding estado}" 
-                                   Foreground="White" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center" 
-                                   FontSize="24" />
+                                <TextBlock Text="{Binding email}" 
+                                    Foreground="Black" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="22"
+                                    FontFamily="Georgia" 
+                                    TextWrapping="Wrap"
+                                    MaxWidth="280"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <!-- Button Column -->
-                    <GridViewColumn Header=" " Width="215">
+                    <GridViewColumn Header=" " Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Modificar usuario" Width="120" Height="40" Background="Goldenrod" />
+                                <Button Content="✏ Modificar" Width="160" Height="40" 
+                                    Background="#00008B" 
+                                    Foreground="White" FontSize="16" 
+                                    FontFamily="Georgia" FontWeight="Bold"
+                                    Click="ModificarUsuario"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -167,7 +207,33 @@
             </ListView.View>
         </ListView>
 
-        <Button Content="Dar de alta usuario" HorizontalAlignment="Left" Margin="654,600,0,0" VerticalAlignment="Top" Height="62" Width="212" Click="DarAltaUsuario" Background="Green" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20"/>
-       
+
+        <!-- Nuevo diseño -->
+
+        <Button HorizontalAlignment="Left" Height="63" Margin="616,610,0,0" VerticalAlignment="Top" Width="280" Background="#008000" Click="DarAltaUsuario">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        Padding="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Plus" 
+                                     VerticalAlignment="Center" 
+                                     Foreground="White"
+                                     Width="24" 
+                                     Height="24" />
+                            <TextBlock Text="Dar de alta usuario" 
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    FontWeight="Bold"
+                                    FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Page>

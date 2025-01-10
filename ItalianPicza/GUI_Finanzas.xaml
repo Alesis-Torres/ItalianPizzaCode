@@ -1,0 +1,234 @@
+﻿<Page x:Class="ItalianPicza.GUI_Finanzas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="GUI_Finanzas">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="720" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="White"/>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="528,20,0,0" VerticalAlignment="Top" Width="493" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Finanzas" HorizontalAlignment="Left" Height="59" Margin="701,34,0,0" VerticalAlignment="Top" Width="224" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="60" Margin="558,34,0,0" VerticalAlignment="Top" Width="56" Source="/Imagenes/Logos/money 1.png"/>
+
+
+        <ComboBox Name="cbTipoTransaccion" HorizontalAlignment="Left" Height="46" Margin="936,124,0,0" VerticalAlignment="Top" Width="284" Background="White" FontSize="16" 
+                  Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0" SelectionChanged="filtrarTransacciones">
+            <ComboBoxItem Content="Entrada"/>
+            <ComboBoxItem Content="Salida"/>
+        </ComboBox>
+        <Rectangle HorizontalAlignment="Left" Height="50" Stroke="Black" VerticalAlignment="Top" Width="284" Fill="White" Margin="490,120,0,546"/>
+        <Label Content="Buscar por fecha:" HorizontalAlignment="Left" Height="34" Margin="290,130,0,0" VerticalAlignment="Top" Width="190" Background="Transparent" Foreground="White" FontSize="24" FontFamily="Georgia"/>
+        <DatePicker HorizontalAlignment="Left"
+            Name="cuadroFecha"
+            Height="50" 
+            Margin="490,120,0,546" 
+            VerticalAlignment="Top" 
+            Width="284" 
+            BorderBrush="Black" 
+            BorderThickness="1" 
+            Background="White" 
+            FontSize="20"
+            SelectedDateChanged="cuadroFecha_SelectedDateChanged"/>
+        <Rectangle HorizontalAlignment="Left" Height="361" Stroke="Black" VerticalAlignment="Top" Width="916" Fill="White" Margin="294,198,0,0"/>
+        <Grid x:Name="listaEntradas" Visibility="Visible" HorizontalAlignment="Center" Width="1280" Margin="0,0,0,5">
+            <ListView Margin="294,198,70,161" 
+                Background="White" 
+                BorderThickness="1" 
+                BorderBrush="Black"
+                FontFamily="Segoe UI" 
+                FontSize="14"
+                Name="lvEntradas">
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#231B1B" />
+                        <!-- Color de fondo gris -->
+                        <Setter Property="Foreground" Value="White" />
+                        <!-- Color del texto blanco -->
+                        <Setter Property="FontSize" Value="20" />
+                        <!-- Tamaño de fuente más grande -->
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <!-- Texto en negrita -->
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <!-- Centrar texto -->
+                        <Setter Property="Padding" Value="10,5" />
+                        <!-- Espaciado en la cabecera -->
+                    </Style>
+                </ListView.Resources>
+
+                <ListView.View>
+                    <GridView>
+                        <!-- Encabezado: Fecha de Realización -->
+                        <GridViewColumn Width="170">
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Fecha de realización"
+                                        TextWrapping="Wrap"
+                                        TextAlignment="Center"
+                                        FontWeight="Bold" />
+                                </DataTemplate>
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding fechaRealizacion, StringFormat='dd/MM/yyyy'}"
+                                        TextWrapping="Wrap" 
+                                        FontWeight="Bold" 
+                                        TextAlignment="Center"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+
+                        <!-- Encabezado: Cantidad -->
+                        <GridViewColumn Header="Cantidad" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding cantidad}" 
+                                        TextWrapping="Wrap" 
+                                        TextAlignment="Center"
+                                        FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <!-- Encabezado: Descripción -->
+                        <GridViewColumn Header="Descripción" Width="620">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding descripcion}" 
+                                        TextWrapping="Wrap" 
+                                        TextAlignment="Center"
+                                        FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Grid x:Name="listaSalidas" Visibility="Collapsed">
+            <ListView Margin="294,198,60,161" 
+                Background="White" 
+                BorderThickness="1" 
+                BorderBrush="Black"
+                FontFamily="Segoe UI" 
+                FontSize="14"
+                Name="lvSalidas">
+                <ListView.Resources>
+                    <Style TargetType="GridViewColumnHeader">
+                        <Setter Property="Background" Value="#231B1B" />
+                        <!-- Color de fondo gris -->
+                        <Setter Property="Foreground" Value="White" />
+                        <!-- Color del texto blanco -->
+                        <Setter Property="FontSize" Value="20" />
+                        <!-- Tamaño de fuente más grande -->
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <!-- Texto en negrita -->
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <!-- Centrar texto -->
+                        <Setter Property="Padding" Value="10,5" />
+                        <!-- Espaciado en la cabecera -->
+                    </Style>
+                </ListView.Resources>
+
+                <ListView.View>
+                    <GridView>
+                        <!-- Encabezado: Fecha de Realización -->
+                        <GridViewColumn Width="170">
+                            <GridViewColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="Fecha de realización"
+                                        TextWrapping="Wrap"
+                                        TextAlignment="Center"
+                                        FontWeight="Bold" />
+                                </DataTemplate>
+                            </GridViewColumn.HeaderTemplate>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding fechaRealizacion, StringFormat='dd/MM/yyyy'}"
+                                        TextWrapping="Wrap" 
+                                        FontWeight="Bold" 
+                                        TextAlignment="Center"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <!-- Encabezado: Cantidad -->
+                        <GridViewColumn Header="Cantidad" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding cantidad}" 
+                                        TextWrapping="Wrap" 
+                                        TextAlignment="Center"
+                                        FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <!-- Encabezado: Descripción -->
+                        <GridViewColumn Header="Descripción" Width="620">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding descripcion}" 
+                                        TextWrapping="Wrap"
+                                        TextAlignment="Center"
+                                        FontWeight="Bold"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+
+        <Button HorizontalAlignment="Left" Height="63" Margin="774,583,0,0" VerticalAlignment="Top" Width="264" Background="#00008B" Click="RealizarBalanceDiario">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        Padding="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock Text="Realizar balance diario" 
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button HorizontalAlignment="Left" Height="63" Margin="446,583,0,0" VerticalAlignment="Top" Width="280" Background="#008000" Click="AgregarTransaccion">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}"
+                        CornerRadius="20"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="0"
+                        Padding="10">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <materialDesign:PackIcon Kind="Plus" 
+                                             VerticalAlignment="Center" 
+                                             Foreground="White"
+                                             Width="24" 
+                                             Height="24" />
+                            <TextBlock Text="Agregar transacción" 
+                                VerticalAlignment="Center"
+                                Foreground="White"
+                                FontWeight="Bold"
+                                FontSize="22"/>
+                        </StackPanel>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label Content="Filtrar por:" HorizontalAlignment="Left" Height="36" Margin="804,129,0,0" VerticalAlignment="Top" Width="132" Foreground="White" FontFamily="Georgia" FontSize="24"/>
+    </Grid>
+</Page>

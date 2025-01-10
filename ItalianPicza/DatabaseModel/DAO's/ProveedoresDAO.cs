@@ -1,5 +1,8 @@
 ﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace ItalianPicza.DatabaseModel.DAO_s
 {
@@ -28,38 +31,88 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
         }
-        /*
-        public List<GUI_Proveedores.Proveedor> ObtenerListaProveedores()
+
+        public List<proveedor> ObtenerProveedores()
+        {
+            List<proveedor> proveedores = new List<proveedor>();
+
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    proveedores = context.proveedor.ToList();
+                }
+
+            }
+            catch (EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+
+            return proveedores;
+        }
+        
+        public proveedor ObtenerInformacionProveedor(int idProveedor)
         {
             try
             {
                 using (var context = new italianpizzaEntities())
                 {
-                    // Obtener la lista de proveedores sin hacer la conversión de imagen en la consulta
-                    var proveedores = context.proveedor.ToList();
+                    var proveedorEncontrado = context.proveedor
+                                           .Where(e => e.idProveedor == idProveedor)
+                                           .FirstOrDefault();
 
-                    // Convertir los datos después de haberlos recuperado
-                    return proveedores.Select(p => new GUI_Proveedores.Proveedor
+                    if (proveedorEncontrado == null)
                     {
-                        NombreProveedor = p.nombre,
-                        DescripcionProveedor = p.descripcion,
-                        ImagenProveedor = p.imagen != null ? ConvertirImagenAString(p.imagen) : "/Imagenes/Logos/default.png"
-                    }).ToList();
+                        throw new Exception("El Proveedor con el ID de Proveedor especificado no existe.");
+                    }
+
+                    return proveedorEncontrado;
                 }
             }
             catch (EntityException ex)
             {
-                throw new EntityException("Error al recuperar la lista de proveedores.", ex);
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
-        }
-        private string ConvertirImagenAString(byte[] imagenBytes)
-        {
-            if (imagenBytes != null && imagenBytes.Length > 0)
+            catch (Exception ex)
             {
-                return "data:image/png;base64," + Convert.ToBase64String(imagenBytes);
+                throw new Exception("Ocurrió un error al obtener la información del proveedor.", ex);
             }
-            return "/Imagenes/Logos/default.png"; // Ruta de la imagen por defecto si no hay imagen
         }
-        */
+
+        public int ModificarProveedor(int idProveedor, proveedor proveedorModificado)
+        {
+            int resultado = 0;
+
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+
+                    var proveedorExistente = context.proveedor.FirstOrDefault(u => u.idProveedor == idProveedor);
+                    if (proveedorExistente == null)
+                    {
+                        throw new Exception("El Proveedor con el ID especificado no existe.");
+                    }
+
+                    proveedorExistente.nombre = proveedorModificado.nombre;
+                    proveedorExistente.telefono = proveedorModificado.telefono;
+                    proveedorExistente.descripcion = proveedorModificado.descripcion;
+                    proveedorExistente.idTipoProducto = proveedorModificado.idTipoProducto;
+                    proveedorExistente.imagen = proveedorModificado.imagen;
+                    resultado = context.SaveChanges();
+                }
+
+                return resultado;
+            }
+            catch (EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al modificar el proveedor.", ex);
+            }
+        }
     }
 }

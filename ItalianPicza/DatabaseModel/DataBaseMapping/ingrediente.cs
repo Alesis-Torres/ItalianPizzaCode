@@ -23,7 +23,6 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
     
         public int idIngrediente { get; set; }
         public string caducidad { get; set; }
-        public string cantidad { get; set; }
         public Nullable<int> codigo { get; set; }
         public string lote { get; set; }
         public string medida { get; set; }
@@ -31,6 +30,9 @@ namespace ItalianPicza.DatabaseModel.DataBaseMapping
         public byte[] imagen { get; set; }
         public Nullable<int> idProveedor { get; set; }
         public Nullable<int> idInventario { get; set; }
+        public string cantidadActual { get; set; }
+        public string cantidadRegistrada { get; set; }
+        public string observacion { get; set; }
     
         public virtual ICollection<baja> baja { get; set; }
         public virtual inventario inventario { get; set; }

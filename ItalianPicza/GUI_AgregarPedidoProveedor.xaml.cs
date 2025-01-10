@@ -78,16 +78,16 @@ namespace ItalianPicza
         }
 
         private void GuardarPedido(object sender, RoutedEventArgs e)
-        {
+        {/*
             pedidoproveedor nuevoPedido = new pedidoproveedor()
             {
                 fecha = DateTime.Now.ToString("yyyy-MM-dd"),
                 monto = null,
                 idProveedor = 0,
                 idEmpleado = 0
-            //monto = CalcularMontoTotal(),
-            //idProveedor = ObtenerIdProveedorSeleccionado(),
-            //idEmpleado = ObtenerIdEmpleado() 
+                monto = CalcularMontoTotal(),
+                idProveedor = ObtenerIdProveedorSeleccionado(),
+                idEmpleado = ObtenerIdEmpleado()
         };
 
             PedidoProveedorDAO pedidosDAO = new PedidoProveedorDAO();
@@ -99,7 +99,7 @@ namespace ItalianPicza
                 if (resultado == 1)
                 {
                     //var resumenPedido = (List<ResumenPedidoProveedor>)lvResumenPedido.ItemsSource;
-                    /*
+                    
                     foreach (var item in resumenPedido)
                     {
                         pedidoproveedorproducto productoPedido = new pedidoproveedorproducto()
@@ -111,7 +111,6 @@ namespace ItalianPicza
 
                         pedidosDAO.GuardarProductoPedidoProveedor(productoPedido);
                     }
-                    */
                     GestorCuadroDialogo.MostrarInformacion("Pedido guardado correctamente", "Éxito");
                     VentanaPrincipal.CambiarPagina(new GUI_Pedidos());
                 }
@@ -123,9 +122,9 @@ namespace ItalianPicza
             catch (Exception ex)
             {
                 GestorCuadroDialogo.MostrarError("Error al guardar el pedido: " + ex.Message, "Error");
-            }
+            }*/
         }
-        /*
+        
         private byte[] CalcularMontoTotal()
         {
             var resumenPedido = (List<ResumenPedidoProveedor>)lvResumenPedido.ItemsSource;
@@ -142,7 +141,6 @@ namespace ItalianPicza
 
             return BitConverter.GetBytes((double)total);
         }
-        */
         private void CancelarPedido(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_Pedidos());
@@ -162,6 +160,5 @@ namespace ItalianPicza
             public string ProductoResumen { get; set; }
             public string CostoResumen { get; set; }
         }
-
     }
 }

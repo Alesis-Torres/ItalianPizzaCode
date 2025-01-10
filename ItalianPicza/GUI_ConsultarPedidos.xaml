@@ -1,0 +1,150 @@
+﻿<Page x:Class="ItalianPicza.GUI_ConsultarPedidos"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      Title="GUI_ConsultarPedidos" Height="709" Width="1255">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
+        <Rectangle Height="564" Margin="266,28,0,0" Stroke="Black" VerticalAlignment="Top" Fill="#800000" HorizontalAlignment="Left" Width="958"/>
+        <Button Content="Agregar pedido" Click="agregarPedido" HorizontalAlignment="Left" Margin="626,618,0,0" VerticalAlignment="Top" Height="57" Width="238" FontSize="22" Background="Green" Foreground="#FFFAFAFA"/>
+        <ListView x:Name="lvPedidos" Margin="285,115,56,159" Background="#020250">
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <!-- Estilo solo para esta tabla -->
+                    <Setter Property="Background" Value="#00008B" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+                <GridView>
+                    <!-- Name Column -->
+                    <GridViewColumn Header="Mesa" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding numeroMesa}" 
+                Foreground="White" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Nombre" Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NombreCliente}" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Tipo" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding TipoProducto}" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Estatus" Width="150">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding EstatusUsuario}" 
+                                    Foreground="White" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" 
+                                    FontSize="24" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Columna con ambos botones (uno encima del otro) -->
+                    <GridViewColumn Header=" " Width="250">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- StackPanel con orientación vertical -->
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <!-- Botón "Modificar artículo" -->
+                                    <Button Content="botonModificar " Width="120" Height="40" Background="green" Margin="0,0,0,10" Click="modificarPedido" />
+
+                                    <!-- Botón "Ver receta" -->
+                                    <Button Content="botonDetalles" Width="120" Height="40" Background="#00008B" Foreground="White" Click="consultarPedido"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <TextBox x:Name="cuadroTextoPedido" HorizontalAlignment="Left" Margin="285,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="352" Height="34" MaxLength="50" FontSize="24" Text="Buscar..." TextChanged="cuadroTextoPedido_TextChanged"/>
+        <Grid x:Name="GridResumen" Margin="527,73,292,162">
+            <Rectangle HorizontalAlignment="Center" Height="444" Stroke="Black" VerticalAlignment="Center" Width="250" Fill="#020250"/>
+            <Label Content="Resumen" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="140" FontSize="20" Foreground="White" Height="32" Margin="93,15,0,0"/>
+            <ListView x:Name="lvResumen"  Background="#020250" Margin="93,52,93,15">
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <!-- Estilo solo para esta tabla -->
+                        <Setter Property="Background" Value="#00008B" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                    <GridView>
+                        <!-- Image Column -->
+                        <GridViewColumn Header="Producto" Width="120">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding ImagenProducto}" Width="80" Height="80" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <!-- Name Column -->
+                        <GridViewColumn Header="Cantidad" Width="65">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding CantidadPedido}" 
+                            Foreground="White" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            FontSize="24" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <!-- Status Column -->
+                        <GridViewColumn Header="Costo" Width="60">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding TipoProducto}" 
+                            Foreground="White" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            FontSize="24" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="X" Click="cerrarDetalles" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="31" FontSize="22" Background="Red" Foreground="#FFFAFAFA" Margin="343,0,0,0"/>
+        </Grid>
+
+    </Grid>
+</Page>

@@ -3,12 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\databasemodel\\dao\u0027s\\pedidosproveedoresdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:databasemodel\\dao\u0027s\\pedidosproveedoresdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\italianpicza\\gui_agregarpedidoproveedor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B2265859-C875-482E-B42E-9371A52F3CAC}|ItalianPicza.csproj|solutionrelative:gui_agregarpedidoproveedor.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C11546DC-CF92-4C8A-9F53-8F5622456BCA}|..\\Pruebas\\Pruebas.csproj|c:\\users\\danie\\onedrive\\escritorio\\desarrollosoftware\\italianpizzacode\\pruebas\\pruebasdaos\\pruebapedidoproveedoresdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,27 +30,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PedidosProveedoresDAO.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\DatabaseModel\\DAO\u0027s\\PedidosProveedoresDAO.cs",
-              "RelativeDocumentMoniker": "DatabaseModel\\DAO\u0027s\\PedidosProveedoresDAO.cs",
-              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\DatabaseModel\\DAO\u0027s\\PedidosProveedoresDAO.cs",
-              "RelativeToolTip": "DatabaseModel\\DAO\u0027s\\PedidosProveedoresDAO.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBUAAAANAAAA",
+              "Title": "PruebaPedidoProveedoresDAO.cs",
+              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
+              "RelativeDocumentMoniker": "..\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
+              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
+              "RelativeToolTip": "..\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T17:23:58.049Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GUI_AgregarPedidoProveedor.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_AgregarPedidoProveedor.xaml.cs",
-              "RelativeDocumentMoniker": "GUI_AgregarPedidoProveedor.xaml.cs",
-              "ToolTip": "C:\\Users\\danie\\OneDrive\\Escritorio\\DesarrolloSoftware\\ItalianPizzaCode\\ItalianPicza\\GUI_AgregarPedidoProveedor.xaml.cs",
-              "RelativeToolTip": "GUI_AgregarPedidoProveedor.xaml.cs",
-              "ViewState": "AQIAAGUAAAAAAAAAAADwv1wAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T17:14:36.887Z",
+              "WhenOpened": "2024-11-26T04:08:29.265Z",
               "EditorCaption": ""
             }
           ]
