@@ -1,0 +1,138 @@
+﻿<Page x:Class="ItalianPicza.GUI_ResponsivaCocineros"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ItalianPicza"
+      mc:Ignorable="d" 
+      Height="709" Width="1255"
+      Title="GUI_ResponsivaCocineros">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                    <Setter Property="Control.FontSize" Value="22px"/>
+                    <Setter Property="Control.FontWeight" Value="Bold"/>
+                    <Setter Property="Control.Foreground" Value="White"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Rectangle Height="699" Margin="235,10,0,0" Stroke="Black" VerticalAlignment="Top" Fill="LightGray" HorizontalAlignment="Left" Width="1020"/>
+        <ListView x:Name="lvPedidos" Margin="250,186,15,96" Background="White" >
+            <ListView.Resources>
+                <Style TargetType="{x:Type GridViewColumnHeader}">
+                    <!-- Estilo solo para esta tabla -->
+                    <Setter Property="Background" Value="BLACK" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="22" />
+
+                </Style>
+            </ListView.Resources>
+            <ListView.View>
+
+                <GridView>
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Nombre" Width="300">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Detalle}" 
+                                    Foreground="Black" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"
+                                    FontWeight="Bold"
+                                    FontSize="18" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Status Column -->
+                    <GridViewColumn Header="Fecha realizacion" Width="170">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Fecha}" 
+                                    Foreground="Black" 
+                                    HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center"
+                                    FontWeight="Bold"
+                                    FontSize="18" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Productos" Width="290">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ProductosDisplay}" 
+                       Foreground="Black" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Center" 
+                       FontWeight="Bold"
+                       FontSize="18" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!-- Columna con ambos botones (uno encima del otro) -->
+                    <GridViewColumn Header="" Width="230">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Button x:Name="btn_Preparacion" Margin="0,0,0,0" Visibility="{Binding IsPreparacionButtonVisible}"  Width="200" Height="60" Background="#00008B" Click="click_enPreparacion" BorderBrush="LightGray" BorderThickness="3,3,3,3">
+                                        <TextBlock Text="En preparacion" FontSize="22px" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                    </Button>
+                                    <Button x:Name="btn_Listo" Margin="0,0,0,0"  Background="#00008B" Visibility="{Binding IsListoButtonVisible}" Width="200" Height="60"  Click="click_pedidoListo" BorderBrush="LightGray" BorderThickness="3,3,3,3">
+                                        <StackPanel Margin="0,0,20,0" Orientation="Horizontal">
+                                            <Image Source="Imagenes\Iconos\check.png" Height="20" Width="35"/>
+                                            <TextBlock Text="Pedido listo" FontSize="22px" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                        </StackPanel>
+
+                                    </Button>
+                                    <Button  Margin="0,0,0,0" Width="200" Height="60" Background="#65558f"  HorizontalAlignment="Center" Click="click_CancelarPedido" VerticalAlignment="Center"  BorderBrush="LightGray" BorderThickness="3,3,3,3">
+                                        <TextBlock Text="Cancelar Pedido" FontSize="22px" FontWeight="Bold" Foreground="White"  HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                    </Button>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid HorizontalAlignment="Left" Height="87" Margin="250,24,0,0"   VerticalAlignment="Top" Width="103">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="6*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Label Content="Estado:" HorizontalAlignment="Left" VerticalAlignment="Top" Width="103" FontSize="20" Foreground="White" Height="34" Margin="250,147,0,0"/>
+        <Border Margin="512,24,277,619" BorderBrush="Red" Background="black" BorderThickness="2,2,2,2" CornerRadius="30,30,30,30">
+            <DockPanel Margin="0,0,0,0">
+                <Image Source="Imagenes\Logos\order_icon.png" Width="76"/>
+                <Label Content="Responsiva cocineros" Height="50" Width="292" Foreground="White" FontWeight="Bold" FontSize="28"/>
+            </DockPanel>
+
+        </Border>
+        <Button  HorizontalAlignment="Left" Margin="250,24,0,0" VerticalAlignment="Top" Height="66" Width="86" FontSize="22" Background="white" BorderBrush="Black" BorderThickness="2,2,2,2">
+            <WrapPanel>
+                <Image Source="Imagenes\Logos\return_pizza_icon.png" Height="33" Width="82"/>
+                <Label Content="Regresar" Height="38" Width="80" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Center"/>
+            </WrapPanel>
+        </Button>
+        <ComboBox x:Name="cbEstadoPedido" HorizontalAlignment="Left" Margin="327,159,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cbEstadoPedido_SelectionChanged" />
+        <Button  HorizontalAlignment="Left" Margin="1190,129,0,0" VerticalAlignment="Top" Background="Black" Click="recargarListaPedidos">
+            <Image Source="Imagenes\Iconos\Refresh cw.png" Height="48" Width="46"></Image>
+        </Button>
+        <Button  HorizontalAlignment="Left" Margin="336,24,0,0" VerticalAlignment="Top" Height="66" Width="118" FontSize="22" Background="white" BorderBrush="Black" BorderThickness="2,2,2,2" Click="ConsultaTest">
+            <WrapPanel>
+                <Label Content="Consulta &#xA;Test" Height="54" Width="96" Foreground="Black" FontWeight="Bold" FontSize="16" HorizontalContentAlignment="Center"/>
+            </WrapPanel>
+        </Button>
+
+
+
+    </Grid>
+
+</Page>

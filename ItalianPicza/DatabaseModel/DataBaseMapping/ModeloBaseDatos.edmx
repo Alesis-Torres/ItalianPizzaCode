@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="italianpizzaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="italianpizzaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="baja">
           <Key>
             <PropertyRef Name="idBaja" />
@@ -21,10 +21,8 @@
             <PropertyRef Name="idCliente" />
           </Key>
           <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="20" />
-          <Property Name="apellidoPaterno" Type="varchar" MaxLength="20" />
-          <Property Name="apellidoMaterno" Type="varchar" MaxLength="20" />
-          <Property Name="telefono" Type="int" />
+          <Property Name="nombre" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="idTelefono" Type="int" />
         </EntityType>
         <EntityType Name="cortecaja">
           <Key>
@@ -41,7 +39,14 @@
           </Key>
           <Property Name="idDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="direccioncliente">
+          <Key>
+            <PropertyRef Name="idClienteDireccion" />
+          </Key>
+          <Property Name="idClienteDireccion" Type="int" Nullable="false" />
           <Property Name="idCliente" Type="int" />
+          <Property Name="idDireccion" Type="int" />
         </EntityType>
         <EntityType Name="empleado">
           <Key>
@@ -66,6 +71,15 @@
           <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="int" />
           <Property Name="idEmpleado" Type="int" />
+          <Property Name="fechaRealizacion" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="estadopedido">
+          <Key>
+            <PropertyRef Name="idEstadoPedido" />
+          </Key>
+          <Property Name="idEstadoPedido" Type="int" Nullable="false" />
+          <Property Name="nombreEstado" Type="nchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="ingrediente">
           <Key>
@@ -73,12 +87,12 @@
           </Key>
           <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="caducidad" Type="varchar" MaxLength="10" />
-          <Property Name="cantidad" Type="int" />
+          <Property Name="cantidad" Type="varchar" MaxLength="5" />
           <Property Name="codigo" Type="int" />
           <Property Name="lote" Type="varchar" MaxLength="10" />
           <Property Name="medida" Type="varchar" MaxLength="10" />
           <Property Name="nombre" Type="varchar" MaxLength="20" />
-          <Property Name="imagen" Type="varbinary" MaxLength="1" />
+          <Property Name="imagen" Type="varbinary(max)" />
           <Property Name="idProveedor" Type="int" />
           <Property Name="idInventario" Type="int" />
         </EntityType>
@@ -111,19 +125,23 @@
           <Property Name="fecha" Type="varchar" MaxLength="10" />
           <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="int" />
+          <Property Name="idEstadoPedido" Type="int" />
+          <Property Name="idDireccion" Type="int" />
+          <Property Name="idTelefono" Type="int" />
         </EntityType>
-        <EntityType Name="pedidodomicilio">
+        <EntityType Name="pedidocliente">
           <Key>
-            <PropertyRef Name="idPedidoDomicilio" />
+            <PropertyRef Name="idPedidoCliente" />
           </Key>
-          <Property Name="idPedidoDomicilio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPedidoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idCliente" Type="int" />
+          <Property Name="idPedido" Type="int" />
         </EntityType>
         <EntityType Name="pedidolocal">
           <Key>
             <PropertyRef Name="idPedidoLocal" />
           </Key>
-          <Property Name="idPedidoLocal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPedidoLocal" Type="int" Nullable="false" />
           <Property Name="idMesa" Type="int" />
         </EntityType>
         <EntityType Name="pedidoproducto">
@@ -181,6 +199,8 @@
           <Property Name="idReceta" Type="int" />
           <Property Name="idTipoProducto" Type="int" />
           <Property Name="idMedidaProducto" Type="int" />
+          <Property Name="observacion" Type="nchar" MaxLength="50" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="0" />
         </EntityType>
         <EntityType Name="proveedor">
           <Key>
@@ -190,22 +210,23 @@
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
           <Property Name="nombre" Type="varchar" MaxLength="30" />
           <Property Name="telefono" Type="int" />
+          <Property Name="imagen" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="receta">
           <Key>
             <PropertyRef Name="idReceta" />
           </Key>
           <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nombre" Type="varchar" MaxLength="10" />
           <Property Name="tiempoCoccion" Type="int" />
-          <Property Name="imagen" Type="varbinary" MaxLength="1" />
+          <Property Name="descripcion" Type="varchar" MaxLength="150" />
+          <Property Name="instrucciones" Type="varchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="recetaingrediente">
           <Key>
             <PropertyRef Name="idRecetaIngrediente" />
           </Key>
           <Property Name="idRecetaIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="cantidad" Type="int" />
+          <Property Name="cantidad" Type="varchar" MaxLength="3" />
           <Property Name="idReceta" Type="int" />
           <Property Name="idIngrediente" Type="int" />
         </EntityType>
@@ -224,6 +245,25 @@
           <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="int" />
           <Property Name="idEmpleado" Type="int" />
+          <Property Name="fechaRealizacion" Type="date" />
+          <Property Name="descripcion" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numero" Type="nchar" MaxLength="12" />
         </EntityType>
         <EntityType Name="tipoproducto">
           <Key>
@@ -268,17 +308,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_cliente_direccion">
-          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="direccion" Type="Self.direccion" Multiplicity="*" />
+        <Association Name="FK_cliente_telefono">
+          <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="idCliente" />
+            <Principal Role="telefono">
+              <PropertyRef Name="idTelefono" />
             </Principal>
-            <Dependent Role="direccion">
-              <PropertyRef Name="idCliente" />
+            <Dependent Role="cliente">
+              <PropertyRef Name="idTelefono" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -291,6 +329,32 @@
             </Principal>
             <Dependent Role="cortecaja">
               <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_direccioncliente_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="direccioncliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_direccioncliente_direccion">
+          <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+          <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="direccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="direccioncliente">
+              <PropertyRef Name="idDireccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -404,36 +468,86 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_pedidodomicilio_cliente">
-          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="*" />
+        <Association Name="FK_pedido_direccion">
+          <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="idCliente" />
+            <Principal Role="direccion">
+              <PropertyRef Name="idDireccion" />
             </Principal>
-            <Dependent Role="pedidodomicilio">
-              <PropertyRef Name="idCliente" />
+            <Dependent Role="pedido">
+              <PropertyRef Name="idDireccion" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_pedidodomicilio_pedido">
+        <Association Name="FK_pedido_estado">
+          <End Role="estadopedido" Type="Self.estadopedido" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadopedido">
+              <PropertyRef Name="idEstadoPedido" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="idEstadoPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedido_pedido">
           <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
-          <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="0..1" />
+          <End Role="pedido1" Type="Self.pedido" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="pedido">
               <PropertyRef Name="idPedido" />
             </Principal>
-            <Dependent Role="pedidodomicilio">
-              <PropertyRef Name="idPedidoDomicilio" />
+            <Dependent Role="pedido1">
+              <PropertyRef Name="idPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedido_telefono">
+          <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefono">
+              <PropertyRef Name="idTelefono" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="idTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedidocliente_cliente">
+          <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="idCliente" />
+            </Principal>
+            <Dependent Role="pedidocliente">
+              <PropertyRef Name="idCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedidocliente_pedido">
+          <End Role="pedido" Type="Self.pedido" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido">
+              <PropertyRef Name="idPedido" />
+            </Principal>
+            <Dependent Role="pedidocliente">
+              <PropertyRef Name="idPedido" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_pedidolocal_mesa">
-          <End Role="mesa" Type="Self.mesa" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="mesa" Type="Self.mesa" Multiplicity="0..1" />
           <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="mesa">
@@ -445,7 +559,9 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_pedidolocal_pedido">
-          <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="pedido">
@@ -695,14 +811,16 @@
           <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="cortecaja" EntityType="Self.cortecaja" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="direccioncliente" EntityType="Self.direccioncliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="entradaextraordinaria" EntityType="Self.entradaextraordinaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="estadopedido" EntityType="Self.estadopedido" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ingrediente" EntityType="Self.ingrediente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="medidaproducto" EntityType="Self.medidaproducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="mesa" EntityType="Self.mesa" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedido" EntityType="Self.pedido" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="pedidodomicilio" EntityType="Self.pedidodomicilio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="pedidocliente" EntityType="Self.pedidocliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedidolocal" EntityType="Self.pedidolocal" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedidoproducto" EntityType="Self.pedidoproducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pedidoproveedor" EntityType="Self.pedidoproveedor" Schema="dbo" store:Type="Tables" />
@@ -714,6 +832,8 @@
           <EntitySet Name="recetaingrediente" EntityType="Self.recetaingrediente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="salidaextraordinaria" EntityType="Self.salidaextraordinaria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="telefono" EntityType="Self.telefono" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tipoproducto" EntityType="Self.tipoproducto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_baja_cortecaja" Association="Self.FK_baja_cortecaja">
@@ -724,13 +844,21 @@
             <End Role="empleado" EntitySet="empleado" />
             <End Role="baja" EntitySet="baja" />
           </AssociationSet>
-          <AssociationSet Name="FK_cliente_direccion" Association="Self.FK_cliente_direccion">
+          <AssociationSet Name="FK_cliente_telefono" Association="Self.FK_cliente_telefono">
+            <End Role="telefono" EntitySet="telefono" />
             <End Role="cliente" EntitySet="cliente" />
-            <End Role="direccion" EntitySet="direccion" />
           </AssociationSet>
           <AssociationSet Name="FK_corte_empleado" Association="Self.FK_corte_empleado">
             <End Role="empleado" EntitySet="empleado" />
             <End Role="cortecaja" EntitySet="cortecaja" />
+          </AssociationSet>
+          <AssociationSet Name="FK_direccioncliente_cliente" Association="Self.FK_direccioncliente_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="direccioncliente" EntitySet="direccioncliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_direccioncliente_direccion" Association="Self.FK_direccioncliente_direccion">
+            <End Role="direccion" EntitySet="direccion" />
+            <End Role="direccioncliente" EntitySet="direccioncliente" />
           </AssociationSet>
           <AssociationSet Name="FK_empleado_rol" Association="Self.FK_empleado_rol">
             <End Role="rol" EntitySet="rol" />
@@ -764,13 +892,29 @@
             <End Role="cortecaja" EntitySet="cortecaja" />
             <End Role="pedido" EntitySet="pedido" />
           </AssociationSet>
-          <AssociationSet Name="FK_pedidodomicilio_cliente" Association="Self.FK_pedidodomicilio_cliente">
-            <End Role="cliente" EntitySet="cliente" />
-            <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
-          </AssociationSet>
-          <AssociationSet Name="FK_pedidodomicilio_pedido" Association="Self.FK_pedidodomicilio_pedido">
+          <AssociationSet Name="FK_pedido_direccion" Association="Self.FK_pedido_direccion">
+            <End Role="direccion" EntitySet="direccion" />
             <End Role="pedido" EntitySet="pedido" />
-            <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_estado" Association="Self.FK_pedido_estado">
+            <End Role="estadopedido" EntitySet="estadopedido" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_pedido" Association="Self.FK_pedido_pedido">
+            <End Role="pedido" EntitySet="pedido" />
+            <End Role="pedido1" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_telefono" Association="Self.FK_pedido_telefono">
+            <End Role="telefono" EntitySet="telefono" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedidocliente_cliente" Association="Self.FK_pedidocliente_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pedidocliente" EntitySet="pedidocliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedidocliente_pedido" Association="Self.FK_pedidocliente_pedido">
+            <End Role="pedido" EntitySet="pedido" />
+            <End Role="pedidocliente" EntitySet="pedidocliente" />
           </AssociationSet>
           <AssociationSet Name="FK_pedidolocal_mesa" Association="Self.FK_pedidolocal_mesa">
             <End Role="mesa" EntitySet="mesa" />
@@ -849,7 +993,8 @@
             <End Role="salidaextraordinaria" EntitySet="salidaextraordinaria" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="italianpizzaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -873,12 +1018,11 @@
             <PropertyRef Name="idCliente" />
           </Key>
           <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="apellidoPaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="apellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="telefono" Type="Int32" />
-          <NavigationProperty Name="direccion" Relationship="Self.FK_cliente_direccion" FromRole="cliente" ToRole="direccion" />
-          <NavigationProperty Name="pedidodomicilio" Relationship="Self.FK_pedidodomicilio_cliente" FromRole="cliente" ToRole="pedidodomicilio" />
+          <Property Name="nombre" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idTelefono" Type="Int32" />
+          <NavigationProperty Name="telefono" Relationship="Self.FK_cliente_telefono" FromRole="cliente" ToRole="telefono" />
+          <NavigationProperty Name="direccioncliente" Relationship="Self.FK_direccioncliente_cliente" FromRole="cliente" ToRole="direccioncliente" />
+          <NavigationProperty Name="pedidocliente" Relationship="Self.FK_pedidocliente_cliente" FromRole="cliente" ToRole="pedidocliente" />
         </EntityType>
         <EntityType Name="cortecaja">
           <Key>
@@ -900,8 +1044,18 @@
           </Key>
           <Property Name="idDireccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="direccioncliente" Relationship="Self.FK_direccioncliente_direccion" FromRole="direccion" ToRole="direccioncliente" />
+          <NavigationProperty Name="pedido" Relationship="Self.FK_pedido_direccion" FromRole="direccion" ToRole="pedido" />
+        </EntityType>
+        <EntityType Name="direccioncliente">
+          <Key>
+            <PropertyRef Name="idClienteDireccion" />
+          </Key>
+          <Property Name="idClienteDireccion" Type="Int32" Nullable="false" />
           <Property Name="idCliente" Type="Int32" />
-          <NavigationProperty Name="cliente" Relationship="Self.FK_cliente_direccion" FromRole="direccion" ToRole="cliente" />
+          <Property Name="idDireccion" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK_direccioncliente_cliente" FromRole="direccioncliente" ToRole="cliente" />
+          <NavigationProperty Name="direccion" Relationship="Self.FK_direccioncliente_direccion" FromRole="direccioncliente" ToRole="direccion" />
         </EntityType>
         <EntityType Name="empleado">
           <Key>
@@ -913,16 +1067,16 @@
           <Property Name="apellidoMaterno" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="Boolean" />
-          <Property Name="telefono" Type="String" FixedLength="false" MaxLength="10" Unicode="true" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="idRol" Type="Int32" />
+          <Property Name="idUsuario" Type="Int32" />
           <NavigationProperty Name="baja" Relationship="Self.FK_baja_empleado" FromRole="empleado" ToRole="baja" />
           <NavigationProperty Name="cortecaja" Relationship="Self.FK_corte_empleado" FromRole="empleado" ToRole="cortecaja" />
           <NavigationProperty Name="rol" Relationship="Self.FK_empleado_rol" FromRole="empleado" ToRole="rol" />
+          <NavigationProperty Name="usuario" Relationship="Self.FK_empleado_usuario" FromRole="empleado" ToRole="usuario" />
           <NavigationProperty Name="entradaextraordinaria" Relationship="Self.FK_entradaextraordinaria_empleado" FromRole="empleado" ToRole="entradaextraordinaria" />
           <NavigationProperty Name="salidaextraordinaria" Relationship="Self.FK_salidaextraordinaria_empleado" FromRole="empleado" ToRole="salidaextraordinaria" />
-          <Property Name="idUsuario" Type="Int32" />
-          <NavigationProperty Name="usuario" Relationship="italianpizzaModel.FK_empleado_usuario" FromRole="empleado" ToRole="usuario" />
         </EntityType>
         <EntityType Name="entradaextraordinaria">
           <Key>
@@ -932,8 +1086,18 @@
           <Property Name="cantidad" Type="Decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="Int32" />
           <Property Name="idEmpleado" Type="Int32" />
+          <Property Name="fechaRealizacion" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="cortecaja" Relationship="Self.FK_entradaextraordinaria_cortecaja" FromRole="entradaextraordinaria" ToRole="cortecaja" />
           <NavigationProperty Name="empleado" Relationship="Self.FK_entradaextraordinaria_empleado" FromRole="entradaextraordinaria" ToRole="empleado" />
+        </EntityType>
+        <EntityType Name="estadopedido">
+          <Key>
+            <PropertyRef Name="idEstadoPedido" />
+          </Key>
+          <Property Name="idEstadoPedido" Type="Int32" Nullable="false" />
+          <Property Name="nombreEstado" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="pedido" Relationship="Self.FK_pedido_estado" FromRole="estadopedido" ToRole="pedido" />
         </EntityType>
         <EntityType Name="ingrediente">
           <Key>
@@ -941,12 +1105,12 @@
           </Key>
           <Property Name="idIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="caducidad" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="cantidad" Type="Int32" />
+          <Property Name="cantidad" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="codigo" Type="Int32" />
           <Property Name="lote" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="medida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="imagen" Type="Binary" MaxLength="1" FixedLength="false" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="idProveedor" Type="Int32" />
           <Property Name="idInventario" Type="Int32" />
           <NavigationProperty Name="baja" Relationship="Self.FK_ingrediente_baja" FromRole="ingrediente" ToRole="baja" />
@@ -988,25 +1152,34 @@
           <Property Name="fecha" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="cantidad" Type="Decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="Int32" />
+          <Property Name="idEstadoPedido" Type="Int32" />
+          <Property Name="idDireccion" Type="Int32" />
+          <Property Name="idTelefono" Type="Int32" />
           <NavigationProperty Name="cortecaja" Relationship="Self.FK_pedido_cortecaja" FromRole="pedido" ToRole="cortecaja" />
-          <NavigationProperty Name="pedidodomicilio" Relationship="Self.FK_pedidodomicilio_pedido" FromRole="pedido" ToRole="pedidodomicilio" />
+          <NavigationProperty Name="direccion" Relationship="Self.FK_pedido_direccion" FromRole="pedido" ToRole="direccion" />
+          <NavigationProperty Name="estadopedido" Relationship="Self.FK_pedido_estado" FromRole="pedido" ToRole="estadopedido" />
+          <NavigationProperty Name="pedido1" Relationship="Self.FK_pedido_pedido" FromRole="pedido" ToRole="pedido1" />
+          <NavigationProperty Name="pedido2" Relationship="Self.FK_pedido_pedido" FromRole="pedido1" ToRole="pedido" />
+          <NavigationProperty Name="telefono" Relationship="Self.FK_pedido_telefono" FromRole="pedido" ToRole="telefono" />
+          <NavigationProperty Name="pedidocliente" Relationship="Self.FK_pedidocliente_pedido" FromRole="pedido" ToRole="pedidocliente" />
           <NavigationProperty Name="pedidolocal" Relationship="Self.FK_pedidolocal_pedido" FromRole="pedido" ToRole="pedidolocal" />
           <NavigationProperty Name="pedidoproducto" Relationship="Self.FK_pedidorpoducto_producto" FromRole="pedido" ToRole="pedidoproducto" />
         </EntityType>
-        <EntityType Name="pedidodomicilio">
+        <EntityType Name="pedidocliente">
           <Key>
-            <PropertyRef Name="idPedidoDomicilio" />
+            <PropertyRef Name="idPedidoCliente" />
           </Key>
-          <Property Name="idPedidoDomicilio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPedidoCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idCliente" Type="Int32" />
-          <NavigationProperty Name="cliente" Relationship="Self.FK_pedidodomicilio_cliente" FromRole="pedidodomicilio" ToRole="cliente" />
-          <NavigationProperty Name="pedido" Relationship="Self.FK_pedidodomicilio_pedido" FromRole="pedidodomicilio" ToRole="pedido" />
+          <Property Name="idPedido" Type="Int32" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK_pedidocliente_cliente" FromRole="pedidocliente" ToRole="cliente" />
+          <NavigationProperty Name="pedido" Relationship="Self.FK_pedidocliente_pedido" FromRole="pedidocliente" ToRole="pedido" />
         </EntityType>
         <EntityType Name="pedidolocal">
           <Key>
             <PropertyRef Name="idPedidoLocal" />
           </Key>
-          <Property Name="idPedidoLocal" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPedidoLocal" Type="Int32" Nullable="false" />
           <Property Name="idMesa" Type="Int32" />
           <NavigationProperty Name="mesa" Relationship="Self.FK_pedidolocal_mesa" FromRole="pedidolocal" ToRole="mesa" />
           <NavigationProperty Name="pedido" Relationship="Self.FK_pedidolocal_pedido" FromRole="pedidolocal" ToRole="pedido" />
@@ -1075,6 +1248,8 @@
           <Property Name="idReceta" Type="Int32" />
           <Property Name="idTipoProducto" Type="Int32" />
           <Property Name="idMedidaProducto" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="precio" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="baja" Relationship="Self.FK_producto_baja" FromRole="producto" ToRole="baja" />
           <NavigationProperty Name="inventario" Relationship="Self.FK_producto_inventario" FromRole="producto" ToRole="inventario" />
           <NavigationProperty Name="medidaproducto" Relationship="Self.FK_producto_medidaproducto" FromRole="producto" ToRole="medidaproducto" />
@@ -1092,6 +1267,7 @@
           <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="Int32" />
+          <Property Name="imagen" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="ingrediente" Relationship="Self.FK_ingrediente_proveedor" FromRole="proveedor" ToRole="ingrediente" />
           <NavigationProperty Name="pedidoproveedor" Relationship="Self.FK_pedidoproveedor_proveedor" FromRole="proveedor" ToRole="pedidoproveedor" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_proveedor" FromRole="proveedor" ToRole="producto" />
@@ -1101,9 +1277,9 @@
             <PropertyRef Name="idReceta" />
           </Key>
           <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="tiempoCoccion" Type="Int32" />
-          <Property Name="imagen" Type="Binary" MaxLength="1" FixedLength="false" />
+          <Property Name="descripcion" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="instrucciones" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_receta" FromRole="receta" ToRole="producto" />
           <NavigationProperty Name="recetaingrediente" Relationship="Self.FK_recetaingrediente_receta" FromRole="receta" ToRole="recetaingrediente" />
         </EntityType>
@@ -1112,7 +1288,7 @@
             <PropertyRef Name="idRecetaIngrediente" />
           </Key>
           <Property Name="idRecetaIngrediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="cantidad" Type="Int32" />
+          <Property Name="cantidad" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
           <Property Name="idReceta" Type="Int32" />
           <Property Name="idIngrediente" Type="Int32" />
           <NavigationProperty Name="ingrediente" Relationship="Self.FK_recetaingrediente_ingrediente" FromRole="recetaingrediente" ToRole="ingrediente" />
@@ -1134,8 +1310,29 @@
           <Property Name="cantidad" Type="Decimal" Precision="20" Scale="2" />
           <Property Name="idCorteCaja" Type="Int32" />
           <Property Name="idEmpleado" Type="Int32" />
+          <Property Name="fechaRealizacion" Type="DateTime" Precision="0" />
+          <Property Name="descripcion" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="cortecaja" Relationship="Self.FK_salidaextraordinaria_cortecaja" FromRole="salidaextraordinaria" ToRole="cortecaja" />
           <NavigationProperty Name="empleado" Relationship="Self.FK_salidaextraordinaria_empleado" FromRole="salidaextraordinaria" ToRole="empleado" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numero" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="cliente" Relationship="Self.FK_cliente_telefono" FromRole="telefono" ToRole="cliente" />
+          <NavigationProperty Name="pedido" Relationship="Self.FK_pedido_telefono" FromRole="telefono" ToRole="pedido" />
         </EntityType>
         <EntityType Name="tipoproducto">
           <Key>
@@ -1144,6 +1341,15 @@
           <Property Name="idTipoProducto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="producto" Relationship="Self.FK_producto_tipoproducto" FromRole="tipoproducto" ToRole="producto" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="idUsuario" />
+          </Key>
+          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="empleado" Relationship="Self.FK_empleado_usuario" FromRole="usuario" ToRole="empleado" />
         </EntityType>
         <Association Name="FK_baja_cortecaja">
           <End Role="cortecaja" Type="Self.cortecaja" Multiplicity="0..1">
@@ -1199,30 +1405,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_cliente_direccion">
+        <Association Name="FK_cliente_telefono">
+          <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+          <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefono">
+              <PropertyRef Name="idTelefono" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="idTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_direccioncliente_cliente">
           <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="direccion" Type="Self.direccion" Multiplicity="*" />
+          <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cliente">
               <PropertyRef Name="idCliente" />
             </Principal>
-            <Dependent Role="direccion">
+            <Dependent Role="direccioncliente">
               <PropertyRef Name="idCliente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_pedidodomicilio_cliente">
+        <Association Name="FK_pedidocliente_cliente">
           <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="*" />
+          <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cliente">
               <PropertyRef Name="idCliente" />
             </Principal>
-            <Dependent Role="pedidodomicilio">
+            <Dependent Role="pedidocliente">
               <PropertyRef Name="idCliente" />
             </Dependent>
           </ReferentialConstraint>
@@ -1281,6 +1499,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_direccioncliente_direccion">
+          <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+          <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="direccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="direccioncliente">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedido_direccion">
+          <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="direccion">
+              <PropertyRef Name="idDireccion" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="idDireccion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_empleado_rol">
           <End Role="rol" Type="Self.rol" Multiplicity="0..1">
             <OnDelete Action="Cascade" />
@@ -1292,6 +1534,18 @@
             </Principal>
             <Dependent Role="empleado">
               <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_empleado_usuario">
+          <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+          <End Role="empleado" Type="Self.empleado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="usuario">
+              <PropertyRef Name="idUsuario" />
+            </Principal>
+            <Dependent Role="empleado">
+              <PropertyRef Name="idUsuario" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1320,6 +1574,20 @@
             </Principal>
             <Dependent Role="salidaextraordinaria">
               <PropertyRef Name="idEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedido_estado">
+          <End Role="estadopedido" Type="Self.estadopedido" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="estadopedido">
+              <PropertyRef Name="idEstadoPedido" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="idEstadoPedido" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1408,9 +1676,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_pedidolocal_mesa">
-          <End Role="mesa" Type="Self.mesa" Multiplicity="0..1">
-            <OnDelete Action="Cascade" />
-          </End>
+          <End Role="mesa" Type="Self.mesa" Multiplicity="0..1" />
           <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="mesa">
@@ -1421,20 +1687,48 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_pedidodomicilio_pedido">
+        <Association Name="FK_pedido_pedido">
           <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
-          <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="0..1" />
+          <End Role="pedido1" Type="Self.pedido" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="pedido">
               <PropertyRef Name="idPedido" />
             </Principal>
-            <Dependent Role="pedidodomicilio">
-              <PropertyRef Name="idPedidoDomicilio" />
+            <Dependent Role="pedido1">
+              <PropertyRef Name="idPedido" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedido_telefono">
+          <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="telefono">
+              <PropertyRef Name="idTelefono" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="idTelefono" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_pedidocliente_pedido">
+          <End Role="pedido" Type="Self.pedido" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="pedido">
+              <PropertyRef Name="idPedido" />
+            </Principal>
+            <Dependent Role="pedidocliente">
+              <PropertyRef Name="idPedido" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_pedidolocal_pedido">
-          <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
+          <End Role="pedido" Type="Self.pedido" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="pedido">
@@ -1588,14 +1882,16 @@
           <EntitySet Name="cliente" EntityType="Self.cliente" />
           <EntitySet Name="cortecaja" EntityType="Self.cortecaja" />
           <EntitySet Name="direccion" EntityType="Self.direccion" />
+          <EntitySet Name="direccioncliente" EntityType="Self.direccioncliente" />
           <EntitySet Name="empleado" EntityType="Self.empleado" />
           <EntitySet Name="entradaextraordinaria" EntityType="Self.entradaextraordinaria" />
+          <EntitySet Name="estadopedido" EntityType="Self.estadopedido" />
           <EntitySet Name="ingrediente" EntityType="Self.ingrediente" />
           <EntitySet Name="inventario" EntityType="Self.inventario" />
           <EntitySet Name="medidaproducto" EntityType="Self.medidaproducto" />
           <EntitySet Name="mesa" EntityType="Self.mesa" />
           <EntitySet Name="pedido" EntityType="Self.pedido" />
-          <EntitySet Name="pedidodomicilio" EntityType="Self.pedidodomicilio" />
+          <EntitySet Name="pedidocliente" EntityType="Self.pedidocliente" />
           <EntitySet Name="pedidolocal" EntityType="Self.pedidolocal" />
           <EntitySet Name="pedidoproducto" EntityType="Self.pedidoproducto" />
           <EntitySet Name="pedidoproveedor" EntityType="Self.pedidoproveedor" />
@@ -1607,7 +1903,10 @@
           <EntitySet Name="recetaingrediente" EntityType="Self.recetaingrediente" />
           <EntitySet Name="rol" EntityType="Self.rol" />
           <EntitySet Name="salidaextraordinaria" EntityType="Self.salidaextraordinaria" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="telefono" EntityType="Self.telefono" />
           <EntitySet Name="tipoproducto" EntityType="Self.tipoproducto" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" />
           <AssociationSet Name="FK_baja_cortecaja" Association="Self.FK_baja_cortecaja">
             <End Role="cortecaja" EntitySet="cortecaja" />
             <End Role="baja" EntitySet="baja" />
@@ -1624,13 +1923,17 @@
             <End Role="producto" EntitySet="producto" />
             <End Role="baja" EntitySet="baja" />
           </AssociationSet>
-          <AssociationSet Name="FK_cliente_direccion" Association="Self.FK_cliente_direccion">
+          <AssociationSet Name="FK_cliente_telefono" Association="Self.FK_cliente_telefono">
+            <End Role="telefono" EntitySet="telefono" />
             <End Role="cliente" EntitySet="cliente" />
-            <End Role="direccion" EntitySet="direccion" />
           </AssociationSet>
-          <AssociationSet Name="FK_pedidodomicilio_cliente" Association="Self.FK_pedidodomicilio_cliente">
+          <AssociationSet Name="FK_direccioncliente_cliente" Association="Self.FK_direccioncliente_cliente">
             <End Role="cliente" EntitySet="cliente" />
-            <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
+            <End Role="direccioncliente" EntitySet="direccioncliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedidocliente_cliente" Association="Self.FK_pedidocliente_cliente">
+            <End Role="cliente" EntitySet="cliente" />
+            <End Role="pedidocliente" EntitySet="pedidocliente" />
           </AssociationSet>
           <AssociationSet Name="FK_corte_empleado" Association="Self.FK_corte_empleado">
             <End Role="empleado" EntitySet="empleado" />
@@ -1648,8 +1951,20 @@
             <End Role="cortecaja" EntitySet="cortecaja" />
             <End Role="salidaextraordinaria" EntitySet="salidaextraordinaria" />
           </AssociationSet>
+          <AssociationSet Name="FK_direccioncliente_direccion" Association="Self.FK_direccioncliente_direccion">
+            <End Role="direccion" EntitySet="direccion" />
+            <End Role="direccioncliente" EntitySet="direccioncliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_direccion" Association="Self.FK_pedido_direccion">
+            <End Role="direccion" EntitySet="direccion" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
           <AssociationSet Name="FK_empleado_rol" Association="Self.FK_empleado_rol">
             <End Role="rol" EntitySet="rol" />
+            <End Role="empleado" EntitySet="empleado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_empleado_usuario" Association="Self.FK_empleado_usuario">
+            <End Role="usuario" EntitySet="usuario" />
             <End Role="empleado" EntitySet="empleado" />
           </AssociationSet>
           <AssociationSet Name="FK_entradaextraordinaria_empleado" Association="Self.FK_entradaextraordinaria_empleado">
@@ -1659,6 +1974,10 @@
           <AssociationSet Name="FK_salidaextraordinaria_empleado" Association="Self.FK_salidaextraordinaria_empleado">
             <End Role="empleado" EntitySet="empleado" />
             <End Role="salidaextraordinaria" EntitySet="salidaextraordinaria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_estado" Association="Self.FK_pedido_estado">
+            <End Role="estadopedido" EntitySet="estadopedido" />
+            <End Role="pedido" EntitySet="pedido" />
           </AssociationSet>
           <AssociationSet Name="FK_ingrediente_inventario" Association="Self.FK_ingrediente_inventario">
             <End Role="inventario" EntitySet="inventario" />
@@ -1688,9 +2007,17 @@
             <End Role="mesa" EntitySet="mesa" />
             <End Role="pedidolocal" EntitySet="pedidolocal" />
           </AssociationSet>
-          <AssociationSet Name="FK_pedidodomicilio_pedido" Association="Self.FK_pedidodomicilio_pedido">
+          <AssociationSet Name="FK_pedido_pedido" Association="Self.FK_pedido_pedido">
             <End Role="pedido" EntitySet="pedido" />
-            <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
+            <End Role="pedido1" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedido_telefono" Association="Self.FK_pedido_telefono">
+            <End Role="telefono" EntitySet="telefono" />
+            <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="FK_pedidocliente_pedido" Association="Self.FK_pedidocliente_pedido">
+            <End Role="pedido" EntitySet="pedido" />
+            <End Role="pedidocliente" EntitySet="pedidocliente" />
           </AssociationSet>
           <AssociationSet Name="FK_pedidolocal_pedido" Association="Self.FK_pedidolocal_pedido">
             <End Role="pedido" EntitySet="pedido" />
@@ -1736,33 +2063,7 @@
             <End Role="receta" EntitySet="receta" />
             <End Role="recetaingrediente" EntitySet="recetaingrediente" />
           </AssociationSet>
-          <EntitySet Name="usuario" EntityType="italianpizzaModel.usuario" />
-          <AssociationSet Name="FK_empleado_usuario" Association="italianpizzaModel.FK_empleado_usuario">
-            <End Role="usuario" EntitySet="usuario" />
-            <End Role="empleado" EntitySet="empleado" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="usuario">
-          <Key>
-            <PropertyRef Name="idUsuario" />
-          </Key>
-          <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="empleado" Relationship="italianpizzaModel.FK_empleado_usuario" FromRole="usuario" ToRole="empleado" />
-        </EntityType>
-        <Association Name="FK_empleado_usuario">
-          <End Type="italianpizzaModel.usuario" Role="usuario" Multiplicity="0..1" />
-          <End Type="italianpizzaModel.empleado" Role="empleado" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="usuario">
-              <PropertyRef Name="idUsuario" />
-            </Principal>
-            <Dependent Role="empleado">
-              <PropertyRef Name="idUsuario" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1786,9 +2087,7 @@
               <MappingFragment StoreEntitySet="cliente">
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
-                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
-                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1807,14 +2106,21 @@
               <MappingFragment StoreEntitySet="direccion">
                 <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="direccioncliente">
+            <EntityTypeMapping TypeName="italianpizzaModel.direccioncliente">
+              <MappingFragment StoreEntitySet="direccioncliente">
+                <ScalarProperty Name="idClienteDireccion" ColumnName="idClienteDireccion" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="empleado">
             <EntityTypeMapping TypeName="italianpizzaModel.empleado">
               <MappingFragment StoreEntitySet="empleado">
-                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
                 <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
@@ -1824,6 +2130,7 @@
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="imagen" ColumnName="imagen" />
                 <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1834,6 +2141,16 @@
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
                 <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="estadopedido">
+            <EntityTypeMapping TypeName="italianpizzaModel.estadopedido">
+              <MappingFragment StoreEntitySet="estadopedido">
+                <ScalarProperty Name="idEstadoPedido" ColumnName="idEstadoPedido" />
+                <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1884,14 +2201,18 @@
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
+                <ScalarProperty Name="idEstadoPedido" ColumnName="idEstadoPedido" />
+                <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+                <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="pedidodomicilio">
-            <EntityTypeMapping TypeName="italianpizzaModel.pedidodomicilio">
-              <MappingFragment StoreEntitySet="pedidodomicilio">
-                <ScalarProperty Name="idPedidoDomicilio" ColumnName="idPedidoDomicilio" />
+          <EntitySetMapping Name="pedidocliente">
+            <EntityTypeMapping TypeName="italianpizzaModel.pedidocliente">
+              <MappingFragment StoreEntitySet="pedidocliente">
+                <ScalarProperty Name="idPedidoCliente" ColumnName="idPedidoCliente" />
                 <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="idPedido" ColumnName="idPedido" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1961,6 +2282,8 @@
                 <ScalarProperty Name="idReceta" ColumnName="idReceta" />
                 <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
                 <ScalarProperty Name="idMedidaProducto" ColumnName="idMedidaProducto" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1971,6 +2294,7 @@
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="imagen" ColumnName="imagen" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1978,9 +2302,9 @@
             <EntityTypeMapping TypeName="italianpizzaModel.receta">
               <MappingFragment StoreEntitySet="receta">
                 <ScalarProperty Name="idReceta" ColumnName="idReceta" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="tiempoCoccion" ColumnName="tiempoCoccion" />
-                <ScalarProperty Name="imagen" ColumnName="imagen" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2009,6 +2333,27 @@
                 <ScalarProperty Name="cantidad" ColumnName="cantidad" />
                 <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
                 <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+                <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="italianpizzaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="telefono">
+            <EntityTypeMapping TypeName="italianpizzaModel.telefono">
+              <MappingFragment StoreEntitySet="telefono">
+                <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2023,9 +2368,9 @@
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="italianpizzaModel.usuario">
               <MappingFragment StoreEntitySet="usuario">
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2046,7 +2391,7 @@
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="true" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -29,5 +29,25 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
         }
+
+        public static direccion obtenerDomicilioPorId(int? idDireccion)
+        {
+            direccion direccion = new direccion();
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    direccion = context.direccion
+                        .FirstOrDefault(d => d.idDireccion == idDireccion);
+                }
+
+            }
+            catch (InvalidOperationException ex)
+            {
+                throw new InvalidOperationException("Operación no válida al acceder a la base de datos.", ex);
+            }
+
+            return direccion;
+        }
     }
 }

@@ -1,9 +1,13 @@
 ﻿
-
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\GUI_DarAltaUsuario.xaml;;
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\GUI_InicioSesion.xaml;;
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\GUI_Inventario.xaml;;
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\GUI_MenuPrincipal.xaml;;
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\GUI_Usuarios.xaml;;
-FC:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\VentanaPrincipal.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\App.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_ConsultarPedidos.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_DarAltaProducto.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_DarAltaUsuario.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_FormularioPedido.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_InicioSesion.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_Inventario.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_MenuPrincipal.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_Usuarios.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\VentanaPrincipal.xaml;;
+FC:\ItalianPizzaCode\ItalianPicza\GUI_ResponsivaCocineros.xaml;;
 

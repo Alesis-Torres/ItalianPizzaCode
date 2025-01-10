@@ -18,9 +18,7 @@
         <MappingFragment StoreEntitySet="cliente">
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
-          <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -39,14 +37,21 @@
         <MappingFragment StoreEntitySet="direccion">
           <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="direccioncliente">
+      <EntityTypeMapping TypeName="italianpizzaModel.direccioncliente">
+        <MappingFragment StoreEntitySet="direccioncliente">
+          <ScalarProperty Name="idClienteDireccion" ColumnName="idClienteDireccion" />
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="empleado">
       <EntityTypeMapping TypeName="italianpizzaModel.empleado">
         <MappingFragment StoreEntitySet="empleado">
-          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
           <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
@@ -56,6 +61,7 @@
           <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="imagen" ColumnName="imagen" />
           <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -66,6 +72,16 @@
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
           <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="estadopedido">
+      <EntityTypeMapping TypeName="italianpizzaModel.estadopedido">
+        <MappingFragment StoreEntitySet="estadopedido">
+          <ScalarProperty Name="idEstadoPedido" ColumnName="idEstadoPedido" />
+          <ScalarProperty Name="nombreEstado" ColumnName="nombreEstado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -116,14 +132,18 @@
           <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
+          <ScalarProperty Name="idEstadoPedido" ColumnName="idEstadoPedido" />
+          <ScalarProperty Name="idDireccion" ColumnName="idDireccion" />
+          <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="pedidodomicilio">
-      <EntityTypeMapping TypeName="italianpizzaModel.pedidodomicilio">
-        <MappingFragment StoreEntitySet="pedidodomicilio">
-          <ScalarProperty Name="idPedidoDomicilio" ColumnName="idPedidoDomicilio" />
+    <EntitySetMapping Name="pedidocliente">
+      <EntityTypeMapping TypeName="italianpizzaModel.pedidocliente">
+        <MappingFragment StoreEntitySet="pedidocliente">
+          <ScalarProperty Name="idPedidoCliente" ColumnName="idPedidoCliente" />
           <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idPedido" ColumnName="idPedido" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -193,6 +213,8 @@
           <ScalarProperty Name="idReceta" ColumnName="idReceta" />
           <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
           <ScalarProperty Name="idMedidaProducto" ColumnName="idMedidaProducto" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -203,6 +225,7 @@
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -210,9 +233,9 @@
       <EntityTypeMapping TypeName="italianpizzaModel.receta">
         <MappingFragment StoreEntitySet="receta">
           <ScalarProperty Name="idReceta" ColumnName="idReceta" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="tiempoCoccion" ColumnName="tiempoCoccion" />
-          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="instrucciones" ColumnName="instrucciones" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -241,6 +264,27 @@
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="idCorteCaja" ColumnName="idCorteCaja" />
           <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="fechaRealizacion" ColumnName="fechaRealizacion" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="italianpizzaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="telefono">
+      <EntityTypeMapping TypeName="italianpizzaModel.telefono">
+        <MappingFragment StoreEntitySet="telefono">
+          <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -255,9 +299,9 @@
     <EntitySetMapping Name="usuario">
       <EntityTypeMapping TypeName="italianpizzaModel.usuario">
         <MappingFragment StoreEntitySet="usuario">
-          <ScalarProperty Name="password" ColumnName="password" />
-          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
           <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,4 +1,5 @@
 ﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
+using ItalianPicza.DatabaseModel.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,41 +11,60 @@ namespace ItalianPicza.DatabaseModel.DAO_s
 {
     internal class ProductoDAO
     {
-        internal static List<producto> ObtenerListaProductos()
+        public static List<producto> ObtenerListaProductos()
         {
+            List<producto> productos = new List<producto>();
+            try
             {
-                List<producto> listaProductos;
-                try
+                using (var context = new italianpizzaEntities())
                 {
-                    using (var context = new italianpizzaEntities())
+                    var listaProductos = context.producto.ToList();
+                    productos = listaProductos;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                GestorCuadroDialogo.MostrarError("No hay conexion con la base de datos, intentelo más tarde.",
+                    "Sin conexion a la base de datos");
+            }
+            return productos;
+        }
+
+        public static int incrementarCantidadProducto(producto nuevoProducto, int cantidad)
+        {
+            int resultado = 0;
+
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    var existingProduct = context.producto.FirstOrDefault(p => p.idProducto == nuevoProducto.idProducto);
+                    Console.WriteLine("Encontre " + existingProduct.nombre);
+                    if (existingProduct != null)
                     {
-                            listaProductos = context.producto
-                                .Select(p => new producto
-                                {
-                                    nombre = p.nombre,
-                                    lote = p.lote,
-                                    caducidad = p.caducidad,
-                                    tipo = p.tipoproducto.nombre,
-                                    proveedor = p.proveedor,
-                                    medida = p.medida,
-                                    codigo = p.codigo
-                                }).ToList();
-
-                        }
-
-                }
-                catch (EntityException ex)
-                {
-                    throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
-                }
-                catch (InvalidOperationException ex)
-                {
-                    throw new InvalidOperationException("Operación no válida al acceder a la base de datos.", ex);
+                        Console.WriteLine("voy a actualizar con " + (existingProduct.cantidad ?? 0) + nuevoProducto.cantidad);
+                        existingProduct.cantidad = (existingProduct.cantidad ?? 0) + cantidad;
+                        resultado = context.SaveChanges();
+                    }
+                    else
+                    {
+                        throw new Exception("Producto no encontrado.");
+                    }
                 }
 
-                return listaProductos;
+                return resultado;
+            }
+            catch (EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al actualizar la cantidad del producto.", ex);
             }
         }
+
+        
 
         public int DarDeAltaNuevoProducto(producto nuevoProducto)
         {
@@ -64,6 +84,93 @@ namespace ItalianPicza.DatabaseModel.DAO_s
             {
                 throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
             }
+        }
+        public static int reducirCantidadProductos(List<producto> listaResumenDTO)
+        {
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    foreach (var productoResumen in listaResumenDTO)
+                    {
+
+                        var producto = context.producto.FirstOrDefault(p => p.idProducto == productoResumen.idProducto);
+
+                        if (producto != null)
+                        {
+                            if (producto.cantidad >= productoResumen.cantidad)
+                            {
+                                producto.cantidad -= productoResumen.cantidad;
+                            }
+                            else
+                            {
+                                return -2;
+                            }
+                        }
+                        else
+                        {
+                            return -1;
+                        }
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                GestorCuadroDialogo.MostrarError("No hay conexión con la base de datos, inténtelo más tarde.",
+                    "Sin conexión a la base de datos");
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                GestorCuadroDialogo.MostrarError($"Ocurrió un error al reducir la cantidad de productos: {ex.Message}",
+                    "Error al reducir cantidad");
+                return -1;
+            }
+
+            return 0;
+        }
+
+        public static int ReducirCantidadProducto(producto productoResumen, int cantidad)
+        {
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    var producto = context.producto.FirstOrDefault(p => p.idProducto == productoResumen.idProducto);
+
+                    if (producto != null)
+                    {
+                        if (producto.cantidad >= cantidad)
+                        {
+                            producto.cantidad = producto.cantidad - cantidad;
+                        }
+                        else
+                        {
+                            return -2;
+                        }
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+
+                    context.SaveChanges();
+                }
+            }
+            catch (InvalidOperationException)
+            {
+                GestorCuadroDialogo.MostrarError("No hay conexión con la base de datos, inténtelo más tarde.",
+                    "Sin conexión a la base de datos");
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                GestorCuadroDialogo.MostrarError($"Ocurrió un error al reducir la cantidad de productos: {ex.Message}",
+                    "Error al reducir cantidad");
+                return -1;
+            }
+            return 0;
         }
     }
 }

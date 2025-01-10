@@ -16,10 +16,8 @@
       <PropertyRef Name="idCliente" />
     </Key>
     <Property Name="idCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="20" />
-    <Property Name="apellidoPaterno" Type="varchar" MaxLength="20" />
-    <Property Name="apellidoMaterno" Type="varchar" MaxLength="20" />
-    <Property Name="telefono" Type="int" />
+    <Property Name="nombre" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="idTelefono" Type="int" />
   </EntityType>
   <EntityType Name="cortecaja">
     <Key>
@@ -36,7 +34,14 @@
     </Key>
     <Property Name="idDireccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombre" Type="varchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="direccioncliente">
+    <Key>
+      <PropertyRef Name="idClienteDireccion" />
+    </Key>
+    <Property Name="idClienteDireccion" Type="int" Nullable="false" />
     <Property Name="idCliente" Type="int" />
+    <Property Name="idDireccion" Type="int" />
   </EntityType>
   <EntityType Name="empleado">
     <Key>
@@ -61,6 +66,15 @@
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="estadopedido">
+    <Key>
+      <PropertyRef Name="idEstadoPedido" />
+    </Key>
+    <Property Name="idEstadoPedido" Type="int" Nullable="false" />
+    <Property Name="nombreEstado" Type="nchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="ingrediente">
     <Key>
@@ -68,12 +82,12 @@
     </Key>
     <Property Name="idIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="caducidad" Type="varchar" MaxLength="10" />
-    <Property Name="cantidad" Type="int" />
+    <Property Name="cantidad" Type="varchar" MaxLength="5" />
     <Property Name="codigo" Type="int" />
     <Property Name="lote" Type="varchar" MaxLength="10" />
     <Property Name="medida" Type="varchar" MaxLength="10" />
     <Property Name="nombre" Type="varchar" MaxLength="20" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="imagen" Type="varbinary(max)" />
     <Property Name="idProveedor" Type="int" />
     <Property Name="idInventario" Type="int" />
   </EntityType>
@@ -106,19 +120,23 @@
     <Property Name="fecha" Type="varchar" MaxLength="10" />
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
     <Property Name="idCorteCaja" Type="int" />
+    <Property Name="idEstadoPedido" Type="int" />
+    <Property Name="idDireccion" Type="int" />
+    <Property Name="idTelefono" Type="int" />
   </EntityType>
-  <EntityType Name="pedidodomicilio">
+  <EntityType Name="pedidocliente">
     <Key>
-      <PropertyRef Name="idPedidoDomicilio" />
+      <PropertyRef Name="idPedidoCliente" />
     </Key>
-    <Property Name="idPedidoDomicilio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedidoCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idCliente" Type="int" />
+    <Property Name="idPedido" Type="int" />
   </EntityType>
   <EntityType Name="pedidolocal">
     <Key>
       <PropertyRef Name="idPedidoLocal" />
     </Key>
-    <Property Name="idPedidoLocal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPedidoLocal" Type="int" Nullable="false" />
     <Property Name="idMesa" Type="int" />
   </EntityType>
   <EntityType Name="pedidoproducto">
@@ -176,6 +194,8 @@
     <Property Name="idReceta" Type="int" />
     <Property Name="idTipoProducto" Type="int" />
     <Property Name="idMedidaProducto" Type="int" />
+    <Property Name="observacion" Type="nchar" MaxLength="50" />
+    <Property Name="precio" Type="decimal" Precision="18" Scale="0" />
   </EntityType>
   <EntityType Name="proveedor">
     <Key>
@@ -185,22 +205,23 @@
     <Property Name="descripcion" Type="varchar" MaxLength="200" />
     <Property Name="nombre" Type="varchar" MaxLength="30" />
     <Property Name="telefono" Type="int" />
+    <Property Name="imagen" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="receta">
     <Key>
       <PropertyRef Name="idReceta" />
     </Key>
     <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nombre" Type="varchar" MaxLength="10" />
     <Property Name="tiempoCoccion" Type="int" />
-    <Property Name="imagen" Type="varbinary" MaxLength="1" />
+    <Property Name="descripcion" Type="varchar" MaxLength="150" />
+    <Property Name="instrucciones" Type="varchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="recetaingrediente">
     <Key>
       <PropertyRef Name="idRecetaIngrediente" />
     </Key>
     <Property Name="idRecetaIngrediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="cantidad" Type="int" />
+    <Property Name="cantidad" Type="varchar" MaxLength="3" />
     <Property Name="idReceta" Type="int" />
     <Property Name="idIngrediente" Type="int" />
   </EntityType>
@@ -219,6 +240,25 @@
     <Property Name="cantidad" Type="decimal" Precision="20" Scale="2" />
     <Property Name="idCorteCaja" Type="int" />
     <Property Name="idEmpleado" Type="int" />
+    <Property Name="fechaRealizacion" Type="date" />
+    <Property Name="descripcion" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="telefono">
+    <Key>
+      <PropertyRef Name="idTelefono" />
+    </Key>
+    <Property Name="idTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero" Type="nchar" MaxLength="12" />
   </EntityType>
   <EntityType Name="tipoproducto">
     <Key>
@@ -263,17 +303,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_cliente_direccion">
-    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="direccion" Type="Self.direccion" Multiplicity="*" />
+  <Association Name="FK_cliente_telefono">
+    <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+    <End Role="cliente" Type="Self.cliente" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="cliente">
-        <PropertyRef Name="idCliente" />
+      <Principal Role="telefono">
+        <PropertyRef Name="idTelefono" />
       </Principal>
-      <Dependent Role="direccion">
-        <PropertyRef Name="idCliente" />
+      <Dependent Role="cliente">
+        <PropertyRef Name="idTelefono" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -286,6 +324,32 @@
       </Principal>
       <Dependent Role="cortecaja">
         <PropertyRef Name="idEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_direccioncliente_cliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="direccioncliente">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_direccioncliente_direccion">
+    <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+    <End Role="direccioncliente" Type="Self.direccioncliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="direccion">
+        <PropertyRef Name="idDireccion" />
+      </Principal>
+      <Dependent Role="direccioncliente">
+        <PropertyRef Name="idDireccion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -399,36 +463,86 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_pedidodomicilio_cliente">
-    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="*" />
+  <Association Name="FK_pedido_direccion">
+    <End Role="direccion" Type="Self.direccion" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="cliente">
-        <PropertyRef Name="idCliente" />
+      <Principal Role="direccion">
+        <PropertyRef Name="idDireccion" />
       </Principal>
-      <Dependent Role="pedidodomicilio">
-        <PropertyRef Name="idCliente" />
+      <Dependent Role="pedido">
+        <PropertyRef Name="idDireccion" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_pedidodomicilio_pedido">
+  <Association Name="FK_pedido_estado">
+    <End Role="estadopedido" Type="Self.estadopedido" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="estadopedido">
+        <PropertyRef Name="idEstadoPedido" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="idEstadoPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedido_pedido">
     <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
-    <End Role="pedidodomicilio" Type="Self.pedidodomicilio" Multiplicity="0..1" />
+    <End Role="pedido1" Type="Self.pedido" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="pedido">
         <PropertyRef Name="idPedido" />
       </Principal>
-      <Dependent Role="pedidodomicilio">
-        <PropertyRef Name="idPedidoDomicilio" />
+      <Dependent Role="pedido1">
+        <PropertyRef Name="idPedido" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedido_telefono">
+    <End Role="telefono" Type="Self.telefono" Multiplicity="0..1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="telefono">
+        <PropertyRef Name="idTelefono" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="idTelefono" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedidocliente_cliente">
+    <End Role="cliente" Type="Self.cliente" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="idCliente" />
+      </Principal>
+      <Dependent Role="pedidocliente">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_pedidocliente_pedido">
+    <End Role="pedido" Type="Self.pedido" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="pedidocliente" Type="Self.pedidocliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pedido">
+        <PropertyRef Name="idPedido" />
+      </Principal>
+      <Dependent Role="pedidocliente">
+        <PropertyRef Name="idPedido" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_pedidolocal_mesa">
-    <End Role="mesa" Type="Self.mesa" Multiplicity="0..1">
-      <OnDelete Action="Cascade" />
-    </End>
+    <End Role="mesa" Type="Self.mesa" Multiplicity="0..1" />
     <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="mesa">
@@ -440,7 +554,9 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_pedidolocal_pedido">
-    <End Role="pedido" Type="Self.pedido" Multiplicity="1" />
+    <End Role="pedido" Type="Self.pedido" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
     <End Role="pedidolocal" Type="Self.pedidolocal" Multiplicity="0..1" />
     <ReferentialConstraint>
       <Principal Role="pedido">
@@ -690,14 +806,16 @@
     <EntitySet Name="cliente" EntityType="Self.cliente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="cortecaja" EntityType="Self.cortecaja" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="direccion" EntityType="Self.direccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="direccioncliente" EntityType="Self.direccioncliente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="entradaextraordinaria" EntityType="Self.entradaextraordinaria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="estadopedido" EntityType="Self.estadopedido" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ingrediente" EntityType="Self.ingrediente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="inventario" EntityType="Self.inventario" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="medidaproducto" EntityType="Self.medidaproducto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mesa" EntityType="Self.mesa" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pedido" EntityType="Self.pedido" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="pedidodomicilio" EntityType="Self.pedidodomicilio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedidocliente" EntityType="Self.pedidocliente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pedidolocal" EntityType="Self.pedidolocal" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pedidoproducto" EntityType="Self.pedidoproducto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pedidoproveedor" EntityType="Self.pedidoproveedor" Schema="dbo" store:Type="Tables" />
@@ -709,6 +827,8 @@
     <EntitySet Name="recetaingrediente" EntityType="Self.recetaingrediente" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="rol" EntityType="Self.rol" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="salidaextraordinaria" EntityType="Self.salidaextraordinaria" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="telefono" EntityType="Self.telefono" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipoproducto" EntityType="Self.tipoproducto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_baja_cortecaja" Association="Self.FK_baja_cortecaja">
@@ -719,13 +839,21 @@
       <End Role="empleado" EntitySet="empleado" />
       <End Role="baja" EntitySet="baja" />
     </AssociationSet>
-    <AssociationSet Name="FK_cliente_direccion" Association="Self.FK_cliente_direccion">
+    <AssociationSet Name="FK_cliente_telefono" Association="Self.FK_cliente_telefono">
+      <End Role="telefono" EntitySet="telefono" />
       <End Role="cliente" EntitySet="cliente" />
-      <End Role="direccion" EntitySet="direccion" />
     </AssociationSet>
     <AssociationSet Name="FK_corte_empleado" Association="Self.FK_corte_empleado">
       <End Role="empleado" EntitySet="empleado" />
       <End Role="cortecaja" EntitySet="cortecaja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_direccioncliente_cliente" Association="Self.FK_direccioncliente_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="direccioncliente" EntitySet="direccioncliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_direccioncliente_direccion" Association="Self.FK_direccioncliente_direccion">
+      <End Role="direccion" EntitySet="direccion" />
+      <End Role="direccioncliente" EntitySet="direccioncliente" />
     </AssociationSet>
     <AssociationSet Name="FK_empleado_rol" Association="Self.FK_empleado_rol">
       <End Role="rol" EntitySet="rol" />
@@ -759,13 +887,29 @@
       <End Role="cortecaja" EntitySet="cortecaja" />
       <End Role="pedido" EntitySet="pedido" />
     </AssociationSet>
-    <AssociationSet Name="FK_pedidodomicilio_cliente" Association="Self.FK_pedidodomicilio_cliente">
-      <End Role="cliente" EntitySet="cliente" />
-      <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
-    </AssociationSet>
-    <AssociationSet Name="FK_pedidodomicilio_pedido" Association="Self.FK_pedidodomicilio_pedido">
+    <AssociationSet Name="FK_pedido_direccion" Association="Self.FK_pedido_direccion">
+      <End Role="direccion" EntitySet="direccion" />
       <End Role="pedido" EntitySet="pedido" />
-      <End Role="pedidodomicilio" EntitySet="pedidodomicilio" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedido_estado" Association="Self.FK_pedido_estado">
+      <End Role="estadopedido" EntitySet="estadopedido" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedido_pedido" Association="Self.FK_pedido_pedido">
+      <End Role="pedido" EntitySet="pedido" />
+      <End Role="pedido1" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedido_telefono" Association="Self.FK_pedido_telefono">
+      <End Role="telefono" EntitySet="telefono" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedidocliente_cliente" Association="Self.FK_pedidocliente_cliente">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="pedidocliente" EntitySet="pedidocliente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_pedidocliente_pedido" Association="Self.FK_pedidocliente_pedido">
+      <End Role="pedido" EntitySet="pedido" />
+      <End Role="pedidocliente" EntitySet="pedidocliente" />
     </AssociationSet>
     <AssociationSet Name="FK_pedidolocal_mesa" Association="Self.FK_pedidolocal_mesa">
       <End Role="mesa" EntitySet="mesa" />
