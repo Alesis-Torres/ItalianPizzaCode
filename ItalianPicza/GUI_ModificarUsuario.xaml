@@ -56,6 +56,7 @@
         <ComboBox Name="cbRol" HorizontalAlignment="Left" Height="38" Margin="553,400,0,0" VerticalAlignment="Top" Width="284" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0">
             <ComboBoxItem Content="Gerente de sucursal"/>
             <ComboBoxItem Content="Cocinero"/>
+            <ComboBoxItem Content="Mesero"/>
         </ComboBox>
         <Image Name="imagenUsuario" HorizontalAlignment="Left" Height="242" Margin="920,200,0,0" VerticalAlignment="Top" Width="260" Source="Imagenes/Indicadores/Group 1.png"/>
         <Button Width="200"

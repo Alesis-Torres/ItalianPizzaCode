@@ -51,7 +51,7 @@ namespace ItalianPicza
 
         private void irPedidos(object sender, RoutedEventArgs e)
         {
-            //CambiarPagina(new GUI_Pedidos());
+            MostrarGUISegunRol();
         }
 
         private void irProveedores(object sender, RoutedEventArgs e)
@@ -63,5 +63,41 @@ namespace ItalianPicza
         {
             CambiarPagina(new GUI_Finanzas());
         }
+
+        public void ActualizarAccesoSegunRol()
+        {
+            switch (empleado)
+            {
+                case 2: 
+                    btnUsuarios.IsEnabled = false;
+                    btnFinanzas.IsEnabled = false;
+                    btnProveedores.IsEnabled = false;
+                    break;
+
+                case 3: // Si es rol 3, deshabilitar otros botones
+                    btnUsuarios.IsEnabled = false;
+                    btnFinanzas.IsEnabled = false;
+                    btnProveedores.IsEnabled = false;
+                    btnInventario.IsEnabled = false;
+                    break;
+                default: 
+                    btnUsuarios.IsEnabled = true;
+                    btnFinanzas.IsEnabled = true;
+                    btnProveedores.IsEnabled = true;
+                    btnPedidos.IsEnabled = true;
+                    btnInventario.IsEnabled = true;
+                    break;
+            }
+        }
+
+
+        public void MostrarGUISegunRol()
+        {
+            if (empleado != 1) //Segun sea el rol
+            {
+                //CambiarPagina(new GUI_Finanzas()); Segun el rol del empleado en GUI_Empleados
+            }
+        }
+
     }
 }

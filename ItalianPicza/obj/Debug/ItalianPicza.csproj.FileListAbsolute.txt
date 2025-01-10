@@ -58,3 +58,5 @@ C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_RegistrarTransaccionFinanciera.baml
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Productos.g.cs
 C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Productos.baml
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Recetas.g.cs
+C:\Users\king_\Documents\Proyecto software\ItalianPiczzza\ItalianPicza\obj\Debug\GUI_Recetas.baml

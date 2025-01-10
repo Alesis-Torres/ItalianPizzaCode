@@ -56,7 +56,8 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                                     IDIngrediente = ing.idIngrediente,
                                     Nombre = ing.nombre,
                                     Cantidad = ri.cantidad,
-                                    Imagen = ing.imagen 
+                                    Imagen = ing.imagen,
+                                    Medida = ing.medida
                                 };
 
                     foreach (var item in query)
@@ -66,7 +67,8 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                             idIngrediente = item.IDIngrediente,
                             nombre = item.Nombre,
                             cantidad = item.Cantidad,
-                            imagen = item.Imagen 
+                            imagen = item.Imagen,
+                            medida = item.Medida
                         });
                     }
                 }

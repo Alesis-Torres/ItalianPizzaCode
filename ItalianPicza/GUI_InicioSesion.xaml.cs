@@ -43,6 +43,8 @@ namespace ItalianPicza
                             VentanaPrincipal ventanaPrincipal = (VentanaPrincipal)Application.Current.MainWindow;
                             ventanaPrincipal.panelNavegacion.Visibility = Visibility.Visible;
 
+                            ventanaPrincipal.ActualizarAccesoSegunRol();
+
                             VentanaPrincipal.CambiarPagina(new GUI_MenuPrincipal());
 
                         }

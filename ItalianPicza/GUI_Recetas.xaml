@@ -1,4 +1,4 @@
-﻿<Page x:Class="ItalianPicza.GUI_Productos"
+﻿<Page x:Class="ItalianPicza.GUI_Recetas"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:ItalianPicza"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
-      Title="GUI_Productos">
+      Title="GUI_Recetas">
 
     <Page.Resources>
         <!-- Estilo para el ComboBox -->
@@ -32,51 +32,51 @@
 
                             <!-- Borde del ComboBox -->
                             <Border 
-                            x:Name="Border"
-                            Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="5"
-                            Grid.ColumnSpan="2">
+                         x:Name="Border"
+                         Background="{TemplateBinding Background}" 
+                         BorderBrush="{TemplateBinding BorderBrush}" 
+                         BorderThickness="{TemplateBinding BorderThickness}" 
+                         CornerRadius="5"
+                         Grid.ColumnSpan="2">
 
                                 <Grid>
                                     <!-- Muestra el contenido seleccionado del ComboBox -->
                                     <ContentPresenter
-                                    Margin="4"
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Left"
-                                    Content="{TemplateBinding SelectionBoxItem}" />
+                                 Margin="4"
+                                 VerticalAlignment="Center"
+                                 HorizontalAlignment="Left"
+                                 Content="{TemplateBinding SelectionBoxItem}" />
                                 </Grid>
                             </Border>
 
                             <!-- Botón de despliegue con la flecha -->
                             <ToggleButton 
-                            Grid.Column="1"
-                            Name="ToggleButton"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Focusable="False"
-                            IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                            ClickMode="Press">
+                         Grid.Column="1"
+                         Name="ToggleButton"
+                         Background="Transparent"
+                         BorderBrush="Transparent"
+                         Focusable="False"
+                         IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
+                         ClickMode="Press">
                                 <Path
-                                x:Name="Arrow"
-                                Fill="Gray"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Data="M 0 0 L 4 4 L 8 0 Z"/>
+                             x:Name="Arrow"
+                             Fill="Gray"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Data="M 0 0 L 4 4 L 8 0 Z"/>
                             </ToggleButton>
 
                             <!-- Popup que contiene los elementos del ComboBox desplegados -->
                             <Popup Name="Popup"
-                               Placement="Bottom"
-                               IsOpen="{TemplateBinding IsDropDownOpen}"
-                               AllowsTransparency="True"
-                               Focusable="False"
-                               PopupAnimation="Slide">
+                            Placement="Bottom"
+                            IsOpen="{TemplateBinding IsDropDownOpen}"
+                            AllowsTransparency="True"
+                            Focusable="False"
+                            PopupAnimation="Slide">
                                 <Border 
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="Gray" 
-                                BorderThickness="1">
+                             Background="{TemplateBinding Background}" 
+                             BorderBrush="Gray" 
+                             BorderThickness="1">
                                     <ScrollViewer Margin="4">
                                         <StackPanel IsItemsHost="True" />
                                     </ScrollViewer>
@@ -99,17 +99,17 @@
         </Button>
 
         <Rectangle HorizontalAlignment="Left" Height="78" Margin="580,15,0,0" VerticalAlignment="Top" Width="418" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
-        <Label Content="Productos" HorizontalAlignment="Left" Height="59" Margin="713,29,0,0" VerticalAlignment="Top" Width="239" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
-        <Image HorizontalAlignment="Left" Height="70" Margin="605,19,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+        <Label Content="Recetas" HorizontalAlignment="Left" Height="59" Margin="713,29,0,0" VerticalAlignment="Top" Width="239" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
+        <Image HorizontalAlignment="Left" Height="56" Margin="610,26,0,0" VerticalAlignment="Top" Width="72" Source="Imagenes/Logos/script 2.png"/>
 
         <Grid HorizontalAlignment="Left" Height="60" Margin="330,-440,0,0" Width="400">
             <!-- TextBox con estilo MaterialDesign -->
             <TextBox Name="cuadroTextoNombreEmpleado" 
-                FontSize="20"
-                VerticalAlignment="Center"
-                Background="White"
-                Style="{StaticResource MaterialDesignOutlinedTextBox}"
-                Padding="5,0,55,0" Height="40">
+        FontSize="20"
+        VerticalAlignment="Center"
+        Background="White"
+        Style="{StaticResource MaterialDesignOutlinedTextBox}"
+        Padding="5,0,55,0" Height="40">
                 <materialDesign:HintAssist.Hint>
                     <TextBlock Text="Buscar..." Foreground="Black" FontSize="18"/>
                 </materialDesign:HintAssist.Hint>
@@ -117,12 +117,12 @@
 
             <!-- Ícono de lupa -->
             <materialDesign:PackIcon Kind="Magnify"
-                      VerticalAlignment="Center"
-                      HorizontalAlignment="Right"
-                      Margin="0,0,10,0"
-                      Width="24"
-                      Height="24"
-                      Foreground="Gray"/>
+              VerticalAlignment="Center"
+              HorizontalAlignment="Right"
+              Margin="0,0,10,0"
+              Width="24"
+              Height="24"
+              Foreground="Gray"/>
         </Grid>
 
         <ComboBox HorizontalAlignment="Left" Height="38" Margin="942,122,0,0" VerticalAlignment="Top" Width="231" FontSize="16" Style="{StaticResource MaterialDesignOutlinedComboBox}" Padding="5,0,5,0" Background="White">
@@ -136,8 +136,8 @@
         <!-- Nuevo diseño -->
 
         <ListView Name="lvProductos" Margin="321,182,111,158"
-            BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
-            SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}">
+    BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
+    SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}">
             <ListView.Resources>
                 <Style TargetType="{x:Type GridViewColumnHeader}">
                     <Setter Property="Background" Value="White"/>
@@ -169,39 +169,24 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding nombre}" 
-                             Foreground="Black" 
-                             HorizontalAlignment="Center" 
-                             VerticalAlignment="Center" 
-                             FontSize="20"
-                             FontFamily="Georgia"/>
+                     Foreground="Black" 
+                     HorizontalAlignment="Center" 
+                     VerticalAlignment="Center" 
+                     FontSize="20"
+                     FontFamily="Georgia"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
                     <!-- Status Column -->
-                    <GridViewColumn Header="Caducidad" Width="150">
+                    <GridViewColumn Header="Caducidad" Width="200">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding caducidad}" 
-                                    Foreground="Black" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="24"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-
-                    <GridViewColumn Header="Medida" Width="150">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding medida}"
-                                    Foreground="Black" 
-                                    HorizontalAlignment="Center" 
-                                    VerticalAlignment="Center" 
-                                    FontSize="18"
-                                    FontFamily="Georgia" 
-                                    TextWrapping="Wrap"
-                                    MaxWidth="280"/>
+                            Foreground="Black" 
+                            HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" 
+                            FontSize="24"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -212,8 +197,8 @@
                             <DataTemplate>
                                 <!-- StackPanel con orientación vertical -->
                                 <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <!-- Botón "Modificar artículo" -->
-                                    <Button Content="Modificar artículo" Width="120" Height="40" Background="Goldenrod" Margin="0,0,0,10" />
+                                    <!-- Botón "Ver receta" -->
+                                    <Button Content="Ver receta" Width="160" Height="50" Background="#00008B" Foreground="White" Click="VerReceta"/>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -224,31 +209,5 @@
 
 
         <!-- Nuevo diseño -->
-
-        <Button HorizontalAlignment="Left" Height="63" Margin="616,600,0,0" VerticalAlignment="Top" Width="280" Background="#008000">
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Border Background="{TemplateBinding Background}"
-                        CornerRadius="20"
-                        BorderBrush="{TemplateBinding BorderBrush}"
-                        BorderThickness="0"
-                        Padding="10">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                            <materialDesign:PackIcon Kind="Plus" 
-                             VerticalAlignment="Center" 
-                             Foreground="White"
-                             Width="24" 
-                             Height="24" />
-                            <TextBlock Text="Agregar producto" 
-                            VerticalAlignment="Center"
-                            Foreground="White"
-                            FontWeight="Bold"
-                            FontSize="22"/>
-                        </StackPanel>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
     </Grid>
 </Page>

@@ -206,6 +206,9 @@
     <Compile Include="GUI_Proveedores.xaml.cs">
       <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_Recetas.xaml.cs">
+      <DependentUpon>GUI_Recetas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_RegistrarTransaccionFinanciera.xaml.cs">
       <DependentUpon>GUI_RegistrarTransaccionFinanciera.xaml</DependentUpon>
     </Compile>
@@ -270,6 +273,10 @@
     <Page Include="GUI_Proveedores.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_Recetas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GUI_RegistrarTransaccionFinanciera.xaml">
       <SubType>Designer</SubType>

@@ -16,7 +16,6 @@ namespace ItalianPicza
         private List<ingrediente> ingredientes;
         private List<ingrediente> ingredientesReceta = new List<ingrediente>();
         int receta;
-        string instruccionesReceta;
 
         public GUI_ModificarReceta(int idReceta)
         {
@@ -29,7 +28,7 @@ namespace ItalianPicza
 
         private void Cancelar(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_Productos()); //Regresar a Consultar receta pero necesito el producto
+            VentanaPrincipal.CambiarPagina(new GUI_Recetas()); 
         }
 
         private void Siguiente(object sender, RoutedEventArgs e)
