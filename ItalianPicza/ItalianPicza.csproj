@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -37,8 +38,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=3.1.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>packages\MaterialDesignColors.3.1.0\lib\net462\MaterialDesignColors.dll</HintPath>
@@ -48,6 +52,24 @@
     </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Charting.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Quality, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Quality.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Snippets, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.Snippets.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.System, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.System.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.WPFonts, Version=6.1.1.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>packages\PDFsharp.6.1.1\lib\netstandard2.0\PdfSharp.WPFonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -74,9 +96,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DatabaseModel\DAO%27s\DomicilioDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\IngredientesDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\InsumosDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\MiscDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\PedidoDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\PedidosProveedoresDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\ProductoDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\ProductosDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\ProveedoresDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\RecetaDAO.cs" />
+    <Compile Include="DatabaseModel\DAO%27s\TransaccionesDAO.cs" />
     <Compile Include="DatabaseModel\DAO%27s\UsuariosDAO.cs" />
     <Compile Include="DatabaseModel\DataBaseMapping\baja.cs">
       <DependentUpon>ModeloBaseDatos.tt</DependentUpon>
@@ -183,14 +212,29 @@
     <Compile Include="DatabaseModel\DTO\ProductoDTO.cs" />
     <Compile Include="DatabaseModel\DTO\ProductoResumenDTO.cs" />
     <Compile Include="GestorCuadroDialogo.cs" />
+    <Compile Include="GUI_AgregarPedidoProveedor.xaml.cs">
+      <DependentUpon>GUI_AgregarPedidoProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_AgregarProveedores.xaml.cs">
+      <DependentUpon>GUI_AgregarProveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ConsultarPedidos.xaml.cs">
       <DependentUpon>GUI_ConsultarPedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ConsultarReceta.xaml.cs">
+      <DependentUpon>GUI_ConsultarReceta.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_DarAltaProducto.xaml.cs">
       <DependentUpon>GUI_DarAltaProducto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_DarAltaReceta.xaml.cs">
+      <DependentUpon>GUI_DarAltaReceta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_DarAltaUsuario.xaml.cs">
       <DependentUpon>GUI_DarAltaUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Finanzas.xaml.cs">
+      <DependentUpon>GUI_Finanzas.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_FormularioPedido.xaml.cs">
       <DependentUpon>GUI_FormularioPedido.xaml</DependentUpon>
@@ -201,27 +245,81 @@
     <Compile Include="GUI_MenuPrincipal.xaml.cs">
       <DependentUpon>GUI_MenuPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_ModificarPedidoProveedor.xaml.cs">
+      <DependentUpon>GUI_ModificarPedidoProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ModificarProveedor.xaml.cs">
+      <DependentUpon>GUI_ModificarProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ModificarReceta.xaml.cs">
+      <DependentUpon>GUI_ModificarReceta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ModificarUsuario.xaml.cs">
+      <DependentUpon>GUI_ModificarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Pedidos.xaml.cs">
+      <DependentUpon>GUI_Pedidos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_PedidosProveedores.xaml.cs">
+      <DependentUpon>GUI_PedidosProveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Productos.xaml.cs">
+      <DependentUpon>GUI_Productos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_Proveedores.xaml.cs">
+      <DependentUpon>GUI_Proveedores.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_RegistrarTransaccionFinanciera.xaml.cs">
+      <DependentUpon>GUI_RegistrarTransaccionFinanciera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUI_ReporteInventario.xaml.cs">
+      <DependentUpon>GUI_ReporteInventario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GUI_ResponsivaCocineros.xaml.cs">
       <DependentUpon>GUI_ResponsivaCocineros.xaml</DependentUpon>
     </Compile>
     <Compile Include="GUI_Usuarios.xaml.cs">
       <DependentUpon>GUI_Usuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GUI_VerDetallesPedidoProveedores.xaml.cs">
+      <DependentUpon>GUI_VerDetallesPedidoProveedores.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Model\PedidoGeneral.cs" />
+    <Compile Include="Model\ProductoGeneral.cs" />
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
+    <Page Include="GUI_AgregarPedidoProveedor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_AgregarProveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GUI_ConsultarPedidos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_ConsultarReceta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="GUI_DarAltaProducto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUI_DarAltaReceta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GUI_DarAltaUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_Finanzas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="GUI_FormularioPedido.xaml">
       <SubType>Designer</SubType>
@@ -246,6 +344,46 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GUI_ModificarPedidoProveedor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_ModificarProveedor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_ModificarReceta.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_ModificarUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_Pedidos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_PedidosProveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_Productos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_Proveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_RegistrarTransaccionFinanciera.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GUI_ReporteInventario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="GUI_ResponsivaCocineros.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -253,6 +391,10 @@
     <Page Include="GUI_Usuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GUI_VerDetallesPedidoProveedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="VentanaPrincipal.xaml">
       <SubType>Designer</SubType>
@@ -353,7 +495,6 @@
   <ItemGroup>
     <Resource Include="Imagenes\Iconos\check.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="DatabaseModel\DataBaseMapping\ModeloBaseDatos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -373,5 +514,8 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.5.1\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="packages\EntityFramework.6.5.1\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.5.1\build\EntityFramework.targets')" />
 </Project>

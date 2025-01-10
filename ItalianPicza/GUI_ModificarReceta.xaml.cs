@@ -210,7 +210,7 @@ namespace ItalianPicza
                                 ingrediente nuevoIngrediente = new ingrediente
                                 {
                                     nombre = nombreIngrediente,
-                                    cantidad = cantidadTexto,
+                                    cantidad = Int32.Parse(cantidadTexto),
                                     idIngrediente = idInsumo
                                 };
 

@@ -64,7 +64,7 @@ namespace ItalianPicza
 
         private void AgregarPedido(object sender, RoutedEventArgs e)
         {
-            VentanaPrincipal.CambiarPagina(new GUI_AgregarPedidoProveedor());
+            //VentanaPrincipal.CambiarPagina(new GUI_AgregarPedidoProveedor());
         }
 
         private void ConfirmarPedido(object sender, RoutedEventArgs e)

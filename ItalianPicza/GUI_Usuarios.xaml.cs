@@ -115,5 +115,9 @@ namespace ItalianPicza
             }
         }
 
+        private void lvUsuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

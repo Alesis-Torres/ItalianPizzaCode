@@ -133,7 +133,7 @@
 
         <ListView Name="lvUsuarios" Margin="321,177,89,139"
             BorderBrush="Black" Foreground="#E5000000" FontFamily="Georgia" FontSize="12" BorderThickness="1,1,1,1" 
-            SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}">
+            SnapsToDevicePixels="False" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="lvUsuarios_SelectionChanged">
             <ListView.Resources>
                 <Style TargetType="{x:Type GridViewColumnHeader}">
                     <Setter Property="Background" Value="White"/>

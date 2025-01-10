@@ -60,5 +60,10 @@ namespace ItalianPicza
         {
 
         }
+
+        private void irInventario(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

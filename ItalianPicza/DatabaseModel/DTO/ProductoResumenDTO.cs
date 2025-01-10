@@ -8,10 +8,10 @@ namespace ItalianPicza.DatabaseModel.DTO
 {
     public class ProductoResumenDTO
     {
-        public int idProducto { get; set; }
-        public string nombre { get; set; }
-        public decimal precio { get; set; }
-        public int cantidad { get; set; }
-        public decimal precioTotal { get; set; }
+        public int IdProducto { get; set; }
+        public string Nombre { get; set; }
+        public decimal Precio { get; set; }
+        public int Cantidad { get; set; }
+        public decimal PrecioTotal { get; set; }
     }
 }

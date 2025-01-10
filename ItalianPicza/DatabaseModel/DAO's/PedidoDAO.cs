@@ -115,11 +115,11 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                         .Where(pp => pp.idPedido == idPedido)
                         .Select(pp => new ProductoResumenDTO
                         {
-                            idProducto = pp.producto.idProducto,
-                            nombre = pp.producto.nombre,
-                            precio = (decimal)pp.producto.precio,
-                            cantidad = (int)pp.cantidad,
-                            precioTotal = (decimal)(pp.producto.precio * pp.cantidad)
+                            IdProducto = pp.producto.idProducto,
+                            Nombre = pp.producto.nombre,
+                            Precio = (decimal)pp.producto.precio,
+                            Cantidad = (int)pp.cantidad,
+                            PrecioTotal = (decimal)(pp.producto.precio * pp.cantidad)
                         })
                         .ToList();
                 }

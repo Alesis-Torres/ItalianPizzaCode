@@ -1,5 +1,7 @@
-﻿using ItalianPicza.DatabaseModel.DataBaseMapping;
+﻿
+using ItalianPicza.DatabaseModel.DataBaseMapping;
 using ItalianPicza.DatabaseModel.DTO;
+using ItalianPicza.Model;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -171,6 +173,46 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 return -1;
             }
             return 0;
+        }
+
+        public static List<ProductoGeneral> ObtenerProductosEIngredientes()
+        {
+            List<ProductoGeneral> productosEIngredientes = new List<ProductoGeneral>();
+
+            using (var context = new italianpizzaEntities())
+            {
+                // Fetch productos
+                var productos = from p in context.producto
+                                select new ProductoGeneral
+                                {
+                                    IdProducto = p.idProducto,
+                                    TipoPedido = "Producto",
+                                    UnidadMedida = p.medida,
+                                    Precio = (decimal)p.precio,
+                                    Nombre = p.nombre, // Assuming 'nombre' exists in 'producto'
+                                    Cantidad = p.cantidad ?? 0 // Assuming 'cantidad' is nullable in 'producto'
+                                };
+
+                // Fetch ingredientes
+                var ingredientes = from i in context.ingrediente
+                                   select new ProductoGeneral
+                                   {
+                                       IdProducto = i.idIngrediente,
+                                       TipoPedido = "Ingrediente",
+                                       UnidadMedida = i.medida,
+                                       Precio = (decimal)i.cantidad,
+                                       Nombre = i.nombre, // Assuming 'nombre' exists in 'ingrediente'
+                                       Cantidad = i.cantidad ?? 0 // Assuming 'cantidad' is nullable in 'ingrediente'
+                                   };
+
+                // Combine both lists
+                productosEIngredientes = productos
+                    .Union(ingredientes)
+                    .OrderBy(pe => pe.TipoPedido) // Optional ordering
+                    .ToList();
+            }
+
+            return productosEIngredientes;
         }
     }
 }

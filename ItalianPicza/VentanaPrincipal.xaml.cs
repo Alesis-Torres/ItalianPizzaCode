@@ -35,7 +35,7 @@ namespace ItalianPicza
 
         private void CerrarSesion(object sender, RoutedEventArgs e)
         {
-            CambiarPagina(new GUI_InicioSesion());
+            CambiarPagina(new GUI_AgregarPedidoProveedor(false, -1));
             panelNavegacion.Visibility = Visibility.Collapsed;
         }
 

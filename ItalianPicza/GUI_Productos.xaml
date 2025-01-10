@@ -94,14 +94,14 @@
 
         <Rectangle HorizontalAlignment="Left" Height="83" Stroke="Black" VerticalAlignment="Top" Width="92" Fill="White" Margin="250,15,0,0" StrokeThickness="2" RadiusX="20" RadiusY="20"/>
         <Label Content="Regresar" HorizontalAlignment="Left" Height="36" Margin="261,70,0,0" VerticalAlignment="Top" Width="70" Background="Transparent" Foreground="Black" FontSize="16"/>
-        <Button Margin="240,10,922,630" Click="irInventario" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
-            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        <Button Margin="250,18,939,624"  Background="{x:Null}" BorderBrush="{x:Null}">
+            <!-- <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" /> -->
         </Button>
 
         <Rectangle HorizontalAlignment="Left" Height="78" Margin="580,15,0,0" VerticalAlignment="Top" Width="418" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
         <Label Content="Productos" HorizontalAlignment="Left" Height="59" Margin="713,29,0,0" VerticalAlignment="Top" Width="239" Background="Transparent" Foreground="White" FontSize="36" FontFamily="Rockwell Extra Bold"/>
-        <Image HorizontalAlignment="Left" Height="70" Margin="605,19,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
-
+        <!-- <Image HorizontalAlignment="Left" Height="70" Margin="605,19,0,0" VerticalAlignment="Top" Width="81" Source="Imagenes/Logos/users 3.png"/>
+ -->
         <Grid HorizontalAlignment="Left" Height="60" Margin="330,-440,0,0" Width="400">
             <!-- TextBox con estilo MaterialDesign -->
             <TextBox Name="cuadroTextoNombreEmpleado" 

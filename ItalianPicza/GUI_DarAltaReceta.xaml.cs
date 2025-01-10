@@ -1,5 +1,6 @@
 ﻿using ItalianPicza.DatabaseModel.DAO_s;
 using ItalianPicza.DatabaseModel.DataBaseMapping;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -135,7 +136,7 @@ namespace ItalianPicza
                                     ingrediente nuevoIngrediente = new ingrediente
                                     {
                                         nombre = nombreIngrediente,
-                                        cantidadActual = cantidadTexto,
+                                        cantidadActual = Int32.Parse(cantidadTexto),
                                         idIngrediente = idInsumo
                                     };
 

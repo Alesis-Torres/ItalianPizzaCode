@@ -98,7 +98,6 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                     proveedorExistente.nombre = proveedorModificado.nombre;
                     proveedorExistente.telefono = proveedorModificado.telefono;
                     proveedorExistente.descripcion = proveedorModificado.descripcion;
-                    proveedorExistente.idTipoProducto = proveedorModificado.idTipoProducto;
                     proveedorExistente.imagen = proveedorModificado.imagen;
                     resultado = context.SaveChanges();
                 }
@@ -114,5 +113,6 @@ namespace ItalianPicza.DatabaseModel.DAO_s
                 throw new Exception("Ocurrió un error al modificar el proveedor.", ex);
             }
         }
+
     }
 }

@@ -30,6 +30,7 @@ using Button = System.Windows.Controls.Button;
 using TextBox = System.Windows.Controls.TextBox;
 using System.Windows.Controls.Primitives;
 using ListView = System.Windows.Controls.ListView;
+using ItalianPicza.Model;
 
 namespace ItalianPicza
 {
@@ -386,10 +387,10 @@ namespace ItalianPicza
             List<ProductoResumenDTO> listaResumenDTO = PedidoDAO.recuperarProductos(idPedido);
             foreach (ProductoResumenDTO productoDTO in listaResumenDTO)
             {
-                var matchingProducto = productos.FirstOrDefault(p => p.idProducto == productoDTO.idProducto);
+                var matchingProducto = productos.FirstOrDefault(p => p.idProducto == productoDTO.IdProducto);
                 if (matchingProducto != null)
                 {
-                    matchingProducto.cantidad += productoDTO.cantidad;
+                    matchingProducto.cantidad += productoDTO.Cantidad;
                 }
             }
             lvProductos.ItemsSource = null;
@@ -400,7 +401,7 @@ namespace ItalianPicza
             {
                 Console.WriteLine("llegue hasta aqui");
                 CrearCopiaResumen(item);
-                setCantidadesProductos(item.idProducto, item.cantidad);
+                setCantidadesProductos(item.IdProducto, item.Cantidad);
             }
             
         }
@@ -409,8 +410,8 @@ namespace ItalianPicza
         {
             producto productoOriginal = new producto
             {
-                idProducto = item.idProducto,
-                cantidad = item.cantidad
+                idProducto = item.IdProducto,
+                cantidad = item.Cantidad
             };
             productosResumenEdicion.Add(productoOriginal);
         }
@@ -904,7 +905,7 @@ namespace ItalianPicza
             foreach (producto productoResumen in productosResumen)
             {
                 Console.WriteLine(idPedidoRegistro + " " + productoResumen.idProducto + " " + (int)productoResumen.cantidad);
-                PedidoDAO.registrarPedidoProducto(idPedidoRegistro, productoResumen.idProducto, (int)productoResumen.cantidad);
+                PedidoProveedorDAO.registrarPedidoProducto(idPedidoRegistro, productoResumen.idProducto, (int)productoResumen.cantidad);
             }
             
             MessageBox.Show("Pedido creado correctamente.",
