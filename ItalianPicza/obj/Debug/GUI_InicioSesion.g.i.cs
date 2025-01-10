@@ -42,7 +42,7 @@ namespace ItalianPicza {
     public partial class GUI_InicioSesion : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
         
-        #line 14 "..\..\GUI_InicioSesion.xaml"
+        #line 13 "..\..\GUI_InicioSesion.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox cuadroTextoNombreUsuario;
         
@@ -92,7 +92,7 @@ namespace ItalianPicza {
             return;
             case 2:
             
-            #line 17 "..\..\GUI_InicioSesion.xaml"
+            #line 16 "..\..\GUI_InicioSesion.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.IniciarSesion);
             
             #line default

@@ -74,9 +74,11 @@
     <EntitySetMapping Name="ingrediente">
       <EntityTypeMapping TypeName="italianpizzaModel.ingrediente">
         <MappingFragment StoreEntitySet="ingrediente">
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="cantidadRegistrada" ColumnName="cantidadRegistrada" />
+          <ScalarProperty Name="cantidadActual" ColumnName="cantidadActual" />
           <ScalarProperty Name="idIngrediente" ColumnName="idIngrediente" />
           <ScalarProperty Name="caducidad" ColumnName="caducidad" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="lote" ColumnName="lote" />
           <ScalarProperty Name="medida" ColumnName="medida" />
@@ -150,6 +152,7 @@
     <EntitySetMapping Name="pedidoproveedor">
       <EntityTypeMapping TypeName="italianpizzaModel.pedidoproveedor">
         <MappingFragment StoreEntitySet="pedidoproveedor">
+          <ScalarProperty Name="estado" ColumnName="estado" />
           <ScalarProperty Name="idPedidoProveedor" ColumnName="idPedidoProveedor" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
           <ScalarProperty Name="monto" ColumnName="monto" />
@@ -181,9 +184,11 @@
     <EntitySetMapping Name="producto">
       <EntityTypeMapping TypeName="italianpizzaModel.producto">
         <MappingFragment StoreEntitySet="producto">
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="cantidadRegistrada" ColumnName="cantidadRegistrada" />
+          <ScalarProperty Name="cantidadActual" ColumnName="cantidadActual" />
           <ScalarProperty Name="idProducto" ColumnName="idProducto" />
           <ScalarProperty Name="caducidad" ColumnName="caducidad" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
           <ScalarProperty Name="codigo" ColumnName="codigo" />
           <ScalarProperty Name="lote" ColumnName="lote" />
           <ScalarProperty Name="medida" ColumnName="medida" />
@@ -201,6 +206,7 @@
     <EntitySetMapping Name="proveedor">
       <EntityTypeMapping TypeName="italianpizzaModel.proveedor">
         <MappingFragment StoreEntitySet="proveedor">
+          <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
           <ScalarProperty Name="imagen" ColumnName="imagen" />
           <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />

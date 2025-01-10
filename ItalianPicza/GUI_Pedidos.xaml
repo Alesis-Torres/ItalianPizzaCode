@@ -8,82 +8,25 @@
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="GUI_Usuarios">
 
-    <Page.Resources>
-        <Style TargetType="ComboBox">
-            <Setter Property="Foreground" Value="White" />
-            <Setter Property="Padding" Value="4" />
-            <Setter Property="FontSize" Value="14" />
-            <Setter Property="BorderBrush" Value="Gray" />
-            <Setter Property="Background" Value="#2B2B2B" />
-            <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="ComboBox">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="30" />
-                            </Grid.ColumnDefinitions>
+    <Grid  Margin="12,-4,-12,4" Background="#D3D3D3D3">
+        <Rectangle HorizontalAlignment="Left" Height="721" Stroke="Black" VerticalAlignment="Center" Width="230" Fill="#231B1B"/>
 
-                            <Border 
-                                x:Name="Border"
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="5"
-                                Grid.ColumnSpan="2">
+        <Button Margin="240,10,922,630" Click="irRegresar" Background="{x:Null}" BorderBrush="{x:Null}" Height="80">
+            <Image Source="/Imagenes/Uses/return.png" Stretch="Fill" Width="80" Height="70" />
+        </Button>
 
-                                <Grid>
-                                    <ContentPresenter
-                                        Margin="4"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Left"
-                                        Content="{TemplateBinding SelectionBoxItem}" />
-                                </Grid>
-                            </Border>
+        <Rectangle HorizontalAlignment="Left" Height="78" Margin="504,10,0,0" VerticalAlignment="Top" Width="541" Fill="#231B1B" RadiusX="25" RadiusY="25" Stroke="Maroon" StrokeThickness="5"/>
+        <Label Content="Pedidos" HorizontalAlignment="Left" Height="44" Margin="721,27,0,0" VerticalAlignment="Top" Width="137" Foreground="White" FontFamily="Georgia" FontSize="32" FontWeight="Bold"/>
+        <Image Source="/Imagenes/Iconos/order.png" Height="70" Width="70" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,13,0,0"/>
 
-                            <ToggleButton 
-                                Grid.Column="1"
-                                Name="ToggleButton"
-                                Background="Transparent"
-                                BorderBrush="Transparent"
-                                Focusable="False"
-                                IsChecked="{Binding Path=IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}"
-                                ClickMode="Press">
-                                <Path
-                                    x:Name="Arrow"
-                                    Fill="Gray"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"
-                                    Data="M 0 0 L 4 4 L 8 0 Z"/>
-                            </ToggleButton>
-
-                            <Popup Name="Popup"
-                                   Placement="Bottom"
-                                   IsOpen="{TemplateBinding IsDropDownOpen}"
-                                   AllowsTransparency="True"
-                                   Focusable="False"
-                                   PopupAnimation="Slide">
-                                <Border 
-                                    Background="{TemplateBinding Background}" 
-                                    BorderBrush="Gray" 
-                                    BorderThickness="1">
-                                    <ScrollViewer Margin="4">
-                                        <StackPanel IsItemsHost="True" />
-                                    </ScrollViewer>
-                                </Border>
-                            </Popup>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Page.Resources>
-
-    <Grid>
-        <Rectangle HorizontalAlignment="Left" Height="710" Stroke="Black" VerticalAlignment="Top" Width="230" Fill="Maroon"/>
-
-        <Button Content="Ver Pedidos Cliente" HorizontalAlignment="Left" Margin="387,0,0,0" VerticalAlignment="Center" Height="62" Width="212"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerPedidosCliente"/>
-        <Button Content="Ver Pedidos Proveedor" HorizontalAlignment="Left" Margin="784,0,0,0" VerticalAlignment="Center" Height="62" Width="212"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerPedidosProveedor"/>
+        <Rectangle HorizontalAlignment="Left" Height="492" Margin="462,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="254" Fill="#FF797070"/>
+        <Label Content="Clientes" HorizontalAlignment="Left" Margin="490,133,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
+        <Image Source="/Imagenes/Stock/clientorder.png" Height="256" Width="252" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="462,197,0,0" AllowDrop="True"/>
+        <Button Content="🔎 Ver Pedidos Cliente" HorizontalAlignment="Left" Margin="468,503,0,0" VerticalAlignment="Top" Height="60" Width="242"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerPedidosCliente"/>
+        
+        <Rectangle HorizontalAlignment="Left" Height="492" Margin="772,0,0,0" Stroke="Black" VerticalAlignment="Center" Width="340" Fill="#FF797070"/>
+        <Label Content="Proveedores" HorizontalAlignment="Left" Margin="808,130,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
+        <Image Source="/Imagenes/Stock/deliveryorder.png" Height="304" Width="356" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="796,159,0,0" AllowDrop="True"/>
+        <Button Content="🔎 Ver Pedidos Proveedor" HorizontalAlignment="Left" Margin="808,501,0,0" VerticalAlignment="Top" Height="62" Width="270"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerPedidosProveedor"/>
     </Grid>
 </Page>

@@ -32,6 +32,34 @@ namespace ItalianPicza.DatabaseModel.DAO_s
             return productos;
         }
 
-    }
+        public int GenerarReporteProducto(producto producto)
+        {
+            int resultado = 0;
 
+            try
+            {
+                using (var context = new italianpizzaEntities())
+                {
+                    var productoExistente = context.producto.FirstOrDefault(p => p.idProducto == producto.idProducto);
+
+                    if (productoExistente == null)
+                    {
+                        throw new Exception("El Producto  con el ID especificado no existe.");
+                    }
+                    productoExistente.cantidadActual = producto.cantidadActual;
+                    productoExistente.observacion = producto.observacion;
+                    resultado = context.SaveChanges();
+                }
+                return resultado;
+            }
+            catch (EntityException ex)
+            {
+                throw new EntityException("Operación no válida al acceder a la base de datos.", ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al modificar el proveedor.", ex);
+            }
+        }
+    }
 }

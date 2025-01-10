@@ -136,6 +136,12 @@ namespace ItalianPicza {
             {
             case 1:
             this.marcoPaginaActual = ((System.Windows.Controls.Frame)(target));
+            
+            #line 12 "..\..\VentanaPrincipal.xaml"
+            this.marcoPaginaActual.Navigated += new System.Windows.Navigation.NavigatedEventHandler(this.marcoPaginaActual_Navigated);
+            
+            #line default
+            #line hidden
             return;
             case 2:
             this.panelBloqueo = ((System.Windows.Controls.Grid)(target));
@@ -185,8 +191,6 @@ namespace ItalianPicza {
             #line 44 "..\..\VentanaPrincipal.xaml"
             this.btnProveedores.Click += new System.Windows.RoutedEventHandler(this.irProveedores);
             
-            #line default
-            #line hidden
             return;
             case 9:
             
@@ -194,7 +198,6 @@ namespace ItalianPicza {
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.CerrarSesion);
             
             #line default
-            #line hidden
             return;
             }
             this._contentLoaded = true;

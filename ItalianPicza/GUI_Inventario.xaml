@@ -24,12 +24,12 @@
             <Label Content="Productos" HorizontalAlignment="Left" Margin="339,137,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50" Height="57"/>
             <Image Source="/Imagenes/Iconos/ingredient.png" Height="256" Width="252" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="332,202,0,0" AllowDrop="True"/>
             <Button Content="🔎 Ver Productos" HorizontalAlignment="Left" Margin="366,520,0,0" VerticalAlignment="Top" Height="60" Width="203"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerProductos"/>
-
+            
             <Rectangle HorizontalAlignment="Left" Height="492" Margin="631,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="254" Fill="#FF797070"/>
             <Button Content="🔎 Ver Recetas" HorizontalAlignment="Left" Margin="662,518,0,0" VerticalAlignment="Top" Height="62" Width="198"  Background="DarkBlue" Foreground="#FFFCFCFC" BorderBrush="White" FontSize="20" Click="VerRecetas"/>
             <Label Content="Recetas" HorizontalAlignment="Left" Margin="670,137,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
             <Image Source="/Imagenes/Iconos/script.png" Height="256" Width="248" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="634,207,0,0" AllowDrop="True"/>
-
+            
             <Rectangle HorizontalAlignment="Left" Height="492" Margin="934,129,0,0" Stroke="Black" VerticalAlignment="Top" Width="254" Fill="#FF797070"/>
             <Label Content="Inventario" HorizontalAlignment="Left" Margin="942,138,0,0" VerticalAlignment="Top" Foreground="#FFFFFBD4" FontFamily="Georgia" FontSize="50"/>
             <Image Source="/Imagenes/Iconos/stock.png" Height="256" Width="248" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="936,206,0,0" AllowDrop="True"/>

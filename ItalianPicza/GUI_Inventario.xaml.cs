@@ -22,7 +22,7 @@ namespace ItalianPicza
             InitializeComponent();
         }
 
-        private void VerProductos(object sender, RoutedEventArgs e)
+        private void irRegresar(object sender, RoutedEventArgs e)
         {
             VentanaPrincipal.CambiarPagina(new GUI_Productos());
         }
@@ -34,11 +34,19 @@ namespace ItalianPicza
 
         private void VerInventario(object sender, RoutedEventArgs e)
         {
+            VentanaPrincipal.CambiarPagina(new GUI_ReporteInventario());
 
         }
 
-        private void irRegresar(object sender, RoutedEventArgs e)
+        private void VerRecetas(object sender, RoutedEventArgs e)
         {
+            //VentanaPrincipal.CambiarPagina(new GUI_Recetas());
+
+        }
+
+        private void VerProductos(object sender, RoutedEventArgs e)
+        {
+            //VentanaPrincipal.CambiarPagina(new GUI_Productos());
 
         }
     }

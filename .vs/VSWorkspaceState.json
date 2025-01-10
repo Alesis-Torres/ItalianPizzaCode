@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\ItalianPicza",
-    "\\ItalianPicza\\DatabaseModel",
-    "\\ItalianPicza\\DatabaseModel\\DAO\u0027s"
+    "\\Pruebas",
+    "\\Pruebas\\PruebasDAOs"
   ],
-  "SelectedNode": "\\ItalianPicza\\GUI_AgregarPedidoProveedor.xaml",
+  "SelectedNode": "\\Pruebas\\PruebasDAOs\\PruebaPedidoProveedoresDAO.cs",
   "PreviewInSolutionExplorer": false
 }
